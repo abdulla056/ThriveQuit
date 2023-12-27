@@ -9,7 +9,10 @@ class ImageConstant {
   static String imgImage1444x360 = '$imagePath/img_image_1_444x360.png';
 
   // LOGIN  Page images
-  static String imgVector = '$imagePath/img_vector.png';
+
+  static String signUpScreenLogo = '$imagePath/signup_screen_logo.png';
+
+  static String signUpScreenLogo2 = '$imagePath/signup_screen_logo_2.png';
 
   static String imgImage9 = '$imagePath/img_image_9.png';
 

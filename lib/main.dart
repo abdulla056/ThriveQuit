@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
           theme: theme,
           title: 'thrive_quit_application',
           debugShowCheckedModeBanner: false,
-          initialRoute: AppRoutes.communityHubGeneralScreen,
+          initialRoute: AppRoutes.loginPageScreen,
           routes: AppRoutes.routes,
         );
       },
