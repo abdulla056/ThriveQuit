@@ -40,7 +40,7 @@ class LoginPageScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 40.v),
+              SizedBox(height: 25.v),
               CustomElevatedButton(
                 height: 67.v,
                 text: "Login with Google",
@@ -87,15 +87,15 @@ class LoginPageScreen extends StatelessWidget {
     return Align(
       alignment: Alignment.centerRight,
       child: SizedBox(
-        height: 230.v,
+        height: 221.v,
         width: 334.h,
         child: Stack(
           alignment: Alignment.bottomLeft,
           children: [
             CustomImageView(
-              imagePath: ImageConstant.imgVector,
-              height: 230.v,
-              width: 236.h,
+              imagePath: ImageConstant.signUpScreenLogo,
+              height: 220.v,
+              width: 215.h,
               alignment: Alignment.centerRight,
             ),
             Align(
@@ -153,7 +153,7 @@ class LoginPageScreen extends StatelessWidget {
                     ),
                   ),
                   CustomImageView(
-                    imagePath: ImageConstant.imgVector281x266,
+                    imagePath: ImageConstant.signUpScreenLogo2,
                     height: 281.v,
                     width: 266.h,
                     alignment: Alignment.centerLeft,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:thrive_quit_application/core/app_export.dart';
+import 'package:thrive_quit_application/presentation/home_page_one_page/home_page_one_page.dart';
 
 class CustomBottomAppBar extends StatefulWidget {
   CustomBottomAppBar({this.onChanged});
@@ -46,9 +47,9 @@ class CustomBottomAppBarState extends State<CustomBottomAppBar> {
       ),
       child: BottomAppBar(
         shape: CircularNotchedRectangle(),
-        color: appTheme.black90001.withOpacity(0.81),
+        color: appTheme.black90001.withOpacity(0.90),
         child: SizedBox(
-          height: 25.v,
+          height: 22.v,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: List.generate(
@@ -62,6 +63,21 @@ class CustomBottomAppBarState extends State<CustomBottomAppBar> {
                     bottomMenuList[index].isSelected = true;
                     widget.onChanged?.call(bottomMenuList[index].type);
                     setState(() {});
+                    // Use Navigator to navigate to the selected screen
+                    switch (bottomMenuList[index].type) {
+                      case BottomBarEnum.Dashboard:
+                        Navigator.pushReplacementNamed(context, AppRoutes.homePageOnePage);
+                        break;
+                      case BottomBarEnum.Education:
+                        Navigator.pushReplacementNamed(context, AppRoutes.breathingExercisesIntroScreen);
+                        break;
+                      case BottomBarEnum.Community:
+                        Navigator.pushReplacementNamed(context, AppRoutes.communityHubGeneralScreen);
+                        break;
+                      case BottomBarEnum.Profile:
+                        Navigator.pushReplacementNamed(context, AppRoutes.otherProfileScreen);
+                        break;
+                    }
                   },
                   child: bottomMenuList[index].isSelected
                       ? Column(

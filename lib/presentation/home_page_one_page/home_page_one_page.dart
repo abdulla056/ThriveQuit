@@ -1,42 +1,71 @@
+import 'package:provider/provider.dart';
+import 'package:thrive_quit_application/app_states/navigation_bar_state';
+import 'package:thrive_quit_application/presentation/community_hub_general_screen/community_hub_general_screen.dart';
+import 'package:thrive_quit_application/presentation/discover_detailed_view_recovery_programs_screen/discover_detailed_view_recovery_programs_screen.dart';
+import 'package:thrive_quit_application/presentation/other_profile_screen/other_profile_screen.dart';
+import 'package:thrive_quit_application/widgets/custom_bottom_app_bar.dart';
 import '../home_page_one_page/widgets/tipscomponentlist_item_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:thrive_quit_application/core/app_export.dart';
 import 'package:thrive_quit_application/widgets/custom_elevated_button.dart';
 
 // ignore_for_file: must_be_immutable
-class HomePageOnePage extends StatelessWidget {
+class HomePageOnePage extends StatefulWidget {
   const HomePageOnePage({Key? key})
       : super(
           key: key,
         );
 
   @override
+  State<HomePageOnePage> createState() => _HomePageOnePageState();
+}
+
+class _HomePageOnePageState extends State<HomePageOnePage> {
+
+  int pageIndex = 0;
+
+  final pages = [ 
+    const HomePageOnePage(), 
+    DiscoverDetailedViewRecoveryProgramsScreen(), 
+    CommunityHubGeneralScreen(), 
+    const OtherProfileScreen(), 
+  ];
+  @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Container(
-          width: double.maxFinite,
-          decoration: AppDecoration.fillWhiteA,
-          child: Container(
-            padding: EdgeInsets.symmetric(
-              horizontal: 9.h,
-              vertical: 8.v,
+        body: Consumer<AppState>(
+          builder: (context, appState, _) {
+          return SingleChildScrollView(
+            // width: double.infinity,
+            // decoration: AppDecoration.fillWhiteA,
+            child: Container(
+              padding: EdgeInsets.symmetric(
+                horizontal: 9.h,
+                vertical: 8.v,
+              ),
+              child: Column(
+                children: [
+                  SizedBox(height: 11.v),
+                  _buildEmergencyHelpRow(context),
+                  SizedBox(height: 14.v),
+                  _buildTrackerDisplayColumn(context),
+                  SizedBox(height: 13.v),
+                  _buildStreakColumn(context),
+                  SizedBox(height: 14.v),
+                  _buildFiveHundredTwentyStack(context),
+                  SizedBox(height: 18.v),
+                  _buildTipsComponentList(context),
+                ],
+              ),
             ),
-            child: Column(
-              children: [
-                SizedBox(height: 11.v),
-                _buildEmergencyHelpRow(context),
-                SizedBox(height: 14.v),
-                _buildTrackerDisplayColumn(context),
-                SizedBox(height: 13.v),
-                _buildStreakColumn(context),
-                SizedBox(height: 14.v),
-                _buildFiveHundredTwentyStack(context),
-                SizedBox(height: 18.v),
-                _buildTipsComponentList(context),
-              ],
-            ),
-          ),
+          );
+          },
+        ),
+        bottomNavigationBar: CustomBottomAppBar(
+        onChanged: (type) {
+          Provider.of<AppState>(context, listen: false).selectedTab = type;
+        },
         ),
       ),
     );
@@ -88,7 +117,7 @@ class HomePageOnePage extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(
         left: 4.h,
-        right: 3.h,
+        right: 4.h,
       ),
       padding: EdgeInsets.symmetric(
         horizontal: 28.h,
@@ -403,66 +432,71 @@ class HomePageOnePage extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadiusStyle.roundedBorder17,
       ),
-      child: Container(
-        height: 128.v,
-        width: 332.h,
-        padding: EdgeInsets.symmetric(
-          horizontal: 15.h,
-          vertical: 14.v,
-        ),
-        decoration: AppDecoration.gradientAmberToAmber.copyWith(
-          borderRadius: BorderRadiusStyle.roundedBorder17,
-        ),
-        child: Stack(
-          alignment: Alignment.centerLeft,
-          children: [
-            Align(
-              alignment: Alignment.bottomRight,
-              child: Padding(
-                padding: EdgeInsets.only(right: 30.h),
-                child: Text(
-                  "520",
-                  style: CustomTextStyles.displayMediumGray80001,
+      child: GestureDetector(
+        onTap: () {
+          Navigator.pushNamed(context, AppRoutes.savingsScreen);
+        },
+        child: Container(
+          height: 128.v,
+          width: 332.h,
+          padding: EdgeInsets.symmetric(
+            horizontal: 15.h,
+            vertical: 14.v,
+          ),
+          decoration: AppDecoration.gradientAmberToAmber.copyWith(
+            borderRadius: BorderRadiusStyle.roundedBorder17,
+          ),
+          child: Stack(
+            alignment: Alignment.centerLeft,
+            children: [
+              Align(
+                alignment: Alignment.bottomRight,
+                child: Padding(
+                  padding: EdgeInsets.only(right: 30.h),
+                  child: Text(
+                    "520",
+                    style: CustomTextStyles.displayMediumGray80001,
+                  ),
                 ),
               ),
-            ),
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SizedBox(
-                        width: 123.h,
-                        child: Text(
-                          "So far you’ve saved ",
-                          maxLines: 2,
-                          overflow: TextOverflow.ellipsis,
-                          style: CustomTextStyles.titleLargeWhiteA700,
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          width: 123.h,
+                          child: Text(
+                            "So far you’ve saved ",
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                            style: CustomTextStyles.titleLargeWhiteA700,
+                          ),
                         ),
-                      ),
-                      CustomImageView(
-                        imagePath: ImageConstant.imgRight,
-                        height: 23.v,
-                        width: 30.h,
-                        margin: EdgeInsets.only(
-                          left: 137.h,
-                          bottom: 25.v,
+                        CustomImageView(
+                          imagePath: ImageConstant.imgRight,
+                          height: 23.v,
+                          width: 30.h,
+                          margin: EdgeInsets.only(
+                            left: 137.h,
+                            bottom: 25.v,
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
-                  Text(
-                    "RM",
-                    style: CustomTextStyles.displaySmallWhiteA700,
-                  ),
-                ],
+                      ],
+                    ),
+                    Text(
+                      "RM",
+                      style: CustomTextStyles.displaySmallWhiteA700,
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

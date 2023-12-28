@@ -248,7 +248,7 @@ class SavingsScreen extends StatelessWidget {
             ],
           ),
         ),
-        bottomNavigationBar: _buildNavigationBar(context),
+        bottomNavigationBar: CustomBottomAppBar(),
         floatingActionButton: CustomFloatingButton(
           height: 81,
           width: 81,
@@ -262,32 +262,6 @@ class SavingsScreen extends StatelessWidget {
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       ),
     );
-  }
-
-  /// Section Widget
-  Widget _buildNavigationBar(BuildContext context) {
-    return CustomBottomAppBar(
-      onChanged: (BottomBarEnum type) {
-        Navigator.pushNamed(
-            navigatorKey.currentContext!, getCurrentRoute(type));
-      },
-    );
-  }
-
-  ///Handling route based on bottom click actions
-  String getCurrentRoute(BottomBarEnum type) {
-    switch (type) {
-      case BottomBarEnum.Dashboard:
-        return "/";
-      case BottomBarEnum.Education:
-        return AppRoutes.homePageOnePage;
-      case BottomBarEnum.Community:
-        return "/";
-      case BottomBarEnum.Profile:
-        return "/";
-      default:
-        return "/";
-    }
   }
 
   ///Handling page based on route
