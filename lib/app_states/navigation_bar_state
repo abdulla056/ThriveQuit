@@ -1,0 +1,13 @@
+import 'package:flutter/material.dart';
+import 'package:thrive_quit_application/widgets/custom_bottom_app_bar.dart';
+
+class AppState extends ChangeNotifier {
+  BottomBarEnum _selectedTab = BottomBarEnum.Dashboard;
+
+  BottomBarEnum get selectedTab => _selectedTab;
+
+  set selectedTab(BottomBarEnum value) {
+    _selectedTab = value;
+    notifyListeners();
+  }
+}

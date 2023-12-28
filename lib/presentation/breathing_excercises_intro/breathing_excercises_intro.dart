@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:thrive_quit_application/core/app_export.dart';
 import 'package:thrive_quit_application/widgets/app_bar/appbar_leading_iconbutton.dart';
 import 'package:thrive_quit_application/widgets/app_bar/custom_app_bar.dart';
+import 'package:thrive_quit_application/widgets/custom_bottom_app_bar.dart';
 import 'package:thrive_quit_application/widgets/custom_elevated_button.dart';
 
 class BreathingExercisesIntroScreen extends StatelessWidget {
@@ -78,6 +79,7 @@ class BreathingExercisesIntroScreen extends StatelessWidget {
             ),
           ),
         ),
+          bottomNavigationBar: CustomBottomAppBar()
       ),
     );
   }

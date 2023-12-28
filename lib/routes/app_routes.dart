@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:thrive_quit_application/presentation/discover_list_view_page/discover_list_view_page.dart';
 import 'package:thrive_quit_application/presentation/home_page_one_page/home_page_one_page.dart';
 import 'package:thrive_quit_application/presentation/logo_page_one_screen/logo_page_one_screen.dart';
 import 'package:thrive_quit_application/presentation/logo_page_screen/logo_page_screen.dart';
@@ -118,6 +119,7 @@ class AppRoutes {
         BreathingExercisesWithGifScreen(),
     discoverListViewTabContainerScreen: (context) =>
         DiscoverListViewTabContainerScreen(),
+    discoverListViewPage:(context) => DiscoverListViewPage(),
     discoverDetailedViewRecoveryProgramsScreen: (context) =>
         DiscoverDetailedViewRecoveryProgramsScreen(),
     discoverDetailedViewRehabCentersScreen: (context) =>
