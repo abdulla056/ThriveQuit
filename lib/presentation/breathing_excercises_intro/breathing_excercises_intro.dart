@@ -69,6 +69,7 @@ class BreathingExercisesIntroScreen extends StatelessWidget {
                 _buildEleven(context),
                 SizedBox(height: 53.v),
                 CustomElevatedButton(
+                  onPressed: () => Navigator.pushNamed(context, AppRoutes.breathingExercisesOneScreen),
                   text: "I’m ready!",
                   margin: EdgeInsets.symmetric(horizontal: 12.h),
                   buttonStyle: CustomButtonStyles.fillPrimaryTL10,

@@ -93,6 +93,7 @@ class _HomePageOnePageState extends State<HomePageOnePage> {
             ),
           ),
           CustomElevatedButton(
+            onPressed: () => Navigator.pushNamed(context, AppRoutes.emergencyPageScreen),
             height: 38.v,
             width: 124.h,
             text: "Emergency Help",
@@ -437,7 +438,7 @@ class _HomePageOnePageState extends State<HomePageOnePage> {
           Navigator.pushNamed(context, AppRoutes.savingsScreen);
         },
         child: Container(
-          height: 128.v,
+          height: 137.v,
           width: 332.h,
           padding: EdgeInsets.symmetric(
             horizontal: 15.h,

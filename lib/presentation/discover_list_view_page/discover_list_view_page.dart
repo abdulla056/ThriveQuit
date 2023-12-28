@@ -1,3 +1,4 @@
+import 'package:thrive_quit_application/widgets/custom_bottom_app_bar.dart';
 import '../discover_list_view_page/widgets/rehabcenter_item_widget.dart';
 import '../discover_list_view_page/widgets/userprofile1_item_widget.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +28,7 @@ class DiscoverListViewPageState extends State<DiscoverListViewPage>
           decoration: AppDecoration.fillWhiteA,
           child: Column(
             children: [
-              SizedBox(height: 29.v),
+              SizedBox(height: 60.v),
               Align(
                 alignment: Alignment.topRight,
                 child: Padding(
@@ -38,22 +39,28 @@ class DiscoverListViewPageState extends State<DiscoverListViewPage>
                       Column(
                         children: [
                           _buildUserProfile(context),
-                          SizedBox(height: 8.v),
+                          SizedBox(height: 15.v),
                           Align(
                             alignment: Alignment.centerLeft,
-                            child: Text(
-                              "View All",
-                              style: CustomTextStyles.labelLargeDMSansAmber900,
+                            child: GestureDetector(
+                              onTap: () => Navigator.pushNamed(context, AppRoutes.discoverDetailedViewRecoveryProgramsScreen),
+                              child: Text(
+                                "View All",
+                                style: CustomTextStyles.labelLargeDMSansAmber900,
+                              ),
                             ),
                           ),
                           SizedBox(height: 24.v),
                           _buildRehabCenters(context),
                         ],
                       ),
-                      SizedBox(height: 6.v),
-                      Text(
-                        "View All",
-                        style: CustomTextStyles.labelLargeDMSansAmber900,
+                      SizedBox(height: 15.v),
+                      GestureDetector(
+                        onTap: () => Navigator.pushNamed(context, AppRoutes.discoverDetailedViewRehabCentersScreen),
+                        child: Text(
+                          "View All",
+                          style: CustomTextStyles.labelLargeDMSansAmber900,
+                        ),
                       ),
                       SizedBox(height: 26.v),
                       SizedBox(
@@ -70,6 +77,7 @@ class DiscoverListViewPageState extends State<DiscoverListViewPage>
             ],
           ),
         ),
+        bottomNavigationBar: CustomBottomAppBar(),
       ),
     );
   }
@@ -89,7 +97,7 @@ class DiscoverListViewPageState extends State<DiscoverListViewPage>
         ),
         SizedBox(height: 7.v),
         SizedBox(
-          height: 153.v,
+          height: 160.v,
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
             separatorBuilder: (
@@ -125,7 +133,7 @@ class DiscoverListViewPageState extends State<DiscoverListViewPage>
         ),
         SizedBox(height: 7.v),
         SizedBox(
-          height: 153.v,
+          height: 160.v,
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
             separatorBuilder: (
