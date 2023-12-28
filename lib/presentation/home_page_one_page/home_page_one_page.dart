@@ -438,7 +438,7 @@ class _HomePageOnePageState extends State<HomePageOnePage> {
           Navigator.pushNamed(context, AppRoutes.savingsScreen);
         },
         child: Container(
-          height: 128.v,
+          height: 137.v,
           width: 332.h,
           padding: EdgeInsets.symmetric(
             horizontal: 15.h,
