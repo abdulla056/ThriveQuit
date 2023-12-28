@@ -4,7 +4,6 @@ import 'package:thrive_quit_application/core/app_export.dart';
 import 'package:thrive_quit_application/presentation/home_page_one_page/home_page_one_page.dart';
 import 'package:thrive_quit_application/widgets/custom_bottom_app_bar.dart';
 import 'package:thrive_quit_application/widgets/custom_elevated_button.dart';
-import 'package:thrive_quit_application/widgets/custom_bottom_app_bar.dart';
 import 'package:thrive_quit_application/widgets/custom_floating_button.dart';
 
 class CommunityHubGeneralScreen extends StatelessWidget {
