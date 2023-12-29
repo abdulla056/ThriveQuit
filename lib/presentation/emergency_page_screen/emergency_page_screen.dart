@@ -68,34 +68,37 @@ class EmergencyPageScreen extends StatelessWidget {
             ),
           ),
           SizedBox(height: 26.v),
-          Container(
-            padding: EdgeInsets.all(30.h),
-            decoration: AppDecoration.fillDeepOrange.copyWith(
-              borderRadius: BorderRadiusStyle.circleBorder145,
-            ),
+          GestureDetector(
+            onTap: () => Navigator.pushNamed(context, AppRoutes.sosActivationScreen),
             child: Container(
-              padding: EdgeInsets.all(25.h),
-              decoration: AppDecoration.fillRed.copyWith(
-                borderRadius: BorderRadiusStyle.circleBorder115,
+              padding: EdgeInsets.all(30.h),
+              decoration: AppDecoration.fillDeepOrange.copyWith(
+                borderRadius: BorderRadiusStyle.circleBorder145,
               ),
               child: Container(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 48.h,
-                  vertical: 59.v,
+                padding: EdgeInsets.all(25.h),
+                decoration: AppDecoration.fillRed.copyWith(
+                  borderRadius: BorderRadiusStyle.circleBorder115,
                 ),
-                decoration: AppDecoration.gradientRedToRed.copyWith(
-                  borderRadius: BorderRadiusStyle.circleBorder90,
-                ),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    SizedBox(height: 8.v),
-                    Text(
-                      "SOS",
-                      style: theme.textTheme.displayMedium,
-                    ),
-                  ],
+                child: Container(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 48.h,
+                    vertical: 59.v,
+                  ),
+                  decoration: AppDecoration.gradientRedToRed.copyWith(
+                    borderRadius: BorderRadiusStyle.circleBorder90,
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      SizedBox(height: 8.v),
+                      Text(
+                        "SOS",
+                        style: theme.textTheme.displayMedium,
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),

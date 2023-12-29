@@ -4,6 +4,7 @@ import 'package:thrive_quit_application/presentation/community_hub_general_scree
 import 'package:thrive_quit_application/presentation/discover_detailed_view_recovery_programs_screen/discover_detailed_view_recovery_programs_screen.dart';
 import 'package:thrive_quit_application/presentation/other_profile_screen/other_profile_screen.dart';
 import 'package:thrive_quit_application/widgets/custom_bottom_app_bar.dart';
+//import 'package:thrive_quit_application/widgets/navigation_bar.dart';
 import '../home_page_one_page/widgets/tipscomponentlist_item_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:thrive_quit_application/core/app_export.dart';
@@ -22,53 +23,45 @@ class HomePageOnePage extends StatefulWidget {
 
 class _HomePageOnePageState extends State<HomePageOnePage> {
 
-  int pageIndex = 0;
+  // int pageIndex = 0;
 
-  final pages = [ 
-    const HomePageOnePage(), 
-    DiscoverDetailedViewRecoveryProgramsScreen(), 
-    CommunityHubGeneralScreen(), 
-    const OtherProfileScreen(), 
-  ];
+  // final pages = [ 
+  //   const HomePageOnePage(), 
+  //   DiscoverDetailedViewRecoveryProgramsScreen(), 
+  //   CommunityHubGeneralScreen(), 
+  //   const OtherProfileScreen(), 
+  // ];
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(
-        body: Consumer<AppState>(
-          builder: (context, appState, _) {
-          return SingleChildScrollView(
-            // width: double.infinity,
-            // decoration: AppDecoration.fillWhiteA,
-            child: Container(
-              padding: EdgeInsets.symmetric(
-                horizontal: 9.h,
-                vertical: 8.v,
-              ),
-              child: Column(
-                children: [
-                  SizedBox(height: 11.v),
-                  _buildEmergencyHelpRow(context),
-                  SizedBox(height: 14.v),
-                  _buildTrackerDisplayColumn(context),
-                  SizedBox(height: 13.v),
-                  _buildStreakColumn(context),
-                  SizedBox(height: 14.v),
-                  _buildFiveHundredTwentyStack(context),
-                  SizedBox(height: 18.v),
-                  _buildTipsComponentList(context),
-                ],
+          child: Scaffold(
+            body : SingleChildScrollView(
+              // width: double.infinity,
+              // decoration: AppDecoration.fillWhiteA,
+              child: Container(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 9.h,
+                  vertical: 8.v,
+                ),
+                child: Column(
+                  children: [
+                    SizedBox(height: 11.v),
+                    _buildEmergencyHelpRow(context),
+                    SizedBox(height: 14.v),
+                    _buildTrackerDisplayColumn(context),
+                    SizedBox(height: 13.v),
+                    _buildStreakColumn(context),
+                    SizedBox(height: 14.v),
+                    _buildFiveHundredTwentyStack(context),
+                    SizedBox(height: 18.v),
+                    _buildTipsComponentList(context),
+                  ],
+                ),
               ),
             ),
-          );
-          },
-        ),
-        bottomNavigationBar: CustomBottomAppBar(
-        onChanged: (type) {
-          Provider.of<AppState>(context, listen: false).selectedTab = type;
-        },
-        ),
-      ),
+          ),
     );
+          }
   }
 
   /// Section Widget
@@ -531,4 +524,3 @@ class _HomePageOnePageState extends State<HomePageOnePage> {
       ),
     );
   }
-}

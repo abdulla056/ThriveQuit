@@ -250,7 +250,6 @@ class SavingsScreen extends StatelessWidget {
             ),
           ),
         ),
-        bottomNavigationBar: CustomBottomAppBar(),
         floatingActionButton: CustomFloatingButton(
           height: 81,
           width: 81,

@@ -174,11 +174,11 @@ class CommunityHubGeneralScreen extends StatelessWidget {
             ],
           ),
         ),
-        bottomNavigationBar: CustomBottomAppBar(),
+        //bottomNavigationBar: CustomBottomAppBar(),
         floatingActionButton: CustomFloatingButton(
           height: 81,
           width: 81,
-          backgroundColor: appTheme.amber900,
+          backgroundColor: Colors.orange,
           child: CustomImageView(
             imagePath: ImageConstant.imgLocationPin3,
             height: 40.5.v,

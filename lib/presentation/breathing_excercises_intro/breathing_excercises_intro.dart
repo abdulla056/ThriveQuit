@@ -80,7 +80,6 @@ class BreathingExercisesIntroScreen extends StatelessWidget {
             ),
           ),
         ),
-          bottomNavigationBar: CustomBottomAppBar()
       ),
     );
   }

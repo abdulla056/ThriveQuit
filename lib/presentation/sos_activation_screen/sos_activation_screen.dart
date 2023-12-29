@@ -109,6 +109,7 @@ class SosActivationScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 54.v),
                 CustomElevatedButton(
+                  onPressed: () => Navigator.pushNamed(context, AppRoutes.homePage),
                   text: "Cancel request",
                   margin: EdgeInsets.symmetric(horizontal: 37.h),
                   buttonStyle: CustomButtonStyles.fillPrimaryTL10,
