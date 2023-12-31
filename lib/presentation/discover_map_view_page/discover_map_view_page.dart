@@ -25,13 +25,13 @@ class DiscoverMapViewPageState extends State<DiscoverMapViewPage>
   bool get wantKeepAlive => true;
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        resizeToAvoidBottomInset: false,
-        body: Container(
-          width: double.maxFinite,
-          decoration: AppDecoration.fillWhiteA,
-          child: Column(
+    return Column(
+      //child: Scaffold(
+        //resizeToAvoidBottomInset: false,
+        //body: Container(
+          // width: double.maxFinite,
+          // decoration: AppDecoration.fillWhiteA,
+          // child: Column(
             children: [
               SizedBox(height: 16.v),
               Padding(
@@ -44,15 +44,15 @@ class DiscoverMapViewPageState extends State<DiscoverMapViewPage>
                       hintText: "Search",
                     ),
                     SizedBox(height: 22.v),
-                    _buildDiscoverRecoverySection(context),
+                    //_buildDiscoverRecoverySection(context),
                   ],
                 ),
               ),
             ],
-          ),
-        ),
-      ),
-    );
+          );
+    //     ),
+    //   ),
+    // );
   }
 
   /// Section Widget

@@ -3,7 +3,6 @@ import 'package:thrive_quit_application/core/app_export.dart';
 import 'package:thrive_quit_application/presentation/home_page_one_page/home_page_one_page.dart';
 import 'package:thrive_quit_application/widgets/custom_bottom_app_bar.dart';
 import 'package:thrive_quit_application/widgets/custom_elevated_button.dart';
-import 'package:thrive_quit_application/widgets/custom_floating_button.dart';
 import 'package:thrive_quit_application/widgets/custom_icon_button.dart';
 
 // ignore_for_file: must_be_immutable
@@ -204,17 +203,8 @@ class DiscoverIndvidualDetailedViewRecoveryProgramsScreen
                       ]),
                   SizedBox(height: 9.v)
                 ])),
-            bottomNavigationBar: _buildNavigationBar(context),
-            floatingActionButton: CustomFloatingButton(
-                height: 81,
-                width: 81,
-                backgroundColor: appTheme.amber900,
-                child: CustomImageView(
-                    imagePath: ImageConstant.imgLocationPin3,
-                    height: 40.5.v,
-                    width: 40.5.h)),
-            floatingActionButtonLocation:
-                FloatingActionButtonLocation.centerDocked));
+                )
+              );
   }
 
   /// Section Widget
@@ -255,7 +245,7 @@ class DiscoverIndvidualDetailedViewRecoveryProgramsScreen
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("Rehab Center 1", style: theme.textTheme.headlineMedium),
+                  Text("Recovery Program 1", style: theme.textTheme.headlineMedium),
                   Spacer(),
                   CustomImageView(
                       imagePath: ImageConstant.imgHeartRewardSOrange90001,
@@ -269,13 +259,6 @@ class DiscoverIndvidualDetailedViewRecoveryProgramsScreen
                       margin:
                           EdgeInsets.only(left: 12.h, top: 9.v, bottom: 10.v))
                 ])));
-  }
-
-  /// Section Widget
-  Widget _buildNavigationBar(BuildContext context) {
-    return CustomBottomAppBar(onChanged: (BottomBarEnum type) {
-      Navigator.pushNamed(navigatorKey.currentContext!, getCurrentRoute(type));
-    });
   }
 
   ///Handling route based on bottom click actions

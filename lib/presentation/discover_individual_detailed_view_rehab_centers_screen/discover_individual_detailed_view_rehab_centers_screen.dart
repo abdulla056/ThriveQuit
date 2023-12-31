@@ -148,17 +148,8 @@ class DiscoverIndividualDetailedViewRehabCentersScreen extends StatelessWidget {
                   ])),
                   SizedBox(height: 9.v)
                 ])),
-            bottomNavigationBar: _buildNavigationBar(context),
-            floatingActionButton: CustomFloatingButton(
-                height: 81,
-                width: 81,
-                backgroundColor: appTheme.amber900,
-                child: CustomImageView(
-                    imagePath: ImageConstant.imgLocationPin3,
-                    height: 40.5.v,
-                    width: 40.5.h)),
-            floatingActionButtonLocation:
-                FloatingActionButtonLocation.centerDocked));
+              )
+            );
   }
 
   /// Section Widget

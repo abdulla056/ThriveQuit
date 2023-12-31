@@ -21,14 +21,31 @@ class DiscoverListViewPageState extends State<DiscoverListViewPage>
   bool get wantKeepAlive => true;
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Container(
-          width: double.maxFinite,
-          decoration: AppDecoration.fillWhiteA,
-          child: Column(
-            children: [
-              SizedBox(height: 60.v),
+    return Column(
+        // appBar: AppBar(
+        // backgroundColor: Colors.transparent,
+        //   leading: IconButton(
+        //     onPressed: () {
+        //       Navigator.pushNamed(context, AppRoutes.homePage);
+        //     },
+        //     icon: Icon(Icons.arrow_back_ios_new_outlined,),
+        //   ),
+        // ),
+        // body: Container(
+        //   width: double.maxFinite,
+        //   decoration: AppDecoration.fillWhiteA,
+        //   child: Column(
+        //     children: [
+        //       Text(
+        //         'Discover',
+        //         style: CustomTextStyles.headlineLargeBlack90001,
+        //       ),
+        //       Text(
+        //         'Discover upcoming events near you',
+        //         style: CustomTextStyles.bodyMediumGray900,
+        //       ),
+              children : [
+              SizedBox(height: 15.v,),
               Align(
                 alignment: Alignment.topRight,
                 child: Padding(
@@ -75,11 +92,11 @@ class DiscoverListViewPageState extends State<DiscoverListViewPage>
                 ),
               ),
             ],
-          ),
-        ),
-        bottomNavigationBar: CustomBottomAppBar(),
-      ),
-    );
+          );
+        //),
+        //bottomNavigationBar: CustomBottomAppBar(),
+    //   ),
+    // );
   }
 
   /// Section Widget
