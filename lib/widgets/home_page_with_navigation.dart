@@ -29,7 +29,7 @@ class _HomePageState extends State<HomePage> {
           floatingActionButton: FloatingActionButton(
             backgroundColor: Colors.orange,
             child : Icon(Icons.location_on_outlined),
-            onPressed: () => Navigator.pushNamed(context, AppRoutes.discoverListViewPage),
+            onPressed: () => Navigator.pushNamed(context, AppRoutes.discoverPage),
           ),
           floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
           bottomNavigationBar: 

@@ -1,10 +1,8 @@
 import 'package:provider/provider.dart';
-import 'package:thrive_quit_application/app_states/navigation_bar_state';
 import 'package:thrive_quit_application/presentation/community_hub_general_screen/community_hub_general_screen.dart';
 import 'package:thrive_quit_application/presentation/discover_detailed_view_recovery_programs_screen/discover_detailed_view_recovery_programs_screen.dart';
 import 'package:thrive_quit_application/presentation/other_profile_screen/other_profile_screen.dart';
 import 'package:thrive_quit_application/widgets/custom_bottom_app_bar.dart';
-//import 'package:thrive_quit_application/widgets/navigation_bar.dart';
 import '../home_page_one_page/widgets/tipscomponentlist_item_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:thrive_quit_application/core/app_export.dart';

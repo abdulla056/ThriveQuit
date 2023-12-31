@@ -15,9 +15,6 @@ class BreathingExercisesIntroScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        extendBody: true,
-        extendBodyBehindAppBar: true,
-        appBar: _buildAppBar(context),
         body: Container(
           width: SizeUtils.width,
           height: SizeUtils.height,
@@ -39,10 +36,11 @@ class BreathingExercisesIntroScreen extends StatelessWidget {
             ),
             child: Column(
               children: [
+                SizedBox(height: 15.v,),
                 CustomImageView(
                   imagePath: ImageConstant.imgImage12,
-                  height: 134.v,
-                  width: 124.h,
+                  height: 155.v,
+                  width: 130.h,
                 ),
                 SizedBox(height: 18.v),
                 Text(
@@ -69,7 +67,7 @@ class BreathingExercisesIntroScreen extends StatelessWidget {
                 _buildEleven(context),
                 SizedBox(height: 53.v),
                 CustomElevatedButton(
-                  onPressed: () => Navigator.pushNamed(context, AppRoutes.breathingExercisesOneScreen),
+                  onPressed: () => Navigator.pushNamed(context, AppRoutes.breathingExercisesWithGifScreen),
                   text: "I’m ready!",
                   margin: EdgeInsets.symmetric(horizontal: 12.h),
                   buttonStyle: CustomButtonStyles.fillPrimaryTL10,
@@ -85,15 +83,7 @@ class BreathingExercisesIntroScreen extends StatelessWidget {
   }
 
   /// Section Widget
-  PreferredSizeWidget _buildAppBar(BuildContext context) {
-    return CustomAppBar(
-      leadingWidth: double.maxFinite,
-      leading: AppbarLeadingIconbutton(
-        imagePath: ImageConstant.imgRightOnprimarycontainer23x32,
-        margin: EdgeInsets.fromLTRB(15.h, 16.v, 313.h, 16.v),
-      ),
-    );
-  }
+
 
   /// Section Widget
   Widget _buildEleven(BuildContext context) {
