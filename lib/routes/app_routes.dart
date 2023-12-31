@@ -26,8 +26,8 @@ import 'package:thrive_quit_application/presentation/discover_detailed_view_reha
 import 'package:thrive_quit_application/presentation/discover_individual_detailed_view_rehab_centers_screen/discover_individual_detailed_view_rehab_centers_screen.dart';
 import 'package:thrive_quit_application/presentation/discover_indvidual_detailed_view_recovery_programs_screen/discover_indvidual_detailed_view_recovery_programs_screen.dart';
 import 'package:thrive_quit_application/presentation/app_navigation_screen/app_navigation_screen.dart';
-import 'package:thrive_quit_application/widgets/discover_page.dart';
-import 'package:thrive_quit_application/widgets/home_page_with_navigation.dart';
+import 'package:thrive_quit_application/state_management/discover_page.dart';
+import 'package:thrive_quit_application/state_management/home_page_with_navigation.dart';
 
 class AppRoutes {
   static const String logoPageOneScreen = '/logo_page_one_screen';

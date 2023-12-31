@@ -22,7 +22,15 @@ class DiscoverDetailedViewRecoveryProgramsScreen extends StatelessWidget {
     return SafeArea(
         child: Scaffold(
             resizeToAvoidBottomInset: false,
-            appBar: _buildAppBar(context),
+            appBar: AppBar(
+        backgroundColor: Colors.transparent,
+          leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(Icons.arrow_back_ios_new_outlined,),
+          ),
+        ),
             body: Container(
                 width: double.maxFinite,
                 padding: EdgeInsets.symmetric(horizontal: 25.h, vertical: 5.v),
@@ -38,31 +46,8 @@ class DiscoverDetailedViewRecoveryProgramsScreen extends StatelessWidget {
                       style: CustomTextStyles.labelSmallGray600),
                   SizedBox(height: 29.v)
                 ])),
-            bottomNavigationBar: _buildNavigationBar(context),
-            floatingActionButton: CustomFloatingButton(
-                height: 81,
-                width: 81,
-                backgroundColor: appTheme.amber900,
-                child: CustomImageView(
-                    imagePath: ImageConstant.imgLocationPin3,
-                    height: 40.5.v,
-                    width: 40.5.h)),
-            floatingActionButtonLocation:
-                FloatingActionButtonLocation.centerDocked));
-  }
-
-  /// Section Widget
-  PreferredSizeWidget _buildAppBar(BuildContext context) {
-    return CustomAppBar(
-        leadingWidth: double.maxFinite,
-        leading: AppbarLeadingIconbuttonOne(
-            imagePath: ImageConstant.imgArrowLeft,
-            margin: EdgeInsets.only(left: 19.h, right: 308.h, bottom: 23.v),
-            onTap: () {
-              onTapArrowLeft(context);
-            }),
-        centerTitle: true,
-        title: AppbarSubtitleOne(text: "All Recovery Programs"));
+      ),
+    );
   }
 
   /// Section Widget
@@ -88,13 +73,6 @@ class DiscoverDetailedViewRecoveryProgramsScreen extends StatelessWidget {
             itemBuilder: (context, index) {
               return Userprofile2ItemWidget();
             }));
-  }
-
-  /// Section Widget
-  Widget _buildNavigationBar(BuildContext context) {
-    return CustomBottomAppBar(onChanged: (BottomBarEnum type) {
-      Navigator.pushNamed(navigatorKey.currentContext!, getCurrentRoute(type));
-    });
   }
 
   ///Handling route based on bottom click actions

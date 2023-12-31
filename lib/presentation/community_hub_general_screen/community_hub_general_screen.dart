@@ -174,18 +174,6 @@ class CommunityHubGeneralScreen extends StatelessWidget {
             ],
           ),
         ),
-        //bottomNavigationBar: CustomBottomAppBar(),
-        floatingActionButton: CustomFloatingButton(
-          height: 81,
-          width: 81,
-          backgroundColor: Colors.orange,
-          child: CustomImageView(
-            imagePath: ImageConstant.imgLocationPin3,
-            height: 40.5.v,
-            width: 40.5.h,
-          ),
-        ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       ),
     );
   }

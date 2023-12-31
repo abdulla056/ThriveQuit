@@ -4,6 +4,7 @@ import 'package:thrive_quit_application/presentation/breathing_excercises_intro/
 import 'package:thrive_quit_application/presentation/community_hub_general_screen/community_hub_general_screen.dart';
 import 'package:thrive_quit_application/presentation/home_page_one_page/home_page_one_page.dart';
 import 'package:thrive_quit_application/presentation/other_profile_screen/other_profile_screen.dart';
+import 'package:thrive_quit_application/state_management/discover_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -18,6 +19,7 @@ class _HomePageState extends State<HomePage> {
   final screens = [
     HomePageOnePage(),
     BreathingExercisesIntroScreen(),
+    DiscoverPage(),
     CommunityHubGeneralScreen(),
     OtherProfileScreen(),
   ]; 
@@ -26,12 +28,12 @@ class _HomePageState extends State<HomePage> {
     final ThemeData theme = Theme.of(context);
         return Scaffold(
           body : screens[currentPageIndex],
-          floatingActionButton: FloatingActionButton(
-            backgroundColor: Colors.orange,
-            child : Icon(Icons.location_on_outlined),
-            onPressed: () => Navigator.pushNamed(context, AppRoutes.discoverPage),
-          ),
-          floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+          // floatingActionButton: FloatingActionButton(
+          //   backgroundColor: Colors.orange,
+          //   child : Icon(Icons.location_on_outlined),
+          //   onPressed: () => Navigator.pushNamed(context, AppRoutes.discoverPage),
+          // ),
+          // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
           bottomNavigationBar: 
               NavigationBar(
               onDestinationSelected: (int index) {
@@ -51,6 +53,18 @@ class _HomePageState extends State<HomePage> {
                   selectedIcon: Icon(Icons.health_and_safety),
                   icon: Badge(child: Icon(Icons.health_and_safety_outlined)),
                   label: 'Health',
+                ),
+                Card(
+                  elevation: 50,
+                  color: Colors.orange,
+                  child: SizedBox(
+                    width: 500,
+                    height: 100,
+                    child: NavigationDestination(
+                      selectedIcon: Icon(Icons.location_on_sharp),
+                      icon: Icon(Icons.location_on_outlined,), 
+                      label: 'Discover',),
+                  ),
                 ),
                 NavigationDestination(
                   selectedIcon: Icon(Icons.people_alt),
