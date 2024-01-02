@@ -19,7 +19,7 @@ class SavingsScreen extends StatelessWidget {
       child: Scaffold(
         body: Container(
           width: double.maxFinite,
-          padding: EdgeInsets.symmetric(vertical: 9.v),
+          padding: EdgeInsets.symmetric(vertical: 10.v),
           child: SingleChildScrollView(
             child: Column(
               children: [
@@ -51,7 +51,7 @@ class SavingsScreen extends StatelessWidget {
                       Container(
                         padding: EdgeInsets.symmetric(
                           horizontal: 23.h,
-                          vertical: 31.v,
+                          vertical: 74.5.v,
                         ),
                         decoration:
                             AppDecoration.gradientAmberToDeepOrangeA.copyWith(
@@ -61,12 +61,13 @@ class SavingsScreen extends StatelessWidget {
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            SizedBox(height: 10.v),
+                            SizedBox(height: 3.v),
                             Padding(
                               padding: EdgeInsets.only(left: 20.h),
                               child: Text(
                                 "So far you’ve saved ",
-                                style: CustomTextStyles.headlineSmallWhiteA700_1,
+                                style:
+                                    CustomTextStyles.headlineSmallWhiteA700_1,
                               ),
                             ),
                             SizedBox(height: 12.v),
@@ -81,7 +82,7 @@ class SavingsScreen extends StatelessWidget {
                                     child: Container(
                                       padding: EdgeInsets.symmetric(
                                         horizontal: 44.h,
-                                        vertical: 7.v,
+                                        vertical: 5.v,
                                       ),
                                       decoration:
                                           AppDecoration.fillPrimary1.copyWith(
@@ -92,11 +93,13 @@ class SavingsScreen extends StatelessWidget {
                                         mainAxisSize: MainAxisSize.min,
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
-                                        mainAxisAlignment: MainAxisAlignment.end,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.end,
                                         children: [
                                           SizedBox(height: 6.v),
                                           Padding(
-                                            padding: EdgeInsets.only(left: 115.h),
+                                            padding:
+                                                EdgeInsets.only(left: 115.h),
                                             child: Text(
                                               "RM",
                                               style: CustomTextStyles
@@ -110,7 +113,7 @@ class SavingsScreen extends StatelessWidget {
                                   Align(
                                     alignment: Alignment.topRight,
                                     child: Padding(
-                                      padding: EdgeInsets.only(right: 11.h),
+                                      padding: EdgeInsets.only(right: 130.h),
                                       child: Text(
                                         "520",
                                         style: CustomTextStyles
@@ -132,14 +135,15 @@ class SavingsScreen extends StatelessWidget {
                               padding: EdgeInsets.only(left: 24.h),
                               child: Text(
                                 "With that, you can",
-                                style: CustomTextStyles.headlineSmallWhiteA700_2,
+                                style:
+                                    CustomTextStyles.headlineSmallWhiteA700_2,
                               ),
                             ),
                             SizedBox(height: 49.v),
                             Padding(
                               padding: EdgeInsets.only(
                                 left: 7.h,
-                                right: 24.h,
+                                right: 15.h,
                               ),
                               child: Row(
                                 children: [
@@ -152,7 +156,7 @@ class SavingsScreen extends StatelessWidget {
                                     padding: EdgeInsets.only(
                                       left: 20.h,
                                       top: 11.v,
-                                      bottom: 2.v,
+                                      bottom: 1.v,
                                     ),
                                     child: Text(
                                       "Feed 1040 starving children",
@@ -166,7 +170,7 @@ class SavingsScreen extends StatelessWidget {
                             Padding(
                               padding: EdgeInsets.only(
                                 left: 7.h,
-                                right: 67.h,
+                                right: 61.h,
                               ),
                               child: Row(
                                 children: [
@@ -177,7 +181,7 @@ class SavingsScreen extends StatelessWidget {
                                   ),
                                   Padding(
                                     padding: EdgeInsets.only(
-                                      left: 21.h,
+                                      left: 19.h,
                                       top: 11.v,
                                       bottom: 2.v,
                                     ),
@@ -193,7 +197,7 @@ class SavingsScreen extends StatelessWidget {
                             Padding(
                               padding: EdgeInsets.only(
                                 left: 7.h,
-                                right: 58.h,
+                                right: 50.h,
                               ),
                               child: Row(
                                 children: [
@@ -204,7 +208,7 @@ class SavingsScreen extends StatelessWidget {
                                   ),
                                   Padding(
                                     padding: EdgeInsets.only(
-                                      left: 21.h,
+                                      left: 20.h,
                                       top: 14.v,
                                     ),
                                     child: Text(
@@ -227,7 +231,7 @@ class SavingsScreen extends StatelessWidget {
                                   ),
                                   Padding(
                                     padding: EdgeInsets.only(
-                                      left: 17.h,
+                                      left: 18.h,
                                       top: 6.v,
                                       bottom: 7.v,
                                     ),
@@ -250,7 +254,7 @@ class SavingsScreen extends StatelessWidget {
             ),
           ),
         ),
-        floatingActionButton: CustomFloatingButton(
+        /*floatingActionButton: CustomFloatingButton(
           height: 81,
           width: 81,
           backgroundColor: appTheme.amber900,
@@ -260,7 +264,7 @@ class SavingsScreen extends StatelessWidget {
             width: 40.5.h,
           ),
         ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,*/
       ),
     );
   }
