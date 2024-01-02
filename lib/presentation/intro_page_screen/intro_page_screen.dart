@@ -73,10 +73,10 @@ class IntroPageScreen extends StatelessWidget {
                   "Begin your journey to a smoke-free life",
                   maxLines: 3,
                   overflow: TextOverflow.ellipsis,
-                  style: theme.textTheme.displaySmall,
+                  style: theme.textTheme.displaySmall?.copyWith(fontSize: 40.0),
                 ),
               ),
-              SizedBox(height: 76.v),
+              SizedBox(height: 70.v),
               Padding(
                 padding: EdgeInsets.only(right: 28.h),
                 child: CustomIconButton(
