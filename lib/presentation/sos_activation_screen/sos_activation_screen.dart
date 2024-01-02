@@ -58,32 +58,25 @@ class SosActivationScreen extends StatelessWidget {
                 SizedBox(height: 13.v),
                 Container(
                   height: 55.v,
-                  width: 273.h,
-                  margin: EdgeInsets.only(left: 24.h),
+                  width: double
+                      .infinity, // allow the container to take up all available width
+                  margin: EdgeInsets.only(left: 22.h),
                   child: Stack(
                     alignment: Alignment.center,
                     children: [
                       Align(
                         alignment: Alignment.center,
                         child: SizedBox(
-                          width: 273.h,
+                          width: double
+                              .infinity, // allow the SizedBox to take up all available width
                           child: Text(
-                            "Ambulance and  responders are arriving soon",
+                            "Ambulance and first responders are arriving soon",
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
-                            style: CustomTextStyles.titleLargeWhiteA700,
-                          ),
-                        ),
-                      ),
-                      Align(
-                        alignment: Alignment.center,
-                        child: SizedBox(
-                          width: 273.h,
-                          child: Text(
-                            "Ambulance and  responders are arriving soon",
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
-                            style: CustomTextStyles.titleLargeWhiteA700,
+                            style: CustomTextStyles.titleLargeWhiteA700
+                                .copyWith(
+                                    fontSize:
+                                        22.0), // change the font size here
                           ),
                         ),
                       ),
@@ -109,7 +102,8 @@ class SosActivationScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 54.v),
                 CustomElevatedButton(
-                  onPressed: () => Navigator.pushNamed(context, AppRoutes.homePage),
+                  onPressed: () => Navigator.pushNamed(
+                      context, AppRoutes.emergencyPageScreen),
                   text: "Cancel request",
                   margin: EdgeInsets.symmetric(horizontal: 37.h),
                   buttonStyle: CustomButtonStyles.fillPrimaryTL10,
