@@ -16,22 +16,67 @@ class CredentialsPageOneScreen extends StatelessWidget {
 
   TextEditingController userNameController = TextEditingController();
 
+  TextEditingController contactNumberController = TextEditingController();
+
   List<String> dropdownItemList = [
-    "Item One",
-    "Item Two",
-    "Item Three",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19",
+    "20",
+    "21",
+    "22",
+    "23",
+    "24",
+    "25",
+    "26",
+    "27",
+    "28",
+    "29",
+    "30",
+    "31",
   ];
 
   List<String> dropdownItemList1 = [
-    "Item One",
-    "Item Two",
-    "Item Three",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12",
   ];
 
   List<String> dropdownItemList2 = [
-    "Item One",
-    "Item Two",
-    "Item Three",
+    "1998",
+    "1999",
+    "2000",
+    "2001",
+    "2002",
+    "2003",
+    "2004",
+    "2005",
+    "2006",
   ];
 
   @override
@@ -43,24 +88,22 @@ class CredentialsPageOneScreen extends StatelessWidget {
           width: double.maxFinite,
           padding: EdgeInsets.symmetric(
             horizontal: 16.h,
-            vertical: 21.v,
+            vertical: 0.v,
           ),
           child: Column(
             children: [
-              SizedBox(height: 17.v),
+              SizedBox(height: 20.v),
               Align(
                 alignment: Alignment.centerLeft,
                 child: Container(
                   width: 292.h,
-                  margin: EdgeInsets.only(
-                    left: 5.h,
-                    right: 30.h,
-                  ),
+                  margin: EdgeInsets.only(left: 5.h, right: 30.h, top: 10.v),
                   child: Text(
                     "Give us some basic information",
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
-                    style: theme.textTheme.headlineLarge,
+                    style:
+                        theme.textTheme.headlineLarge?.copyWith(fontSize: 30),
                   ),
                 ),
               ),
@@ -96,9 +139,9 @@ class CredentialsPageOneScreen extends StatelessWidget {
               _buildContactInfo(context),
               SizedBox(height: 29.v),
               _buildDateOfBirth(context),
-              SizedBox(height: 30.v),
+              SizedBox(height: 25.v),
               Padding(
-                padding: EdgeInsets.only(right: 14.h),
+                padding: EdgeInsets.only(right: 13.h),
                 child: CustomIconButton(
                   height: 56.adaptSize,
                   width: 56.adaptSize,
@@ -144,9 +187,14 @@ class CredentialsPageOneScreen extends StatelessWidget {
           ),
           SizedBox(height: 11.v),
           Padding(
-            padding: EdgeInsets.only(left: 5.h),
-            child: CustomTextFormField(
-              controller: firstNameController,
+            padding: EdgeInsets.only(left: 3.h),
+            child: Container(
+              height: 50.0,
+              width: 400.0,
+              child: CustomTextFormField(
+                controller: userNameController,
+                textInputAction: TextInputAction.done,
+              ),
             ),
           ),
         ],
@@ -181,9 +229,14 @@ class CredentialsPageOneScreen extends StatelessWidget {
           ),
           SizedBox(height: 11.v),
           Padding(
-            padding: EdgeInsets.only(left: 5.h),
-            child: CustomTextFormField(
-              controller: lastNameController,
+            padding: EdgeInsets.only(left: 3.h),
+            child: Container(
+              height: 50.0,
+              width: 400.0,
+              child: CustomTextFormField(
+                controller: userNameController,
+                textInputAction: TextInputAction.done,
+              ),
             ),
           ),
         ],
@@ -220,9 +273,13 @@ class CredentialsPageOneScreen extends StatelessWidget {
           SizedBox(height: 11.v),
           Padding(
             padding: EdgeInsets.only(left: 3.h),
-            child: CustomTextFormField(
-              controller: userNameController,
-              textInputAction: TextInputAction.done,
+            child: Container(
+              height: 50.0, // Set the height you want
+              width: 400.0, // Set the width you want
+              child: CustomTextFormField(
+                controller: userNameController,
+                textInputAction: TextInputAction.done,
+              ),
             ),
           ),
         ],
@@ -253,14 +310,14 @@ class CredentialsPageOneScreen extends StatelessWidget {
             textAlign: TextAlign.left,
           ),
           SizedBox(height: 11.v),
-          Container(
-            height: 37.v,
-            width: 317.h,
-            margin: EdgeInsets.only(left: 5.h),
-            decoration: BoxDecoration(
-              color: theme.colorScheme.primary,
-              borderRadius: BorderRadius.circular(
-                18.h,
+          Padding(
+            padding: EdgeInsets.only(left: 3.h),
+            child: Container(
+              height: 50.0,
+              width: 400.0,
+              child: CustomTextFormField(
+                controller: userNameController,
+                textInputAction: TextInputAction.done,
               ),
             ),
           ),
@@ -317,17 +374,21 @@ class CredentialsPageOneScreen extends StatelessWidget {
                 ),
                 Expanded(
                   child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 11.h),
+                    padding: EdgeInsets.only(right: 11.5.h),
                     child: CustomDropDown(
                       hintText: "MM",
                       items: dropdownItemList1,
+                      contentPadding: EdgeInsets.symmetric(
+                        horizontal: 11.h,
+                        vertical: 15.v,
+                      ),
                       onChanged: (value) {},
                     ),
                   ),
                 ),
                 Expanded(
                   child: Padding(
-                    padding: EdgeInsets.only(left: 11.h),
+                    padding: EdgeInsets.only(left: 0.h),
                     child: CustomDropDown(
                       hintText: "YYYY",
                       items: dropdownItemList2,
