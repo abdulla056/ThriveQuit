@@ -86,7 +86,7 @@ class TrackerPageState extends State<TrackerPage>
                     ),
                     SizedBox(height: 4.v),
                     Align(
-                      alignment: Alignment.center,
+                      alignment: Alignment.bottomRight,
                       child: Text(
                         "4",
                         style: theme.textTheme.labelLarge,
