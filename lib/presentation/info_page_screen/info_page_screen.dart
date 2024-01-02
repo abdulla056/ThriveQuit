@@ -15,22 +15,36 @@ class InfoPageScreen extends StatelessWidget {
         body: Container(
           width: double.maxFinite,
           padding: EdgeInsets.symmetric(
-            horizontal: 21.h,
-            vertical: 41.v,
+            horizontal: 20.h,
+            vertical: 25.v,
           ),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                "Smoking information",
-                style: theme.textTheme.headlineLarge,
-              ),
-              SizedBox(height: 25.v),
+              SizedBox(height: 5.v),
               Align(
                 alignment: Alignment.centerLeft,
-                child: Text(
-                  "Please honestly enter the following",
-                  style: theme.textTheme.titleSmall,
+                child: Container(
+                  width: 292.h,
+                  margin: EdgeInsets.only(left: 0.h, right: 30.h, top: 0.v),
+                  child: Text(
+                    "Smoking Information",
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style:
+                        theme.textTheme.headlineLarge?.copyWith(fontSize: 32),
+                  ),
+                ),
+              ),
+              SizedBox(height: 20.v),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Container(
+                  width: 292.h,
+                  margin: EdgeInsets.only(left: 5.h, right: 35.h, top: 0.v),
+                  child: Text(
+                    "Please honestly enter the following",
+                    style: theme.textTheme.titleSmall,
+                  ),
                 ),
               ),
               SizedBox(height: 36.v),

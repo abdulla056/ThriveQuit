@@ -15,23 +15,24 @@ class CredentialsPage2Screen extends StatelessWidget {
         body: Container(
           width: double.maxFinite,
           padding: EdgeInsets.symmetric(
-            horizontal: 24.h,
-            vertical: 31.v,
+            horizontal: 16.h,
+            vertical: 0.v,
           ),
           child: Column(
             children: [
               SizedBox(height: 14.v),
-              Container(
-                width: 292.h,
-                margin: EdgeInsets.only(
-                  left: 6.h,
-                  right: 13.h,
-                ),
-                child: Text(
-                  "Give us some basic information",
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  style: theme.textTheme.headlineLarge,
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Container(
+                  width: 292.h,
+                  margin: EdgeInsets.only(left: 5.h, right: 30.h, top: 10.v),
+                  child: Text(
+                    "Give us some basic information",
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style:
+                        theme.textTheme.headlineLarge?.copyWith(fontSize: 30),
+                  ),
                 ),
               ),
               SizedBox(height: 38.v),
@@ -40,15 +41,18 @@ class CredentialsPage2Screen extends StatelessWidget {
               _buildHeightInfo(context),
               SizedBox(height: 41.v),
               _buildWeightInfo(context),
-              SizedBox(height: 50.v),
-              CustomIconButton(
-                height: 56.adaptSize,
-                width: 56.adaptSize,
-                padding: EdgeInsets.all(13.h),
-                decoration: IconButtonStyleHelper.fillOrange,
-                alignment: Alignment.centerRight,
-                child: CustomImageView(
-                  imagePath: ImageConstant.imgRight,
+              SizedBox(height: 87.v),
+              Padding(
+                padding: EdgeInsets.only(right: 13.h),
+                child: CustomIconButton(
+                  height: 56.adaptSize,
+                  width: 56.adaptSize,
+                  padding: EdgeInsets.all(13.h),
+                  decoration: IconButtonStyleHelper.fillOrange,
+                  alignment: Alignment.centerRight,
+                  child: CustomImageView(
+                    imagePath: ImageConstant.imgRight,
+                  ),
                 ),
               ),
             ],
@@ -178,7 +182,7 @@ class CredentialsPage2Screen extends StatelessWidget {
           ),
           SizedBox(height: 21.v),
           SizedBox(
-            height: 53.v,
+            height: 54.8.v,
             width: 295.h,
             child: Stack(
               alignment: Alignment.centerRight,
@@ -225,7 +229,7 @@ class CredentialsPage2Screen extends StatelessWidget {
                               decoration: BoxDecoration(
                                 color: appTheme.whiteA700,
                                 borderRadius: BorderRadius.circular(
-                                  12.h,
+                                  20.h,
                                 ),
                                 border: Border.all(
                                   color: appTheme.gray900,
@@ -251,7 +255,7 @@ class CredentialsPage2Screen extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 7.v),
+          SizedBox(height: 5.v),
           Padding(
             padding: EdgeInsets.only(
               left: 4.h,
@@ -281,9 +285,9 @@ class CredentialsPage2Screen extends StatelessWidget {
               style: CustomTextStyles.titleLargeGray900_1,
             ),
           ),
-          SizedBox(height: 22.v),
+          SizedBox(height: 21.v),
           SizedBox(
-            height: 51.v,
+            height: 54.8.v,
             width: 295.h,
             child: Stack(
               alignment: Alignment.centerLeft,
@@ -291,7 +295,7 @@ class CredentialsPage2Screen extends StatelessWidget {
                 Align(
                   alignment: Alignment.topCenter,
                   child: Padding(
-                    padding: EdgeInsets.only(top: 4.v),
+                    padding: EdgeInsets.only(top: 6.v),
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
@@ -341,7 +345,7 @@ class CredentialsPage2Screen extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 9.v),
+          SizedBox(height: 5.v),
           Padding(
             padding: EdgeInsets.only(
               left: 3.h,

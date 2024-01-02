@@ -36,11 +36,13 @@ class BreathingExercisesIntroScreen extends StatelessWidget {
             ),
             child: Column(
               children: [
-                SizedBox(height: 15.v,),
+                SizedBox(
+                  height: 15.v,
+                ),
                 CustomImageView(
                   imagePath: ImageConstant.imgImage12,
-                  height: 155.v,
-                  width: 130.h,
+                  height: 180.v,
+                  width: 165.h,
                 ),
                 SizedBox(height: 18.v),
                 Text(
@@ -67,7 +69,8 @@ class BreathingExercisesIntroScreen extends StatelessWidget {
                 _buildEleven(context),
                 SizedBox(height: 53.v),
                 CustomElevatedButton(
-                  onPressed: () => Navigator.pushNamed(context, AppRoutes.breathingExercisesWithGifScreen),
+                  onPressed: () => Navigator.pushNamed(
+                      context, AppRoutes.breathingExercisesWithGifScreen),
                   text: "I’m ready!",
                   margin: EdgeInsets.symmetric(horizontal: 12.h),
                   buttonStyle: CustomButtonStyles.fillPrimaryTL10,
@@ -83,7 +86,6 @@ class BreathingExercisesIntroScreen extends StatelessWidget {
   }
 
   /// Section Widget
-
 
   /// Section Widget
   Widget _buildEleven(BuildContext context) {

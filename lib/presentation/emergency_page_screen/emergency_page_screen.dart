@@ -3,6 +3,7 @@ import 'package:thrive_quit_application/core/app_export.dart';
 import 'package:thrive_quit_application/widgets/app_bar/appbar_leading_iconbutton.dart';
 import 'package:thrive_quit_application/widgets/app_bar/custom_app_bar.dart';
 import 'package:thrive_quit_application/widgets/custom_elevated_button.dart';
+import 'package:thrive_quit_application/core/app_export.dart'; // Add missing import statement
 
 class EmergencyPageScreen extends StatelessWidget {
   const EmergencyPageScreen({Key? key})
@@ -20,10 +21,8 @@ class EmergencyPageScreen extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 23.h),
           child: Column(
             children: [
-              Text(
-                "Are you in an emergency?",
-                style: theme.textTheme.headlineSmall,
-              ),
+              Text("Are you in an emergency?",
+                  style: theme.textTheme.headlineSmall?.copyWith(fontSize: 27)),
               SizedBox(height: 20.v),
               _buildEmergencySection(context),
               SizedBox(height: 36.v),
@@ -69,7 +68,8 @@ class EmergencyPageScreen extends StatelessWidget {
           ),
           SizedBox(height: 26.v),
           GestureDetector(
-            onTap: () => Navigator.pushNamed(context, AppRoutes.sosActivationScreen),
+            onTap: () =>
+                Navigator.pushNamed(context, AppRoutes.sosActivationScreen),
             child: Container(
               padding: EdgeInsets.all(30.h),
               decoration: AppDecoration.fillDeepOrange.copyWith(
@@ -128,15 +128,18 @@ class EmergencyPageScreen extends StatelessWidget {
                   width: 144.h,
                   text: "Felicia",
                   rightIcon: Container(
-                    padding: EdgeInsets.all(1.h),
+                    padding: EdgeInsets.all(5.h),
                     margin: EdgeInsets.only(left: 28.h),
                     decoration: BoxDecoration(
                       color: appTheme.whiteA700,
+                      borderRadius: BorderRadius.circular(
+                        20,
+                      ),
                     ),
                     child: CustomImageView(
                       imagePath: ImageConstant.imgSettingsDeepPurple900,
-                      height: 16.adaptSize,
-                      width: 16.adaptSize,
+                      height: 20.adaptSize,
+                      width: 20.adaptSize,
                     ),
                   ),
                   leftIcon: Container(
@@ -154,19 +157,22 @@ class EmergencyPageScreen extends StatelessWidget {
                   width: 144.h,
                   text: "Orange",
                   rightIcon: Container(
-                    padding: EdgeInsets.all(1.h),
-                    margin: EdgeInsets.only(left: 24.h),
+                    padding: EdgeInsets.all(5.h),
+                    margin: EdgeInsets.only(left: 20.h),
                     decoration: BoxDecoration(
                       color: appTheme.whiteA700,
+                      borderRadius: BorderRadius.circular(
+                        20,
+                      ),
                     ),
                     child: CustomImageView(
                       imagePath: ImageConstant.imgSettingsDeepPurple900,
-                      height: 16.adaptSize,
-                      width: 16.adaptSize,
+                      height: 20.adaptSize,
+                      width: 20.adaptSize,
                     ),
                   ),
                   leftIcon: Container(
-                    margin: EdgeInsets.only(right: 12.h),
+                    margin: EdgeInsets.only(right: 15.h),
                     child: CustomImageView(
                       imagePath: ImageConstant.imgImage7,
                       height: 20.adaptSize,
@@ -180,15 +186,18 @@ class EmergencyPageScreen extends StatelessWidget {
                   width: 144.h,
                   text: "Lebron",
                   rightIcon: Container(
-                    padding: EdgeInsets.all(1.h),
-                    margin: EdgeInsets.only(left: 24.h),
+                    padding: EdgeInsets.all(5.h),
+                    margin: EdgeInsets.only(left: 20.h),
                     decoration: BoxDecoration(
                       color: appTheme.whiteA700,
+                      borderRadius: BorderRadius.circular(
+                        20,
+                      ),
                     ),
                     child: CustomImageView(
                       imagePath: ImageConstant.imgSettingsDeepPurple900,
-                      height: 16.adaptSize,
-                      width: 16.adaptSize,
+                      height: 20.adaptSize,
+                      width: 20.adaptSize,
                     ),
                   ),
                   leftIcon: Container(
@@ -213,8 +222,8 @@ class EmergencyPageScreen extends StatelessWidget {
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Container(
-                    width: 87.h,
-                    margin: EdgeInsets.only(left: 13.h),
+                    width: 95.h,
+                    margin: EdgeInsets.only(left: 1.h),
                     child: Text(
                       "Your Emergency Contacts",
                       maxLines: 2,
@@ -229,11 +238,14 @@ class EmergencyPageScreen extends StatelessWidget {
                   "OR",
                   style: CustomTextStyles.titleSmallWhiteA700_1,
                 ),
-                SizedBox(height: 9.v),
+                SizedBox(height: 5.v),
                 Text(
                   "Emergency Hotline",
                   textAlign: TextAlign.center,
-                  style: CustomTextStyles.labelLargeDMSansWhiteA700Bold,
+                  style:
+                      CustomTextStyles.labelLargeDMSansWhiteA700Bold.copyWith(
+                    fontSize: 14.0,
+                  ),
                 ),
                 SizedBox(height: 2.v),
                 Text(
