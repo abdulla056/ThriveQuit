@@ -293,20 +293,20 @@ Widget _buildStreakColumn(BuildContext context) {
                         ),
                       ),
                       Container(
-                        width: 35.adaptSize,
+                        width: 37.adaptSize,
                         margin: EdgeInsets.only(
                           top: 1.v,
                           bottom: 6.v,
                         ),
                         padding: EdgeInsets.symmetric(
-                          horizontal: 13.h,
+                          horizontal: 9.h,
                           vertical: 6.v,
                         ),
                         decoration: AppDecoration.fillAmber.copyWith(
                           borderRadius: BorderRadiusStyle.roundedBorder17,
                         ),
                         child: Text(
-                          "T",
+                          "Tu",
                           style: CustomTextStyles.titleSmallWhiteA700Medium,
                         ),
                       ),
@@ -329,17 +329,17 @@ Widget _buildStreakColumn(BuildContext context) {
                         ),
                       ),
                       Container(
-                        width: 35.adaptSize,
+                        width: 38.adaptSize,
                         margin: EdgeInsets.only(bottom: 6.v),
                         padding: EdgeInsets.symmetric(
-                          horizontal: 13.h,
+                          horizontal: 10.h,
                           vertical: 7.v,
                         ),
                         decoration: AppDecoration.fillAmber.copyWith(
                           borderRadius: BorderRadiusStyle.roundedBorder17,
                         ),
                         child: Text(
-                          "T",
+                          "Th",
                           style: CustomTextStyles.titleSmallWhiteA700Medium,
                         ),
                       ),
@@ -347,7 +347,7 @@ Widget _buildStreakColumn(BuildContext context) {
                         width: 35.adaptSize,
                         margin: EdgeInsets.only(bottom: 6.v),
                         padding: EdgeInsets.symmetric(
-                          horizontal: 12.h,
+                          horizontal: 14.h,
                           vertical: 7.v,
                         ),
                         decoration: AppDecoration.fillAmber.copyWith(
@@ -365,14 +365,14 @@ Widget _buildStreakColumn(BuildContext context) {
                           bottom: 6.v,
                         ),
                         padding: EdgeInsets.symmetric(
-                          horizontal: 13.h,
+                          horizontal: 9.h,
                           vertical: 6.v,
                         ),
                         decoration: AppDecoration.fillBluegray100.copyWith(
                           borderRadius: BorderRadiusStyle.roundedBorder17,
                         ),
                         child: Text(
-                          "S",
+                          "St",
                           style: CustomTextStyles.titleSmallGray900Medium_1,
                         ),
                       ),
@@ -380,14 +380,14 @@ Widget _buildStreakColumn(BuildContext context) {
                         width: 35.adaptSize,
                         margin: EdgeInsets.only(bottom: 6.v),
                         padding: EdgeInsets.symmetric(
-                          horizontal: 13.h,
+                          horizontal: 8.h,
                           vertical: 7.v,
                         ),
                         decoration: AppDecoration.fillBluegray100.copyWith(
                           borderRadius: BorderRadiusStyle.roundedBorder17,
                         ),
                         child: Text(
-                          "S",
+                          "Su",
                           style: CustomTextStyles.titleSmallGray900Medium_1,
                         ),
                       ),
@@ -404,6 +404,15 @@ Widget _buildStreakColumn(BuildContext context) {
                     color: appTheme.gray60001,
                     borderRadius: BorderRadius.circular(
                       15.h,
+                    ),
+                  ),
+                  child: Center(
+                    child: Text(
+                      "Check in",
+                      style: TextStyle(
+                        color: Colors.white, // Set the color of the text
+                        fontSize: 16, // Set the size of the text
+                      ),
                     ),
                   ),
                 ),
