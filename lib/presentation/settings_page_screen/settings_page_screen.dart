@@ -60,7 +60,7 @@ class SettingsPageScreen extends StatelessWidget {
                               _buildFirstNameStack(context),
                               SizedBox(height: 40.v),
                               _buildHeightColumn(context),
-                              SizedBox(height: 25.v),
+                              SizedBox(height: 40.v),
                               _buildCigarettesSmokedStack(context),
                               SizedBox(height: 21.v),
                               Text(
@@ -220,7 +220,7 @@ class SettingsPageScreen extends StatelessWidget {
           horizontal: 18.h,
           vertical: 9.v,
         ),
-        decoration: AppDecoration.fillOnError.copyWith(
+        decoration: AppDecoration.fillWhiteA.copyWith(
           borderRadius: BorderRadiusStyle.roundedBorder10,
         ),
         child: Column(
@@ -228,23 +228,34 @@ class SettingsPageScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(height: 1.v),
-            Padding(
-              padding: EdgeInsets.only(
-                left: 1.h,
-                right: 18.h,
-              ),
-              child: _buildPriceRow(
-                context,
-                averageCostPer: "First Name",
-                thirtyFive: "Isabella",
-              ),
-            ),
             SizedBox(height: 0.v),
             Padding(
               padding: EdgeInsets.only(
                 left: 1.h,
-                right: 42.h,
+                right: 28.h,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(bottom: 2.v),
+                    child: Text(
+                      "First Name",
+                      style: CustomTextStyles.labelLargeGray900Medium_2,
+                    ),
+                  ),
+                  Text(
+                    "Isabella",
+                    style: CustomTextStyles.labelLargeYellow900Medium,
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 12.v),
+            Padding(
+              padding: EdgeInsets.only(
+                left: 2.h,
+                right: 50.h,
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -280,7 +291,7 @@ class SettingsPageScreen extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 15.v),
+            SizedBox(height: 10.5.v),
             Padding(
               padding: EdgeInsets.only(left: 1.h),
               child: Row(
@@ -294,7 +305,7 @@ class SettingsPageScreen extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(top: 3.v),
+                    padding: EdgeInsets.only(top: 3.v, right: 6.h),
                     child: Text(
                       "15/02/2003",
                       style: CustomTextStyles.labelMediumYellow900,
@@ -321,9 +332,9 @@ class SettingsPageScreen extends StatelessWidget {
           Align(
             alignment: Alignment.topCenter,
             child: Padding(
-              padding: EdgeInsets.only(top: 33.v),
+              padding: EdgeInsets.only(top: 33.v, right: 6.h),
               child: SizedBox(
-                width: 305.h,
+                width: 295.h,
                 child: Divider(
                   color: appTheme.gray100,
                 ),
@@ -332,19 +343,22 @@ class SettingsPageScreen extends StatelessWidget {
           ),
           Align(
             alignment: Alignment.center,
-            child: SizedBox(
-              width: 305.h,
-              child: Divider(
-                color: appTheme.gray100,
+            child: Padding(
+              padding: EdgeInsets.only(right: 6.h),
+              child: SizedBox(
+                width: 295.h,
+                child: Divider(
+                  color: appTheme.gray100,
+                ),
               ),
             ),
           ),
           Align(
             alignment: Alignment.bottomCenter,
             child: Padding(
-              padding: EdgeInsets.only(bottom: 32.v),
+              padding: EdgeInsets.only(bottom: 32.v, right: 6.h),
               child: SizedBox(
-                width: 305.h,
+                width: 295.h,
                 child: Divider(
                   color: appTheme.gray100,
                 ),
@@ -364,7 +378,7 @@ class SettingsPageScreen extends StatelessWidget {
         horizontal: 8.h,
         vertical: 18.v,
       ),
-      decoration: AppDecoration.fillOnError.copyWith(
+      decoration: AppDecoration.fillWhiteA.copyWith(
         borderRadius: BorderRadiusStyle.roundedBorder10,
       ),
       child: Column(
@@ -404,7 +418,7 @@ class SettingsPageScreen extends StatelessWidget {
                     ),
                     child: CustomImageView(
                       imagePath: ImageConstant.imgGroup,
-                      height: 30.v,
+                      height: 40.v,
                       width: 15.h,
                       alignment: Alignment.topCenter,
                     ),
@@ -489,7 +503,7 @@ class SettingsPageScreen extends StatelessWidget {
                 horizontal: 14.h,
                 vertical: 10.v,
               ),
-              decoration: AppDecoration.fillOnError.copyWith(
+              decoration: AppDecoration.fillWhiteA.copyWith(
                 borderRadius: BorderRadiusStyle.roundedBorder10,
               ),
               child: Row(

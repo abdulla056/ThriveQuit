@@ -41,7 +41,7 @@ class CredentialsPage2Screen extends StatelessWidget {
               _buildHeightInfo(context),
               SizedBox(height: 41.v),
               _buildWeightInfo(context),
-              SizedBox(height: 87.v),
+              SizedBox(height: 64.v),
               Padding(
                 padding: EdgeInsets.only(right: 13.h),
                 child: CustomIconButton(
@@ -222,7 +222,7 @@ class CredentialsPage2Screen extends StatelessWidget {
                               "180cm",
                               style: CustomTextStyles.titleMediumGray900_1,
                             ),
-                            SizedBox(height: 8.v),
+                            SizedBox(height: 7.v),
                             Container(
                               height: 24.adaptSize,
                               width: 24.adaptSize,
