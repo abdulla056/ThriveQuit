@@ -26,6 +26,9 @@ import 'package:thrive_quit_application/presentation/discover_detailed_view_reha
 import 'package:thrive_quit_application/presentation/discover_individual_detailed_view_rehab_centers_screen/discover_individual_detailed_view_rehab_centers_screen.dart';
 import 'package:thrive_quit_application/presentation/discover_indvidual_detailed_view_recovery_programs_screen/discover_indvidual_detailed_view_recovery_programs_screen.dart';
 import 'package:thrive_quit_application/presentation/app_navigation_screen/app_navigation_screen.dart';
+import 'package:thrive_quit_application/presentation/create_post_screen/create_post_screen.dart';
+import '../presentation/health_combined_screen/health_combined_screen.dart';
+import '../presentation/settings_page_screen/settings_page_screen.dart';
 import 'package:thrive_quit_application/state_management/discover_page.dart';
 import 'package:thrive_quit_application/state_management/home_page_with_navigation.dart';
 
@@ -42,6 +45,8 @@ class AppRoutes {
 
   static const String credentialsPage2Screen = '/credentials_page_2_screen';
 
+  static const String createPostScreen = '/create_post_screen';
+
   static const String infoPageScreen = '/info_page_screen';
 
   static const String homePageOnePage = '/home_page_one_page';
@@ -49,12 +54,16 @@ class AppRoutes {
   static const String homePageOneContainerScreen =
       '/home_page_one_container_screen';
 
+  static const String healthCombinedScreen = '/health_combined_screen';
+
   static const String trackerPage = '/tracker_page';
 
   static const String trackerPageTabContainerScreen =
       '/tracker_page_tab_container_screen';
 
   static const String savingsScreen = '/savings_screen';
+
+  static const String settingsScreen = '/settings_page_screen';
 
   static const String communityHubGeneralScreen = '/community_hub_general_screen';
 
@@ -108,12 +117,15 @@ class AppRoutes {
     introPageScreen: (context) => IntroPageScreen(),
     loginPageScreen: (context) => LoginPageScreen(),
     homePageOnePage:(context) => HomePageOnePage(),
+    healthCombinedScreen: (context) => HealthCombinedScreen(),
     credentialsPageOneScreen: (context) => CredentialsPageOneScreen(),
     credentialsPage2Screen: (context) => CredentialsPage2Screen(),
+    createPostScreen: (context) => CreatePostScreen(),
     infoPageScreen: (context) => InfoPageScreen(),
     homePageOneContainerScreen: (context) => HomePageOneContainerScreen(),
     trackerPageTabContainerScreen: (context) => TrackerPageTabContainerScreen(),
     savingsScreen: (context) => SavingsScreen(),
+    settingsScreen: (context) => SettingsPageScreen(),
     communityHubGeneralScreen: (context) => CommunityHubGeneralScreen(),
     communityHubPostScreen: (context) => CommunityHubPostScreen(),
     otherProfileScreen: (context) => OtherProfileScreen(),

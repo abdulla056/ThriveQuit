@@ -63,6 +63,12 @@ class AppNavigationScreen extends StatelessWidget {
                         ),
                         _buildScreenTitle(
                           context,
+                          screenTitle: "Create Post",
+                          onTapScreenTitle: () => onTapScreenTitle(
+                              context, AppRoutes.createPostScreen),
+                        ),
+                        _buildScreenTitle(
+                          context,
                           screenTitle: "Info page",
                           onTapScreenTitle: () => onTapScreenTitle(
                               context, AppRoutes.infoPageScreen),
@@ -75,6 +81,12 @@ class AppNavigationScreen extends StatelessWidget {
                         ),
                         _buildScreenTitle(
                           context,
+                          screenTitle: "Health Page",
+                          onTapScreenTitle: () => onTapScreenTitle(
+                              context, AppRoutes.healthCombinedScreen),
+                        ),
+                        _buildScreenTitle(
+                          context,
                           screenTitle: "Tracker page - Tab Container",
                           onTapScreenTitle: () => onTapScreenTitle(
                               context, AppRoutes.trackerPageTabContainerScreen),
@@ -84,6 +96,12 @@ class AppNavigationScreen extends StatelessWidget {
                           screenTitle: "Savings",
                           onTapScreenTitle: () => onTapScreenTitle(
                               context, AppRoutes.savingsScreen),
+                        ),
+                        _buildScreenTitle(
+                          context,
+                          screenTitle: "Settings",
+                          onTapScreenTitle: () => onTapScreenTitle(
+                              context, AppRoutes.settingsScreen),
                         ),
                         _buildScreenTitle(
                           context,

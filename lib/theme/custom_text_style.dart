@@ -83,6 +83,11 @@ class CustomTextStyles {
   static get headlineSmallMedium => theme.textTheme.headlineSmall!.copyWith(
         fontWeight: FontWeight.w500,
       );
+  static get headlineSmallOnError => theme.textTheme.headlineSmall!.copyWith(
+        color: theme.colorScheme.onError,
+        fontSize: 24.fSize,
+        fontWeight: FontWeight.w500,
+      );
   static get headlineSmallOrangeA200 => theme.textTheme.headlineSmall!.copyWith(
         color: appTheme.orangeA200,
         fontSize: 24.fSize,
@@ -90,6 +95,11 @@ class CustomTextStyles {
       );
   static get headlineSmallWhiteA700 => theme.textTheme.headlineSmall!.copyWith(
         color: appTheme.whiteA700,
+        fontWeight: FontWeight.w500,
+      );
+
+  static get headlineSmallOnErrorMedium => theme.textTheme.headlineSmall!.copyWith(
+        color: theme.colorScheme.onError,
         fontWeight: FontWeight.w500,
       );
   static get headlineSmallWhiteA700Medium =>
@@ -207,6 +217,20 @@ class CustomTextStyles {
         color: appTheme.whiteA700,
         fontWeight: FontWeight.w700,
       );
+  static get labelLargeYellow900 => theme.textTheme.labelLarge!.copyWith(
+        color: appTheme.yellow900,
+      );
+  static get labelLargeYellow900Medium => theme.textTheme.labelLarge!.copyWith(
+        color: appTheme.yellow900,
+        fontWeight: FontWeight.w500,
+      );
+  static get labelMediumYellow900 => theme.textTheme.labelMedium!.copyWith(
+        color: appTheme.yellow900,
+        fontSize: 11.fSize,
+      );
+  static get labelMediumYellow900_1 => theme.textTheme.labelMedium!.copyWith(
+        color: appTheme.yellow900,
+      );
   static get labelMediumBlack90001 => theme.textTheme.labelMedium!.copyWith(
         color: appTheme.black90001,
       );
@@ -222,6 +246,10 @@ class CustomTextStyles {
   static get labelMediumGray900 => theme.textTheme.labelMedium!.copyWith(
         color: appTheme.gray900.withOpacity(0.42),
         fontSize: 10.fSize,
+      );
+  static get labelMediumOnError => theme.textTheme.labelMedium!.copyWith(
+        color: theme.colorScheme.onError,
+        fontWeight: FontWeight.w500,
       );
   static get labelMediumWhiteA700 => theme.textTheme.labelMedium!.copyWith(
         color: appTheme.whiteA700,
@@ -279,11 +307,26 @@ class CustomTextStyles {
         color: appTheme.gray900,
         fontWeight: FontWeight.w500,
       );
+
+  static get labelLargeGray90013 => theme.textTheme.labelLarge!.copyWith(
+        color: appTheme.gray900.withOpacity(0.43),
+        fontSize: 13.fSize,
+      );
+
   static get titleLargeGray900_1 => theme.textTheme.titleLarge!.copyWith(
         color: appTheme.gray900,
       );
   static get titleLargeGray900_2 => theme.textTheme.titleLarge!.copyWith(
         color: appTheme.gray900,
+      );
+  static get labelLargeGray900Medium_2 => theme.textTheme.labelLarge!.copyWith(
+        color: appTheme.gray900.withOpacity(0.63),
+        fontWeight: FontWeight.w500,
+      );
+  static get titleLargeOnErrorMedium => theme.textTheme.titleLarge!.copyWith(
+        color: theme.colorScheme.onError,
+        fontSize: 21.fSize,
+        fontWeight: FontWeight.w500,
       );
   static get titleLargeOrangeA20001 => theme.textTheme.titleLarge!.copyWith(
         color: appTheme.orangeA20001,
@@ -333,6 +376,9 @@ class CustomTextStyles {
         color: appTheme.whiteA700.withOpacity(0.8),
         fontSize: 18.fSize,
       );
+  static get titleSmallOnError => theme.textTheme.titleSmall!.copyWith(
+        color: theme.colorScheme.onError,
+      );
   static get titleSmallAmber900 => theme.textTheme.titleSmall!.copyWith(
         color: appTheme.amber900,
         fontWeight: FontWeight.w500,
@@ -379,6 +425,9 @@ class CustomTextStyles {
       );
   static get titleSmallGray900_1 => theme.textTheme.titleSmall!.copyWith(
         color: appTheme.gray900.withOpacity(0.42),
+      );
+  static get titleSmallMedium => theme.textTheme.titleSmall!.copyWith(
+        fontWeight: FontWeight.w500,
       );
   static get titleSmallRedA700 => theme.textTheme.titleSmall!.copyWith(
         color: appTheme.redA700,
