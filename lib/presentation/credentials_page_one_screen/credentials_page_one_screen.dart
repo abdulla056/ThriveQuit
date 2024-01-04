@@ -143,6 +143,7 @@ class CredentialsPageOneScreen extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.only(right: 13.h),
                 child: CustomIconButton(
+                  onTap: () => Navigator.pushNamed(context, AppRoutes.credentialsPage2Screen),
                   height: 56.adaptSize,
                   width: 56.adaptSize,
                   padding: EdgeInsets.all(13.h),

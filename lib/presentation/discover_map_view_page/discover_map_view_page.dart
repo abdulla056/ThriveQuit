@@ -19,40 +19,35 @@ class DiscoverMapViewPageState extends State<DiscoverMapViewPage>
     with AutomaticKeepAliveClientMixin<DiscoverMapViewPage> {
   TextEditingController searchController = TextEditingController();
 
-  Completer<GoogleMapController> googleMapController = Completer();
+  //Completer<GoogleMapController> mapController = Completer();
+
+  GoogleMapController? mapController;
+
+  final Set<Marker> _locationMarkers = Set<Marker>();
 
   @override
   bool get wantKeepAlive => true;
   @override
   Widget build(BuildContext context) {
     return Column(
-      //child: Scaffold(
-        //resizeToAvoidBottomInset: false,
-        //body: Container(
-          // width: double.maxFinite,
-          // decoration: AppDecoration.fillWhiteA,
-          // child: Column(
             children: [
-              SizedBox(height: 16.v),
+              SizedBox(height: 5.v),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 15.h),
                 child: Column(
                   children: [
-                    CustomSearchView(
-                      width: 212.h,
-                      controller: searchController,
-                      hintText: "Search",
-                    ),
+                    // CustomSearchView(
+                    //   width: 212.h,
+                    //   controller: searchController,
+                    //   hintText: "Search",
+                    // ),
                     SizedBox(height: 22.v),
-                    //_buildDiscoverRecoverySection(context),
+                    _buildDiscoverRecoverySection(context),
                   ],
                 ),
               ),
             ],
           );
-    //     ),
-    //   ),
-    // );
   }
 
   /// Section Widget
@@ -63,30 +58,53 @@ class DiscoverMapViewPageState extends State<DiscoverMapViewPage>
           "Discover Recovery Campaigns and Rehab Centers",
           style: CustomTextStyles.labelLargeDMSansGray600,
         ),
-        SizedBox(height: 3.v),
-        SizedBox(
-          height: 386.v,
+        SizedBox(height: 15.v),
+        Container(
+          height: 440.v,
           width: 330.h,
           child: GoogleMap(
-            //TODO: Add your Google Maps API key in AndroidManifest.xml and pod file
             mapType: MapType.normal,
             initialCameraPosition: CameraPosition(
               target: LatLng(
-                37.43296265331129,
-                -122.08832357078792,
+                3.0648,
+                101.616,
               ),
-              zoom: 14.4746,
+              zoom: 14,
             ),
-            onMapCreated: (GoogleMapController controller) {
-              googleMapController.complete(controller);
-            },
-            zoomControlsEnabled: false,
-            zoomGesturesEnabled: false,
-            myLocationButtonEnabled: false,
-            myLocationEnabled: false,
+            onMapCreated: _onMapCreated,
+             myLocationButtonEnabled: true,
+             myLocationEnabled: true,
+             markers: _locationMarkers,
           ),
         ),
       ],
     );
+  }
+
+
+  void _onMapCreated(GoogleMapController controller) {
+    setState(() {
+      mapController = controller;
+
+      // Add markers to the map
+      _addMarker(LatLng(3.0648, 101.616), 'Recovery Program 1', 'Its a really good recovery program');
+      _addMarker(LatLng(3.0658, 101.626), 'Rehab Center 1', 'Its a really good rehab center');
+      _addMarker(LatLng(3.0638, 101.606), 'Recovery Program 2', 'Its a really good recovery program');
+    });
+  }
+
+  void _addMarker(LatLng position, String markerId, String description) {
+    final Marker marker = Marker(
+      markerId: MarkerId(markerId),
+      position: position,
+      infoWindow: InfoWindow(
+        title: markerId,
+        snippet: description,
+      ),
+    );
+
+    setState(() {
+      _locationMarkers.add(marker);
+    });
   }
 }

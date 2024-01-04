@@ -125,6 +125,7 @@ class LoginPageScreen extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(bottom: 18.v),
             child: CustomIconButton(
+              onTap: () => Navigator.pushNamed(context, AppRoutes.credentialsPageOneScreen),
               height: 56.adaptSize,
               width: 56.adaptSize,
               padding: EdgeInsets.all(13.h),
