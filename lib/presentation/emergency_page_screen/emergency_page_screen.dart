@@ -15,7 +15,15 @@ class EmergencyPageScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: _buildAppBar(context),
+        appBar: AppBar(
+        backgroundColor: Colors.transparent,
+          leading: IconButton(
+            onPressed: () {
+              Navigator.pushNamed(context, AppRoutes.homePage);
+            },
+            icon: Icon(Icons.arrow_back_ios_new_outlined,),
+          ),
+        ),
         body: Container(
           width: double.maxFinite,
           padding: EdgeInsets.symmetric(horizontal: 23.h),

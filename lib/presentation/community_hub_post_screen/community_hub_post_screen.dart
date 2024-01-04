@@ -40,6 +40,7 @@ class CommunityHubPostScreen extends StatelessWidget {
     );
   }
 
+
   /// Section Widget
   PreferredSizeWidget _buildAppBar(BuildContext context) {
     return CustomAppBar(
@@ -51,7 +52,9 @@ class CommunityHubPostScreen extends StatelessWidget {
             padding: EdgeInsets.only(right: 46.h),
             child: Row(
               children: [
+                SizedBox(width: 10.h,),
                 AppbarTitleIconbutton(
+                  onTap: () => Navigator.pop(context),
                   imagePath: ImageConstant.imgRightOnprimarycontainer23x32,
                   margin: EdgeInsets.only(
                     top: 7.v,
@@ -77,12 +80,9 @@ class CommunityHubPostScreen extends StatelessWidget {
             alignment: Alignment.centerLeft,
             child: SizedBox(
               width: 341.h,
-              child: Divider(
-                color: appTheme.black90001.withOpacity(0.63),
-                indent: 3.h,
               ),
             ),
-          ),
+            SizedBox(height: 5.v,)
         ],
       ),
       styleType: Style.bgFill,

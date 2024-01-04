@@ -47,47 +47,42 @@ class CommunityHubGeneralScreen extends StatelessWidget {
                           style: CustomTextStyles.titleSmallGray900,
                         ),
                         SizedBox(height: 2.v),
-                        SizedBox(
-                          height: 48.v,
-                          width: 196.h,
-                          child: Stack(
-                            alignment: Alignment.center,
-                            children: [
-                              Align(
-                                alignment: Alignment.center,
-                                child: Container(
-                                  height: 43.v,
-                                  width: 196.h,
-                                  decoration: BoxDecoration(
-                                    color: appTheme.orangeA200.withOpacity(0.8),
-                                    borderRadius: BorderRadius.circular(
-                                      20.h,
-                                    ),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: appTheme.black90001
-                                            .withOpacity(0.25),
-                                        spreadRadius: 2.h,
-                                        blurRadius: 2.h,
-                                        offset: Offset(
-                                          0,
-                                          4,
-                                        ),
+                        ElevatedButton(
+                          onPressed: () => Navigator.pushNamed(context, AppRoutes.createPostScreen),
+                          child: SizedBox(
+                            height: 48.v,
+                            width: 196.h,
+                            child: Stack(
+                              alignment: Alignment.center,
+                              children: [
+                                Align(
+                                  alignment: Alignment.center,
+                                  child: Container(
+                                    height: 43.v,
+                                    width: 196.h,
+                                    decoration: BoxDecoration(
+                                      color: appTheme.orangeA200.withOpacity(0.8),
+                                      borderRadius: BorderRadius.circular(
+                                        20.h,
                                       ),
-                                    ],
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: appTheme.black90001
+                                              .withOpacity(0.25),
+                                          spreadRadius: 2.h,
+                                          blurRadius: 2.h,
+                                          offset: Offset(
+                                            0,
+                                            4,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
-                              ),
-                              CustomElevatedButton(
-                                width: 174.h,
-                                text: "“Create Post“",
-                                buttonStyle:
-                                    CustomButtonStyles.outlineBlackTL101,
-                                buttonTextStyle:
-                                    CustomTextStyles.headlineSmallWhiteA700,
-                                alignment: Alignment.center,
-                              ),
-                            ],
+                                Text("Create Post", style: CustomTextStyles.headlineSmallWhiteA700,),
+                              ],
+                            ),
                           ),
                         ),
                         SizedBox(height: 12.v),
@@ -180,60 +175,27 @@ class CommunityHubGeneralScreen extends StatelessWidget {
 
   /// Section Widget
   Widget _buildForum(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(left: 5.h),
-      child: ListView.separated(
-        physics: NeverScrollableScrollPhysics(),
-        shrinkWrap: true,
-        separatorBuilder: (
-          context,
-          index,
-        ) {
-          return SizedBox(
-            height: 11.v,
-          );
-        },
-        itemCount: 4,
-        itemBuilder: (context, index) {
-          return ForumItemWidget();
-        },
+    return GestureDetector(
+      onTap: () => Navigator.pushNamed(context, AppRoutes.communityHubPostScreen),
+      child: Padding(
+        padding: EdgeInsets.only(left: 5.h),
+        child: ListView.separated(
+          physics: NeverScrollableScrollPhysics(),
+          shrinkWrap: true,
+          separatorBuilder: (
+            context,
+            index,
+          ) {
+            return SizedBox(
+              height: 11.v,
+            );
+          },
+          itemCount: 4,
+          itemBuilder: (context, index) {
+            return ForumItemWidget();
+          },
+        ),
       ),
     );
-  }
-
-  /// Section Widget
-  Widget _buildNavigationBar(BuildContext context) {
-    return CustomBottomAppBar(
-      onChanged: (BottomBarEnum type) {
-        Navigator.pushNamed(
-            navigatorKey.currentContext!, getCurrentRoute(type));
-      },
-    );
-  }
-
-  ///Handling route based on bottom click actions
-  String getCurrentRoute(BottomBarEnum type) {
-    switch (type) {
-      case BottomBarEnum.Dashboard:
-        return "/";
-      case BottomBarEnum.Education:
-        return AppRoutes.homePageOnePage;
-      case BottomBarEnum.Community:
-        return "/";
-      case BottomBarEnum.Profile:
-        return "/";
-      default:
-        return "/";
-    }
-  }
-
-  ///Handling page based on route
-  Widget getCurrentPage(String currentRoute) {
-    switch (currentRoute) {
-      case AppRoutes.homePageOnePage:
-        return HomePageOnePage();
-      default:
-        return DefaultWidget();
-    }
   }
 }
