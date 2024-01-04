@@ -175,50 +175,27 @@ class CommunityHubGeneralScreen extends StatelessWidget {
 
   /// Section Widget
   Widget _buildForum(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(left: 5.h),
-      child: ListView.separated(
-        physics: NeverScrollableScrollPhysics(),
-        shrinkWrap: true,
-        separatorBuilder: (
-          context,
-          index,
-        ) {
-          return SizedBox(
-            height: 11.v,
-          );
-        },
-        itemCount: 4,
-        itemBuilder: (context, index) {
-          return ForumItemWidget();
-        },
+    return GestureDetector(
+      onTap: () => Navigator.pushNamed(context, AppRoutes.communityHubPostScreen),
+      child: Padding(
+        padding: EdgeInsets.only(left: 5.h),
+        child: ListView.separated(
+          physics: NeverScrollableScrollPhysics(),
+          shrinkWrap: true,
+          separatorBuilder: (
+            context,
+            index,
+          ) {
+            return SizedBox(
+              height: 11.v,
+            );
+          },
+          itemCount: 4,
+          itemBuilder: (context, index) {
+            return ForumItemWidget();
+          },
+        ),
       ),
     );
-  }
-
-  ///Handling route based on bottom click actions
-  String getCurrentRoute(BottomBarEnum type) {
-    switch (type) {
-      case BottomBarEnum.Dashboard:
-        return "/";
-      case BottomBarEnum.Education:
-        return AppRoutes.homePageOnePage;
-      case BottomBarEnum.Community:
-        return "/";
-      case BottomBarEnum.Profile:
-        return "/";
-      default:
-        return "/";
-    }
-  }
-
-  ///Handling page based on route
-  Widget getCurrentPage(String currentRoute) {
-    switch (currentRoute) {
-      case AppRoutes.homePageOnePage:
-        return HomePageOnePage();
-      default:
-        return DefaultWidget();
-    }
   }
 }

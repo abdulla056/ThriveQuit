@@ -27,20 +27,12 @@ class _DiscoverPageState extends State<DiscoverPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-        backgroundColor: Colors.transparent,
-          leading: IconButton(
-            onPressed: () {
-              Navigator.pushNamed(context, AppRoutes.homePage);
-            },
-            icon: Icon(Icons.arrow_back_ios_new_outlined,),
-          ),
-        ),
         body: Center(
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
+                SizedBox(height: 15.v,),
                 Container(
                 width: double.maxFinite,
                 decoration: AppDecoration.fillWhiteA,
