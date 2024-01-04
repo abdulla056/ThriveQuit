@@ -14,7 +14,15 @@ class EmergencyPageScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: _buildAppBar(context),
+        appBar: AppBar(
+        backgroundColor: Colors.transparent,
+          leading: IconButton(
+            onPressed: () {
+              Navigator.pushNamed(context, AppRoutes.homePage);
+            },
+            icon: Icon(Icons.arrow_back_ios_new_outlined,),
+          ),
+        ),
         body: Container(
           width: double.maxFinite,
           padding: EdgeInsets.symmetric(horizontal: 23.h),
@@ -32,17 +40,6 @@ class EmergencyPageScreen extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
-  }
-
-  /// Section Widget
-  PreferredSizeWidget _buildAppBar(BuildContext context) {
-    return CustomAppBar(
-      leadingWidth: double.maxFinite,
-      leading: AppbarLeadingIconbutton(
-        imagePath: ImageConstant.imgRightOnprimarycontainer23x32,
-        margin: EdgeInsets.fromLTRB(15.h, 16.v, 313.h, 16.v),
       ),
     );
   }

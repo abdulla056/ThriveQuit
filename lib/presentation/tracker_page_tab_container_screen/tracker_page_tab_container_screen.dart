@@ -41,60 +41,55 @@ class TrackerPageTabContainerScreenState
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: _buildAppBar(context),
-        body: SizedBox(
-          width: double.maxFinite,
-          child: Column(
-            children: [
-              SizedBox(height: 8.v),
-              _buildCalendar(context),
-              SizedBox(height: 24.v),
-              SizedBox(
-                height: 464.v,
-                width: double.maxFinite,
-                child: Stack(
-                  alignment: Alignment.topCenter,
-                  children: [
-                    Align(
-                      alignment: Alignment.topRight,
-                      child: Padding(
-                        padding: EdgeInsets.only(
-                          top: 118.v,
-                          right: 107.h,
-                        ),
-                        child: Text(
-                          "7",
-                          style: theme.textTheme.displayLarge,
-                        ),
-                      ),
-                    ),
-                    _buildBlueDot(context),
-                    _buildYouVeBeenImproving(context),
-                  ],
-                ),
-              ),
-            ],
+        appBar: AppBar(
+        backgroundColor: Colors.transparent,
+          leading: IconButton(
+            onPressed: () {
+              Navigator.pushNamed(context, AppRoutes.homePage);
+            },
+            icon: Icon(Icons.arrow_back_ios_new_outlined,),
           ),
-        ),
-      ),
-    );
-  }
-
-  /// Section Widget
-  PreferredSizeWidget _buildAppBar(BuildContext context) {
-    return CustomAppBar(
-      leadingWidth: 40.h,
-      leading: AppbarLeadingIconbutton(
-        imagePath: ImageConstant.imgRightOnprimarycontainer23x32,
-        margin: EdgeInsets.only(
-          left: 8.h,
-          top: 14.v,
-          bottom: 18.v,
-        ),
+          title: AppbarSubtitleThree(
+          text: "Your history",
       ),
       centerTitle: true,
-      title: AppbarSubtitleThree(
-        text: "Your history",
+        ),
+        body: SingleChildScrollView(
+          child: SizedBox(
+            width: double.maxFinite,
+            child: Column(
+              children: [
+                SizedBox(height: 8.v),
+                _buildCalendar(context),
+                SizedBox(height: 24.v),
+                SizedBox(
+                  height: 464.v,
+                  width: double.maxFinite,
+                  child: Stack(
+                    alignment: Alignment.topCenter,
+                    children: [
+                      Align(
+                        alignment: Alignment.topRight,
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                            top: 118.v,
+                            right: 107.h,
+                          ),
+                          child: Text(
+                            "7",
+                            style: theme.textTheme.displayLarge,
+                          ),
+                        ),
+                      ),
+                      _buildBlueDot(context),
+                      _buildYouVeBeenImproving(context),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }

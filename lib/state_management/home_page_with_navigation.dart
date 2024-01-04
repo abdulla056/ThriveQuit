@@ -41,6 +41,7 @@ class _HomePageState extends State<HomePage> {
                   currentPageIndex = index;
                 });
               },
+              backgroundColor: Colors.grey.shade200,
               indicatorColor: Colors.orange,
               selectedIndex: currentPageIndex,
               destinations: const <Widget>[

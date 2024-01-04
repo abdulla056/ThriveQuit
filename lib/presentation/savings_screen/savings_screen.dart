@@ -37,13 +37,16 @@ class SavingsScreen extends StatelessWidget {
                       SizedBox(height: 6.v),
                       Padding(
                         padding: EdgeInsets.only(left: 1.h),
-                        child: CustomIconButton(
-                          height: 23.v,
-                          width: 32.h,
-                          padding: EdgeInsets.all(2.h),
-                          child: CustomImageView(
-                            imagePath:
-                                ImageConstant.imgRightOnprimarycontainer23x32,
+                        child: GestureDetector(
+                          onTap: () => Navigator.pop(context),
+                          child: CustomIconButton(
+                            height: 23.v,
+                            width: 32.h,
+                            padding: EdgeInsets.all(2.h),
+                            child: CustomImageView(
+                              imagePath:
+                                  ImageConstant.imgRightOnprimarycontainer23x32,
+                            ),
                           ),
                         ),
                       ),
@@ -71,7 +74,7 @@ class SavingsScreen extends StatelessWidget {
                             ),
                             SizedBox(height: 12.v),
                             SizedBox(
-                              height: 81.v,
+                              height: 90.v,
                               width: 286.h,
                               child: Stack(
                                 alignment: Alignment.topRight,
@@ -250,17 +253,6 @@ class SavingsScreen extends StatelessWidget {
             ),
           ),
         ),
-        floatingActionButton: CustomFloatingButton(
-          height: 81,
-          width: 81,
-          backgroundColor: appTheme.amber900,
-          child: CustomImageView(
-            imagePath: ImageConstant.imgLocationPin3,
-            height: 40.5.v,
-            width: 40.5.h,
-          ),
-        ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       ),
     );
   }
