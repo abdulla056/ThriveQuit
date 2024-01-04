@@ -41,7 +41,19 @@ class TrackerPageTabContainerScreenState
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: _buildAppBar(context),
+        appBar: AppBar(
+        backgroundColor: Colors.transparent,
+          leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(Icons.arrow_back_ios_new_outlined,),
+          ),
+          centerTitle: true,
+          title: AppbarSubtitleThree(
+          text: "Your history",
+      ),
+        ),
         body: SizedBox(
           width: double.maxFinite,
           child: Column(

@@ -23,7 +23,7 @@ class AppbarLeadingIconbutton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, AppRoutes.homePage);
+        Navigator.pop(context);
       },
       child: Padding(
         padding: margin ?? EdgeInsets.zero,

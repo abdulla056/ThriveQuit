@@ -47,47 +47,42 @@ class CommunityHubGeneralScreen extends StatelessWidget {
                           style: CustomTextStyles.titleSmallGray900,
                         ),
                         SizedBox(height: 2.v),
-                        SizedBox(
-                          height: 48.v,
-                          width: 196.h,
-                          child: Stack(
-                            alignment: Alignment.center,
-                            children: [
-                              Align(
-                                alignment: Alignment.center,
-                                child: Container(
-                                  height: 43.v,
-                                  width: 196.h,
-                                  decoration: BoxDecoration(
-                                    color: appTheme.orangeA200.withOpacity(0.8),
-                                    borderRadius: BorderRadius.circular(
-                                      20.h,
-                                    ),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: appTheme.black90001
-                                            .withOpacity(0.25),
-                                        spreadRadius: 2.h,
-                                        blurRadius: 2.h,
-                                        offset: Offset(
-                                          0,
-                                          4,
-                                        ),
+                        ElevatedButton(
+                          onPressed: () => Navigator.pushNamed(context, AppRoutes.createPostScreen),
+                          child: SizedBox(
+                            height: 48.v,
+                            width: 196.h,
+                            child: Stack(
+                              alignment: Alignment.center,
+                              children: [
+                                Align(
+                                  alignment: Alignment.center,
+                                  child: Container(
+                                    height: 43.v,
+                                    width: 196.h,
+                                    decoration: BoxDecoration(
+                                      color: appTheme.orangeA200.withOpacity(0.8),
+                                      borderRadius: BorderRadius.circular(
+                                        20.h,
                                       ),
-                                    ],
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: appTheme.black90001
+                                              .withOpacity(0.25),
+                                          spreadRadius: 2.h,
+                                          blurRadius: 2.h,
+                                          offset: Offset(
+                                            0,
+                                            4,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
-                              ),
-                              CustomElevatedButton(
-                                width: 174.h,
-                                text: "“Create Post“",
-                                buttonStyle:
-                                    CustomButtonStyles.outlineBlackTL101,
-                                buttonTextStyle:
-                                    CustomTextStyles.headlineSmallWhiteA700,
-                                alignment: Alignment.center,
-                              ),
-                            ],
+                                Text("Create Post", style: CustomTextStyles.headlineSmallWhiteA700,),
+                              ],
+                            ),
                           ),
                         ),
                         SizedBox(height: 12.v),
@@ -198,16 +193,6 @@ class CommunityHubGeneralScreen extends StatelessWidget {
           return ForumItemWidget();
         },
       ),
-    );
-  }
-
-  /// Section Widget
-  Widget _buildNavigationBar(BuildContext context) {
-    return CustomBottomAppBar(
-      onChanged: (BottomBarEnum type) {
-        Navigator.pushNamed(
-            navigatorKey.currentContext!, getCurrentRoute(type));
-      },
     );
   }
 

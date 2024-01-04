@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:thrive_quit_application/core/app_export.dart';
 import 'package:thrive_quit_application/presentation/breathing_excercises_intro/breathing_excercises_intro.dart';
 import 'package:thrive_quit_application/presentation/community_hub_general_screen/community_hub_general_screen.dart';
+import 'package:thrive_quit_application/presentation/health_combined_screen/health_combined_screen.dart';
 import 'package:thrive_quit_application/presentation/home_page_one_page/home_page_one_page.dart';
 import 'package:thrive_quit_application/presentation/other_profile_screen/other_profile_screen.dart';
+import 'package:thrive_quit_application/presentation/settings_page_screen/settings_page_screen.dart';
 import 'package:thrive_quit_application/state_management/discover_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -18,10 +20,10 @@ class _HomePageState extends State<HomePage> {
   int currentPageIndex = 0;
   final screens = [
     HomePageOnePage(),
-    BreathingExercisesIntroScreen(),
+    HealthCombinedScreen(),
     DiscoverPage(),
     CommunityHubGeneralScreen(),
-    OtherProfileScreen(),
+    SettingsPageScreen(),
   ]; 
   @override
   Widget build(BuildContext context) {
@@ -41,6 +43,7 @@ class _HomePageState extends State<HomePage> {
                   currentPageIndex = index;
                 });
               },
+              backgroundColor: Colors.grey.shade200,
               indicatorColor: Colors.orange,
               selectedIndex: currentPageIndex,
               destinations: const <Widget>[

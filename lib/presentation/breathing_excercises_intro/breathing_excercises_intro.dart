@@ -15,6 +15,16 @@ class BreathingExercisesIntroScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        extendBodyBehindAppBar: true,
+        appBar: AppBar(
+        backgroundColor: Colors.transparent,
+          leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(Icons.arrow_back_ios_new_outlined,),
+          ),
+        ),
         body: Container(
           width: SizeUtils.width,
           height: SizeUtils.height,
@@ -36,9 +46,7 @@ class BreathingExercisesIntroScreen extends StatelessWidget {
             ),
             child: Column(
               children: [
-                SizedBox(
-                  height: 15.v,
-                ),
+                SizedBox(height: 30.v,),
                 CustomImageView(
                   imagePath: ImageConstant.imgImage12,
                   height: 180.v,
