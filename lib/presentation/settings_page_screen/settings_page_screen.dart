@@ -36,6 +36,12 @@ class SettingsPageScreen extends StatelessWidget {
             padding: EdgeInsets.only(top: 2.v),
             child: Column(
               children: [
+                // Text(
+                //   "Settings",
+                //   style: CustomTextStyles.titleMediumGray900.copyWith(
+                //       fontSize: 35.0,
+                //       color: Color.fromARGB(255, 255, 255, 255)),
+                // ),
                 _buildIsabellaTanStack(context),
                 SizedBox(height: 21.v),
                 SizedBox(
@@ -58,16 +64,19 @@ class SettingsPageScreen extends StatelessWidget {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               _buildFirstNameStack(context),
-                              SizedBox(height: 40.v),
+                              SizedBox(height: 15.v),
                               _buildHeightColumn(context),
-                              SizedBox(height: 40.v),
+                              SizedBox(height: 20.v),
                               _buildCigarettesSmokedStack(context),
                               SizedBox(height: 21.v),
                               Text(
                                 "Badges Earned",
-                                style: CustomTextStyles.titleMediumGray900,
+                                style: CustomTextStyles.titleMediumGray900
+                                    .copyWith(
+                                  fontSize: 20.0,
+                                ),
                               ),
-                              SizedBox(height: 121.v),
+                              SizedBox(height: 150.v),
                             ],
                           ),
                         ),
@@ -86,7 +95,7 @@ class SettingsPageScreen extends StatelessWidget {
                         alignment: Alignment.bottomLeft,
                         child: Padding(
                           padding:
-                              EdgeInsets.fromLTRB(47.h, 423.v, 70.h, 285.v),
+                              EdgeInsets.fromLTRB(48.h, 200.v, 70.h, 291.v),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -117,15 +126,6 @@ class SettingsPageScreen extends StatelessWidget {
   /// Section Widget
   PreferredSizeWidget _buildAppBar(BuildContext context) {
     return CustomAppBar(
-      leadingWidth: 47.h,
-      leading: AppbarLeadingIconbutton(
-        imagePath: ImageConstant.imgRightOnprimarycontainer23x32,
-        margin: EdgeInsets.only(
-          left: 15.h,
-          top: 14.v,
-          bottom: 18.v,
-        ),
-      ),
       centerTitle: true,
       title: AppbarSubtitle(
         text: "Settings",
@@ -293,19 +293,19 @@ class SettingsPageScreen extends StatelessWidget {
             ),
             SizedBox(height: 10.5.v),
             Padding(
-              padding: EdgeInsets.only(left: 1.h),
+              padding: EdgeInsets.only(left: 2.h),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(bottom: 2.v),
+                    padding: EdgeInsets.only(top: 2.3.v),
                     child: Text(
                       "Date of Birth",
                       style: CustomTextStyles.labelLargeGray900Medium_2,
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(top: 3.v, right: 6.h),
+                    padding: EdgeInsets.only(bottom: 0.v, right: 6.h),
                     child: Text(
                       "15/02/2003",
                       style: CustomTextStyles.labelMediumYellow900,
@@ -400,10 +400,9 @@ class SettingsPageScreen extends StatelessWidget {
                       top: 11.v,
                       bottom: 10.v,
                     ),
-                    child: Text(
-                      "Gender",
-                      style: CustomTextStyles.titleSmallMedium,
-                    ),
+                    child: Text("Gender",
+                        style: CustomTextStyles.titleSmallMedium
+                            .copyWith(fontSize: 20.0)),
                   ),
                   Spacer(),
                   Container(
@@ -438,8 +437,8 @@ class SettingsPageScreen extends StatelessWidget {
                   ),
                   CustomImageView(
                     imagePath: ImageConstant.imgThumbsUp,
-                    height: 30.v,
-                    width: 11.h,
+                    height: 33.v,
+                    width: 15.h,
                     margin: EdgeInsets.only(
                       left: 20.h,
                       top: 3.v,
@@ -457,20 +456,47 @@ class SettingsPageScreen extends StatelessWidget {
               right: 12.h,
             ),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                CustomElevatedButton(
+                Container(
                   height: 45.v,
                   width: 123.h,
-                  text: "Height",
-                  buttonStyle: CustomButtonStyles.fillOrangeATL10,
+                  alignment: Alignment.center,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text("Height",
+                          style: TextStyle(
+                              color: const Color.fromARGB(163, 0, 0, 0))),
+                      Text("153cm",
+                          style: TextStyle(
+                            fontSize: 17.8,
+                          )),
+                    ],
+                  ),
+                  decoration: AppDecoration.gradientDeepOrangeToYellow.copyWith(
+                    borderRadius: BorderRadiusStyle.roundedBorder10,
+                  ),
                 ),
-                CustomElevatedButton(
+                Container(
                   height: 45.v,
                   width: 123.h,
-                  text: "Weight",
-                  margin: EdgeInsets.only(left: 11.h),
-                  buttonStyle: CustomButtonStyles.fillOrangeATL10,
+                  alignment: Alignment.center,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text("Weight",
+                          style: TextStyle(
+                              color: const Color.fromARGB(163, 0, 0, 0))),
+                      Text("45kgs",
+                          style: TextStyle(
+                            fontSize: 17.8,
+                          )),
+                    ],
+                  ),
+                  decoration: AppDecoration.gradientDeepOrangeToYellow.copyWith(
+                    borderRadius: BorderRadiusStyle.roundedBorder10,
+                  ),
                 ),
               ],
             ),
@@ -539,7 +565,7 @@ class SettingsPageScreen extends StatelessWidget {
             child: Padding(
               padding: EdgeInsets.only(top: 33.v),
               child: SizedBox(
-                width: 305.h,
+                width: 295.h,
                 child: Divider(
                   color: appTheme.gray100,
                 ),
@@ -582,65 +608,217 @@ class SettingsPageScreen extends StatelessWidget {
                 ),
               ),
             ),
-            Align(
-              alignment: Alignment.bottomRight,
-              child: Padding(
-                padding: EdgeInsets.only(right: 19.h),
-                child: Text(
-                  "87",
-                  style: CustomTextStyles.headlineSmallOnError,
-                ),
+            Padding(
+              padding: EdgeInsets.only(
+                right: 35.v,
+                bottom: 110.v,
+              ),
+              child: Text(
+                "View All",
+                style: CustomTextStyles.labelMediumOnError,
               ),
             ),
-            Align(
-              alignment: Alignment.bottomRight,
-              child: Padding(
-                padding: EdgeInsets.only(right: 59.h),
-                child: Text(
-                  "46",
-                  style: CustomTextStyles.headlineSmallOrangeA200,
-                ),
+            CustomImageView(
+              imagePath: ImageConstant.imgRightOnprimarycontainer,
+              height: 200.adaptSize,
+              width: 20.adaptSize,
+              margin: EdgeInsets.only(
+                right: 8.h,
+                bottom: 107.v,
               ),
             ),
-            Align(
-              alignment: Alignment.bottomRight,
-              child: Padding(
-                padding: EdgeInsets.only(
-                  right: 49.h,
-                  bottom: 2.v,
-                ),
-                child: Text(
-                  "/",
-                  style: CustomTextStyles.titleLargeOnErrorMedium,
-                ),
-              ),
-            ),
-            Align(
-              alignment: Alignment.bottomRight,
-              child: Container(
-                height: 28.v,
-                width: 89.h,
-                margin: EdgeInsets.only(
-                  right: 9.h,
-                  bottom: 1.v,
-                ),
-                decoration: BoxDecoration(
-                  color: appTheme.black90001,
-                  borderRadius: BorderRadius.circular(
-                    14.h,
+            SizedBox(
+              height: 300.v,
+              width: 356.h,
+              child: Stack(
+                alignment: Alignment.bottomCenter,
+                children: [
+                  CustomImageView(
+                    imagePath: ImageConstant.imgDesignWizardB,
+                    height: 240.adaptSize,
+                    width: 240.adaptSize,
+                    alignment: Alignment.centerLeft,
+                    margin: EdgeInsets.only(
+                      right: 15.h,
+                      bottom: 90.v,
+                    ),
                   ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: appTheme.black90001.withOpacity(0.25),
-                      spreadRadius: 2.h,
-                      blurRadius: 2.h,
-                      offset: Offset(
-                        0,
-                        4,
+                  CustomImageView(
+                    imagePath: ImageConstant.imgDesignWizardBOnerror,
+                    height: 240.adaptSize,
+                    width: 240.adaptSize,
+                    alignment: Alignment.bottomCenter,
+                    margin: EdgeInsets.only(
+                      right: 15.h,
+                      bottom: 0.v,
+                    ),
+                  ),
+                  CustomImageView(
+                    imagePath: ImageConstant.imgDesignWizardBadges3d,
+                    height: 240.adaptSize,
+                    width: 240.adaptSize,
+                    alignment: Alignment.bottomRight,
+                    margin: EdgeInsets.only(
+                      right: 35.h,
+                      bottom: 20.v,
+                    ),
+                  ),
+                  CustomImageView(
+                    imagePath: ImageConstant.imgMaskGroupBlueGray10045x41,
+                    height: 240.adaptSize,
+                    width: 100.adaptSize,
+                    alignment: Alignment.bottomRight,
+                    margin: EdgeInsets.only(
+                      right: 7.h,
+                      bottom: 20.v,
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: Container(
+                      width: 213.h,
+                      margin: EdgeInsets.only(
+                        left: 143.h,
+                        top: 54.v,
+                        bottom: 41.v,
+                      ),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 16.h,
+                        vertical: 59.v,
+                      ),
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(
+                            ImageConstant.imgGroup553,
+                          ),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.only(
+                              top: 2.v,
+                              bottom: 90.v,
+                            ),
+                            child: Text(
+                              "View All",
+                              style: CustomTextStyles.labelMediumOnError,
+                            ),
+                          ),
+                          CustomImageView(
+                            imagePath: ImageConstant.imgRightOnprimarycontainer,
+                            height: 20.adaptSize,
+                            width: 20.adaptSize,
+                            margin: EdgeInsets.only(
+                              left: 3.h,
+                              bottom: 62.v,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                  Align(
+                    alignment: Alignment.bottomRight,
+                    child: Padding(
+                      padding: EdgeInsets.only(right: 19.h),
+                      child: Text(
+                        "87",
+                        style: CustomTextStyles.headlineSmallOnError,
+                      ),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.bottomRight,
+                    child: Padding(
+                      padding: EdgeInsets.only(right: 59.h),
+                      child: Text(
+                        "46",
+                        style: CustomTextStyles.headlineSmallOrangeA200,
+                      ),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.bottomRight,
+                    child: Padding(
+                      padding: EdgeInsets.only(
+                        right: 49.h,
+                        bottom: 200.v,
+                      ),
+                      child: Text(
+                        "/",
+                        style: CustomTextStyles.titleLargeOnErrorMedium,
+                      ),
+                    ),
+                  ),
+                  Align(
+                      alignment: Alignment.bottomRight,
+                      child: Container(
+                        height: 28.v,
+                        width: 89.h,
+                        margin: EdgeInsets.only(
+                          right: 9.h,
+                          bottom: 5.v,
+                        ),
+                        decoration: BoxDecoration(
+                          color: appTheme.black90001,
+                          borderRadius: BorderRadius.circular(
+                            14.h,
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                              //color: appTheme.black90001.withOpacity(0.25),
+                              spreadRadius: 2.h,
+                              blurRadius: 2.h,
+                              offset: Offset(
+                                0,
+                                4,
+                              ),
+                            ),
+                          ],
+                        ),
+                      )),
+                  Align(
+                    alignment: Alignment.bottomRight,
+                    child: Padding(
+                      padding: EdgeInsets.only(
+                        right: 19.h,
+                      ),
+                      child: Text(
+                        "87",
+                        style: CustomTextStyles.headlineSmallOnError,
+                      ),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.bottomRight,
+                    child: Padding(
+                      padding: EdgeInsets.only(
+                        right: 59.h,
+                      ),
+                      child: Text(
+                        "46",
+                        style: CustomTextStyles.headlineSmallOrangeA200,
+                      ),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.bottomRight,
+                    child: Padding(
+                      padding: EdgeInsets.only(
+                        right: 49.h,
+                        bottom: 2.v,
+                      ),
+                      child: Text(
+                        "/",
+                        style: CustomTextStyles.titleLargeOnErrorMedium,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ],
@@ -651,111 +829,34 @@ class SettingsPageScreen extends StatelessWidget {
 
   /// Section Widget
   Widget _buildBadgeBoxStack(BuildContext context) {
-    return Align(
+    return Stack(
       alignment: Alignment.bottomCenter,
-      child: SizedBox(
-        height: 294.v,
-        width: 356.h,
-        child: Stack(
-          alignment: Alignment.bottomCenter,
-          children: [
-            CustomImageView(
-              imagePath: ImageConstant.imgDesignWizardB,
-              height: 240.adaptSize,
-              width: 240.adaptSize,
-              alignment: Alignment.topLeft,
-            ),
-            CustomImageView(
-              imagePath: ImageConstant.imgDesignWizardBOnerror,
-              height: 240.adaptSize,
-              width: 240.adaptSize,
-              alignment: Alignment.bottomCenter,
-            ),
-            CustomImageView(
-              imagePath: ImageConstant.imgDesignWizardBadges3d,
-              height: 240.adaptSize,
-              width: 240.adaptSize,
-              alignment: Alignment.bottomRight,
-              margin: EdgeInsets.only(
-                right: 22.h,
-                bottom: 9.v,
+      children: [
+        Align(
+          alignment: Alignment.topCenter,
+          child: Padding(
+            padding: EdgeInsets.only(top: 440.v),
+            child: SizedBox(
+              width: 295.h,
+              child: Divider(
+                color: appTheme.gray100,
               ),
             ),
-            Align(
-              alignment: Alignment.centerRight,
-              child: Container(
-                width: 213.h,
-                margin: EdgeInsets.only(
-                  left: 143.h,
-                  top: 54.v,
-                  bottom: 40.v,
-                ),
-                padding: EdgeInsets.symmetric(
-                  horizontal: 16.h,
-                  vertical: 59.v,
-                ),
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(
-                      ImageConstant.imgGroup553,
-                    ),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(
-                        top: 2.v,
-                        bottom: 65.v,
-                      ),
-                      child: Text(
-                        "View All",
-                        style: CustomTextStyles.labelMediumOnError,
-                      ),
-                    ),
-                    CustomImageView(
-                      imagePath: ImageConstant.imgRightOnprimarycontainer,
-                      height: 20.adaptSize,
-                      width: 20.adaptSize,
-                      margin: EdgeInsets.only(
-                        left: 3.h,
-                        bottom: 62.v,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Align(
-              alignment: Alignment.topCenter,
-              child: Padding(
-                padding: EdgeInsets.only(top: 15.v),
-                child: SizedBox(
-                  width: 305.h,
-                  child: Divider(
-                    color: appTheme.gray100,
-                  ),
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(
-                left: 47.h,
-                bottom: 206.v,
-              ),
-              child: _buildPriceRow(
-                context,
-                averageCostPer: "Average cost per packet (MYR)",
-                thirtyFive: "35",
-              ),
-            ),
-            _buildBdgContainerStack(context),
-          ],
+          ),
         ),
-      ),
+        Padding(
+          padding: EdgeInsets.only(
+            left: 49.h,
+            bottom: 245.v,
+          ),
+          child: _buildPriceRow(
+            context,
+            averageCostPer: "Average cost per packet (MYR)",
+            thirtyFive: "35",
+          ),
+        ),
+        _buildBdgContainerStack(context),
+      ],
     );
   }
 
@@ -781,7 +882,7 @@ class SettingsPageScreen extends StatelessWidget {
         ),
         Padding(
           padding: EdgeInsets.only(
-            left: 126.h,
+            left: 132.h,
             top: 5.v,
             bottom: 12.v,
           ),
