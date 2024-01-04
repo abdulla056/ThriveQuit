@@ -5,111 +5,561 @@ import 'package:thrive_quit_application/core/app_export.dart';
 import 'package:thrive_quit_application/widgets/custom_outlined_button.dart';
 
 class HealthCombinedScreen extends StatelessWidget {
-  const HealthCombinedScreen({Key? key})
-      : super(
-          key: key,
-        );
+  const HealthCombinedScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Container(
-          width: double.maxFinite,
-          padding: EdgeInsets.symmetric(
-            horizontal: 18.h,
-            vertical: 22.v,
-          ),
-          child: Column(
-            children: [
-              SizedBox(height: 12.v),
-              Padding(
-                padding: EdgeInsets.only(right: 6.h),
-                child: Column(
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(25.0),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  
                   children: [
                     Text(
-                      "Your Health",
-                      style: CustomTextStyles.headlineSmallBlack90001,
-                    ),
-                    SizedBox(height: 35.v),
-                    SizedBox(
-                      height: 1931.v,
-                      width: 318.h,
-                      child: Stack(
-                        alignment: Alignment.center,
-                        children: [
-                          Align(
-                            alignment: Alignment.center,
-                            child: SizedBox(
-                              height: 34.v,
-                              child: VerticalDivider(
-                                width: 3.h,
-                                thickness: 3.v,
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            width: double.maxFinite,
-                            child: Align(
-                              alignment: Alignment.center,
-                              child: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsets.only(
-                                      left: 21.h,
-                                      right: 45.h,
-                                    ),
-                                    child: Row(
-                                      children: [
-                                        _buildYourHeartRate(context),
-                                        Expanded(
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsets.only(left: 11.h),
-                                            child: Column(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                SizedBox(
-                                                  width: 183.h,
-                                                  child: Text(
-                                                    "Your heart rate and blood pressure returns to normal",
-                                                    maxLines: 2,
-                                                    overflow:
-                                                        TextOverflow.ellipsis,
-                                                    style: theme
-                                                        .textTheme.bodyMedium,
-                                                  ),
-                                                ),
-                                                SizedBox(height: 1.v),
-                                                Text(
-                                                  "5 hours",
-                                                  style: theme
-                                                      .textTheme.labelLarge,
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  SizedBox(height: 13.v),
-                                  _buildHealthCombined(context),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
+                      'Your Health',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                      ),                    
                     ),
                   ],
                 ),
-              ),
-            ],
-          ),
+
+                SizedBox(
+                  height: 25,
+                  ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Color(0xfff0f2f4),
+                      borderRadius: BorderRadius.circular(16),
+                      ),
+                    
+                    child: Row(children: [
+                      _buildYourHeartRate(context),
+                      
+                      Expanded(
+                        child: Text(
+                          "Your heart rate and blood pressure returns to normal",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                          ),
+                          softWrap: true,
+                          maxLines: 2,   
+                        ),
+                      ),
+                      
+                      ],),
+                      
+                  ),
+                ),
+                
+                SizedBox(
+                  height: 25,
+                  ),
+
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Color(0xfff0f2f4),
+                      borderRadius: BorderRadius.circular(16),
+                      ),
+                    
+                    child: Row(children: [
+                      _buildYourHeartRate(context),
+                      
+                      Expanded(
+                        child: Text(
+                          "Carbon monoxide has started leaving your body",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                          ),
+                          softWrap: true,
+                          maxLines: 2,   
+                        ),
+                      ),
+                      
+                      ],),
+                      
+                  ),
+                ),
+
+                SizedBox(
+                  height: 25,
+                  ),
+
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Color(0xfff0f2f4),
+                      borderRadius: BorderRadius.circular(16),
+                      ),
+                    
+                    child: Row(children: [
+                      _buildYourHeartRate(context),
+                      
+                      Expanded(
+                        child: Text(
+                          "Nicotine is starting to get flushed out of your body.",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                          ),
+                          softWrap: true,
+                          maxLines: 2,   
+                        ),
+                      ),
+                      
+                      ],),
+                      
+                  ),
+                ),
+
+                SizedBox(
+                  height: 25,
+                  ),
+
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Color(0xfff0f2f4),
+                      borderRadius: BorderRadius.circular(16),
+                      ),
+                    
+                    child: Row(children: [
+                      _buildYourHeartRate(context),
+                      
+                      Expanded(
+                        child: Text(
+                          "Oxygen levels start to increase and gradually normalises.",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                          ),
+                          softWrap: true,
+                          maxLines: 2,   
+                        ),
+                      ),
+                      
+                      ],),
+                      
+                  ),
+                ),
+
+                SizedBox(
+                  height: 25,
+                  ),
+
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Color(0xfff0f2f4),
+                      borderRadius: BorderRadius.circular(16),
+                      ),
+                    
+                    child: Row(children: [
+                      _buildYourHeartRate(context),
+                      
+                      Expanded(
+                        child: Text(
+                          "Nicotine is completely of your body.",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                          ),
+                          softWrap: true,
+                          maxLines: 2,   
+                        ),
+                      ),
+                      
+                      ],),
+                      
+                  ),
+                ),
+
+                SizedBox(
+                  height: 25,
+                  ),
+
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Color(0xfff0f2f4),
+                      borderRadius: BorderRadius.circular(16),
+                      ),
+                    
+                    child: Row(children: [
+                      _buildYourHeartRate(context),
+                      
+                      Expanded(
+                        child: Text(
+                          "Body energy has started to return to normal levels",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                          ),
+                          softWrap: true,
+                          maxLines: 2,   
+                        ),
+                      ),
+                      
+                      ],),
+                      
+                  ),
+                ),
+
+                SizedBox(
+                  height: 25,
+                  ),
+
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Color(0xfff0f2f4),
+                      borderRadius: BorderRadius.circular(16),
+                      ),
+                    
+                    child: Row(children: [
+                      _buildYourHeartRate(context),
+                      
+                      Expanded(
+                        child: Text(
+                          "Antibodies, red blood cells and white blood cells are increasing",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                          ),
+                          softWrap: true,
+                          maxLines: 2,   
+                        ),
+                      ),
+                      
+                      ],),
+                      
+                  ),
+                ),
+
+                SizedBox(
+                  height: 25,
+                  ),
+
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Color(0xfff0f2f4),
+                      borderRadius: BorderRadius.circular(16),
+                      ),
+                    
+                    child: Row(children: [
+                      _buildYourHeartRate(context),
+                      
+                      Expanded(
+                        child: Text(
+                          "Your trachea and broncus start to heal",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                          ),
+                          softWrap: true,
+                          maxLines: 2,   
+                        ),
+                      ),
+                      
+                      ],),
+                      
+                  ),
+                ),
+
+                SizedBox(
+                  height: 25,
+                  ),
+
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Color(0xfff0f2f4),
+                      borderRadius: BorderRadius.circular(16),
+                      ),
+                    
+                    child: Row(children: [
+                      _buildYourHeartRate(context),
+                      
+                      Expanded(
+                        child: Text(
+                          "Body starts removing excess mucus, tar and harmful toxins",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                          ),
+                          softWrap: true,
+                          maxLines: 2,   
+                        ),
+                      ),
+                      
+                      ],),
+                      
+                  ),
+                ),
+
+                SizedBox(
+                  height: 25,
+                  ),
+
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Color(0xfff0f2f4),
+                      borderRadius: BorderRadius.circular(16),
+                      ),
+                    
+                    child: Row(children: [
+                      _buildYourHeartRate(context),
+                      
+                      Expanded(
+                        child: Text(
+                          "Vitamin levels start to regain balance",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                          ),
+                          softWrap: true,
+                          maxLines: 2,   
+                        ),
+                      ),
+                      
+                      ],),
+                      
+                  ),
+                ),
+
+                SizedBox(
+                  height: 25,
+                  ),
+
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Color(0xfff0f2f4),
+                      borderRadius: BorderRadius.circular(16),
+                      ),
+                    
+                    child: Row(children: [
+                      _buildYourHeartRate(context),
+                      
+                      Expanded(
+                        child: Text(
+                          "Your overall immune system is back on track",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                          ),
+                          softWrap: true,
+                          maxLines: 2,   
+                        ),
+                      ),
+                      
+                      ],),
+                      
+                  ),
+                ),
+
+                SizedBox(
+                  height: 25,
+                  ),
+
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Color(0xfff0f2f4),
+                      borderRadius: BorderRadius.circular(16),
+                      ),
+                    
+                    child: Row(children: [
+                      _buildYourHeartRate(context),
+                      
+                      Expanded(
+                        child: Text(
+                          "Heart disease risk reduced by half",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                          ),
+                          softWrap: true,
+                          maxLines: 2,   
+                        ),
+                      ),
+                      
+                      ],),
+                      
+                  ),
+                ),
+
+                SizedBox(
+                  height: 25,
+                  ),
+
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Color(0xfff0f2f4),
+                      borderRadius: BorderRadius.circular(16),
+                      ),
+                    
+                    child: Row(children: [
+                      _buildYourHeartRate(context),
+                      
+                      Expanded(
+                        child: Text(
+                          "Bladder is recovering and risk of cancer is reduced",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                          ),
+                          softWrap: true,
+                          maxLines: 2,   
+                        ),
+                      ),
+                      
+                      ],),
+                      
+                  ),
+                ),
+
+                SizedBox(
+                  height: 25,
+                  ),
+
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Color(0xfff0f2f4),
+                      borderRadius: BorderRadius.circular(16),
+                      ),
+                    
+                    child: Row(children: [
+                      _buildYourHeartRate(context),
+                      
+                      Expanded(
+                        child: Text(
+                          "Heart attack is reduced by half",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                          ),
+                          softWrap: true,
+                          maxLines: 2,   
+                        ),
+                      ),
+                      
+                      ],),
+                      
+                  ),
+                ),
+
+                SizedBox(
+                  height: 25,
+                  ),
+
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Color(0xfff0f2f4),
+                      borderRadius: BorderRadius.circular(16),
+                      ),
+                    
+                    child: Row(children: [
+                      _buildYourHeartRate(context),
+                      
+                      Expanded(
+                        child: Text(
+                          "Heart attack and stroke risks are back to normal chances",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                          ),
+                          softWrap: true,
+                          maxLines: 2,   
+                        ),
+                      ),
+                      
+                      ],),
+                      
+                  ),
+                ),
+
+
+                SizedBox(
+                  height: 25,
+                  ),
+
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Color(0xfff0f2f4),
+                      borderRadius: BorderRadius.circular(16),
+                      ),
+                    
+                    child: Row(children: [
+                      _buildYourHeartRate(context),
+                      
+                      Expanded(
+                        child: Text(
+                          "All symptoms have been diminished",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                          ),
+                          softWrap: true,
+                          maxLines: 2,   
+                        ),
+                      ),
+                      
+                      ],),
+                      
+                  ),
+                ),
+            ],),
+          )
         ),
       ),
     );
@@ -118,18 +568,18 @@ class HealthCombinedScreen extends StatelessWidget {
   /// Section Widget
   Widget _buildYourHeartRate(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(bottom: 3.v),
+      padding: EdgeInsets.only(bottom: 5.v),
       child: OutlineGradientButton(
         padding: EdgeInsets.only(
-          left: 8.h,
-          top: 8.v,
-          right: 8.h,
-          bottom: 8.v,
+          left: 5.h,
+          top: 5.v,
+          right: 5.h,
+          bottom: 5.v,
         ),
-        strokeWidth: 8.h,
+        strokeWidth: 9.h,
         gradient: LinearGradient(
-          begin: Alignment(0.24, 0),
-          end: Alignment(0.5, 0),
+          begin: Alignment(-3, -3),
+          end: Alignment(0, -3),
           colors: [
             appTheme.amber900,
             appTheme.whiteA700.withOpacity(0),
@@ -137,10 +587,10 @@ class HealthCombinedScreen extends StatelessWidget {
           ],
         ),
         corners: Corners(
-          topLeft: Radius.circular(28),
-          topRight: Radius.circular(28),
-          bottomLeft: Radius.circular(28),
-          bottomRight: Radius.circular(28),
+          topLeft: Radius.circular(38),
+          topRight: Radius.circular(38),
+          bottomLeft: Radius.circular(38),
+          bottomRight: Radius.circular(38),
         ),
         child: CustomOutlinedButton(
           height: 56.v,
@@ -153,24 +603,17 @@ class HealthCombinedScreen extends StatelessWidget {
   }
 
   /// Section Widget
-  Widget _buildHealthCombined(BuildContext context) {
-    return Expanded(
-      child: ListView.separated(
-        physics: BouncingScrollPhysics(),
-        shrinkWrap: true,
-        separatorBuilder: (
-          context,
-          index,
-        ) {
-          return SizedBox(
-            height: 1.v,
-          );
-        },
-        itemCount: 29,
-        itemBuilder: (context, index) {
-          return HealthcombinedItemWidget();
-        },
-      ),
+   Widget _buildHealthCombined(BuildContext context) {
+    return ListView.separated(
+      physics: BouncingScrollPhysics(),
+      shrinkWrap: true,
+      separatorBuilder: (context, index) {
+        return SizedBox(height: 1.v);
+      },
+      itemCount: 29,
+      itemBuilder: (context, index) {
+        return HealthcombinedItemWidget();
+      },
     );
   }
 }

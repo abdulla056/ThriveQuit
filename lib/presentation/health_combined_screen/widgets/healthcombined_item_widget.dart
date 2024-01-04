@@ -15,8 +15,9 @@ class HealthcombinedItemWidget extends StatelessWidget {
       child: VerticalDivider(
         width: 3.h,
         thickness: 3.v,
-        color: appTheme.yellow90001,
       ),
     );
   }
+
+  
 }
