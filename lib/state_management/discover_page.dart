@@ -31,7 +31,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
-              SizedBox(height: 15.v,),
+              SizedBox(height: 20.v,),
               Container(
               width: double.maxFinite,
               decoration: AppDecoration.fillWhiteA,
