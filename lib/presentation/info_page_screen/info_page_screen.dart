@@ -58,6 +58,7 @@ class InfoPageScreen extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.only(right: 14.h),
                 child: CustomIconButton(
+                  onTap: () => Navigator.pushNamed(context, AppRoutes.homePage),
                   height: 56.adaptSize,
                   width: 56.adaptSize,
                   padding: EdgeInsets.all(13.h),

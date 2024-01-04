@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
           theme: theme,
           title: 'thrive_quit_application',
           debugShowCheckedModeBanner: false,
-          initialRoute: AppRoutes.homePage,
+          initialRoute: AppRoutes.appNavigationScreen,
           routes: AppRoutes.routes,
         );
       },

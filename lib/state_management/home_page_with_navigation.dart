@@ -6,6 +6,7 @@ import 'package:thrive_quit_application/presentation/health_combined_screen/heal
 import 'package:thrive_quit_application/presentation/home_page_one_page/home_page_one_page.dart';
 import 'package:thrive_quit_application/presentation/other_profile_screen/other_profile_screen.dart';
 import 'package:thrive_quit_application/presentation/settings_page_screen/settings_page_screen.dart';
+import 'package:thrive_quit_application/presentation/tip_page_screen/tip_page_screen.dart';
 import 'package:thrive_quit_application/state_management/discover_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -20,7 +21,7 @@ class _HomePageState extends State<HomePage> {
   int currentPageIndex = 0;
   final screens = [
     HomePageOnePage(),
-    HealthCombinedScreen(),
+    TipPageScreen(),
     DiscoverPage(),
     CommunityHubGeneralScreen(),
     SettingsPageScreen(),
@@ -53,9 +54,9 @@ class _HomePageState extends State<HomePage> {
                   label: 'Dashboard',
                 ),
                 NavigationDestination(
-                  selectedIcon: Icon(Icons.health_and_safety),
-                  icon: Badge(child: Icon(Icons.health_and_safety_outlined)),
-                  label: 'Health',
+                  selectedIcon: Icon(Icons.school),
+                  icon: Icon(Icons.school_outlined),
+                  label: 'Tips',
                 ),
                 Card(
                   elevation: 50,

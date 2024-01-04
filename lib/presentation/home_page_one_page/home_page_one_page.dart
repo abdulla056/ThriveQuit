@@ -38,7 +38,6 @@ class _HomePageOnePageState extends State<HomePageOnePage> {
                 SizedBox(height: 14.v),
                 _buildFiveHundredTwentyStack(context),
                 SizedBox(height: 18.v),
-                //_buildTipsComponentList(context),
                 _buildHealthAndBreathingExcercises(context),
               ],
             ),
@@ -500,35 +499,6 @@ Widget _buildFiveHundredTwentyStack(BuildContext context) {
   );
 }
 
-/// Section Widget
-Widget _buildTipsComponentList(BuildContext context) {
-  return Align(
-    alignment: Alignment.centerLeft,
-    child: SizedBox(
-      height: 118.v,
-      child: ListView.separated(
-        padding: EdgeInsets.only(
-          left: 5.h,
-          right: 17.h,
-        ),
-        scrollDirection: Axis.horizontal,
-        separatorBuilder: (
-          context,
-          index,
-        ) {
-          return SizedBox(
-            width: 20.h,
-          );
-        },
-        itemCount: 2,
-        itemBuilder: (context, index) {
-          return TipscomponentlistItemWidget();
-        },
-      ),
-    ),
-  );
-}
-
 Widget _buildHealthAndBreathingExcercises(BuildContext context) {
   return GestureDetector(
     child: SizedBox(
@@ -537,7 +507,7 @@ Widget _buildHealthAndBreathingExcercises(BuildContext context) {
         children: [
           SizedBox(width: 5.h,),
           GestureDetector(
-            onTap: () => Navigator.pushNamed(context, AppRoutes.tipPageScreen),
+            onTap: () => Navigator.pushNamed(context, AppRoutes.healthCombinedScreen),
             child: Container(
               width: 160.v,
               decoration: AppDecoration.gradientDeepOrangeToYellow.copyWith(
@@ -546,18 +516,18 @@ Widget _buildHealthAndBreathingExcercises(BuildContext context) {
                   begin: Alignment.bottomCenter,
                   end: Alignment.topCenter,
                   colors: [
-                    Color.fromARGB(255, 150, 166, 247),
-                    Color(0xff5871F5),
+                    Color.fromARGB(255, 223, 119, 113),
+                    Color(0xffE94339),
                   ],
                 ),
               ),
               child: Column(
                 children: [
                   SizedBox(height: 20.v,),
-                  Icon(Icons.school_outlined),
+                  Icon(Icons.health_and_safety_outlined),
                   SizedBox(height: 5.v,),
                   Text(
-                    "Tips", style: CustomTextStyles.titleLargeWhiteA700
+                    "Health", style: CustomTextStyles.titleLargeWhiteA700
                                   .copyWith(fontSize: 23.3),)
                 ],
               ),

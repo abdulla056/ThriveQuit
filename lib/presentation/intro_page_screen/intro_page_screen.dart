@@ -80,6 +80,7 @@ class IntroPageScreen extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.only(right: 28.h),
                 child: CustomIconButton(
+                  onTap: () => Navigator.pushNamed(context, AppRoutes.loginPageScreen),
                   height: 56.adaptSize,
                   width: 56.adaptSize,
                   padding: EdgeInsets.all(13.h),

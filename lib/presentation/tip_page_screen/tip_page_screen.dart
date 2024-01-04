@@ -54,15 +54,6 @@ class TipPageScreen extends StatelessWidget {
   /// Section Widget
   PreferredSizeWidget _buildAppBar(BuildContext context) {
     return CustomAppBar(
-      leadingWidth: 47.h,
-      leading: AppbarLeadingIconbutton(
-        imagePath: ImageConstant.imgRightOnprimarycontainer23x32,
-        margin: EdgeInsets.only(
-          left: 15.h,
-          top: 14.v,
-          bottom: 18.v,
-        ),
-      ),
       centerTitle: true,
       title: AppbarSubtitleTwo(
         text: "Tips",

@@ -28,53 +28,51 @@ class _DiscoverPageState extends State<DiscoverPage> {
     return SafeArea(
       child: Scaffold(
         body: Center(
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                SizedBox(height: 15.v,),
-                Container(
-                width: double.maxFinite,
-                decoration: AppDecoration.fillWhiteA,
-                child: Column(
-                children: [
-                Text(
-                  'Discover',
-                  style: CustomTextStyles.headlineLargeBlack90001,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              SizedBox(height: 15.v,),
+              Container(
+              width: double.maxFinite,
+              decoration: AppDecoration.fillWhiteA,
+              child: Column(
+              children: [
+              Text(
+                'Discover',
+                style: CustomTextStyles.headlineLargeBlack90001,
+              ),
+              Text(
+                'Discover upcoming events near you',
+                style: CustomTextStyles.bodyMediumGray900,
+              ),
+              SizedBox(height: 15.v,),
+                ToggleButtons(
+                  direction:  Axis.horizontal,
+                  onPressed: (int index) {
+                    setState(() {
+                      // The button that is tapped is set to true, and the others to false.
+                      for (int i = 0; i < _selectedPage.length; i++) {
+                        _selectedPage[i] = i == index;
+                      }
+                      currentPageIndex = index;
+                    });
+                  },
+                borderRadius: const BorderRadius.all(Radius.circular(8)),
+                //selectedBorderColor: Colors.grey,
+                selectedColor: Colors.white,
+                fillColor: Colors.orange,
+                color: Color(0xff545555),
+                  constraints: const BoxConstraints(
+                  minHeight: 35.0,
+                  minWidth: 95.0,
                 ),
-                Text(
-                  'Discover upcoming events near you',
-                  style: CustomTextStyles.bodyMediumGray900,
-                ),
-                SizedBox(height: 15.v,),
-                  ToggleButtons(
-                    direction:  Axis.horizontal,
-                    onPressed: (int index) {
-                      setState(() {
-                        // The button that is tapped is set to true, and the others to false.
-                        for (int i = 0; i < _selectedPage.length; i++) {
-                          _selectedPage[i] = i == index;
-                        }
-                        currentPageIndex = index;
-                      });
-                    },
-                  borderRadius: const BorderRadius.all(Radius.circular(8)),
-                  //selectedBorderColor: Colors.grey,
-                  selectedColor: Colors.white,
-                  fillColor: Colors.orange,
-                  color: Color(0xff545555),
-                    constraints: const BoxConstraints(
-                    minHeight: 35.0,
-                    minWidth: 95.0,
-                  ),
-                  children: view,
-                  isSelected: _selectedPage,),
-                  screens[currentPageIndex],
-                ],
-                )
-                ),
+                children: view,
+                isSelected: _selectedPage,),
+                screens[currentPageIndex],
               ],
-            ),
+              )
+              ),
+            ],
           ),
         ),
       )
