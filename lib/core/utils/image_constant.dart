@@ -18,6 +18,12 @@ class ImageConstant {
 
   static String imgVector281x266 = '$imagePath/img_vector_281x266.png';
 
+  //Create Post Images
+
+  static String imgOrientationLan = '$imagePath/img_orientation_lan.svg';
+
+  static String imgShare = '$imagePath/img_share.svg';
+
   // Credentials Page 2  images
   static String imgUser = '$imagePath/img_user.svg';
 
@@ -28,6 +34,13 @@ class ImageConstant {
   static String imgGroupGray900 = '$imagePath/img_group_gray_900.svg';
 
   static String imgGroup18 = '$imagePath/img_group_18.svg';
+
+  // Settings page images
+  static String imgRectangle4191 = '$imagePath/img_rectangle_4191.png';
+
+  static String imgRectangle4190 = '$imagePath/img_rectangle_4190.png';
+
+  static String imgThumbsUp = '$imagePath/img_thumbs_up.svg';
 
   // Savings images
   static String imgChildIcon = '$imagePath/img_child_icon.svg';
@@ -102,6 +115,14 @@ class ImageConstant {
 
   // Common images
   static String imgRight = '$imagePath/img_right.svg';
+
+  static String imgDesignWizardB = '$imagePath/img_design_wizard_b.png';
+
+  static String imgDesignWizardBOnerror = '$imagePath/img_design_wizard_b_onerror.png';
+
+  static String imgDesignWizardBadges3d = '$imagePath/img_design_wizard_badges_3d.png';
+
+  static String imgGroup553 = '$imagePath/img_group_553.png';
 
   static String imgEmergency = '$imagePath/img_emergency.svg';
 

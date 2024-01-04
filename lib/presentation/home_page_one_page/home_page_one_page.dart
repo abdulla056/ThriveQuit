@@ -332,7 +332,7 @@ Widget _buildStreakColumn(BuildContext context) {
                         width: 38.adaptSize,
                         margin: EdgeInsets.only(bottom: 6.v),
                         padding: EdgeInsets.symmetric(
-                          horizontal: 10.h,
+                          horizontal: 9.h,
                           vertical: 7.v,
                         ),
                         decoration: AppDecoration.fillAmber.copyWith(
@@ -492,7 +492,12 @@ Widget _buildFiveHundredTwentyStack(BuildContext context) {
                   ),
                   Text(
                     "RM",
-                    style: CustomTextStyles.displaySmallWhiteA700,
+                    style: CustomTextStyles.displaySmallWhiteA700
+                        .copyWith(fontSize: 38.0),
+                    textHeightBehavior: TextHeightBehavior(
+                      applyHeightToFirstAscent: false,
+                      applyHeightToLastDescent: false,
+                    ),
                   ),
                 ],
               ),

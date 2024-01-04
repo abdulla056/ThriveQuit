@@ -76,7 +76,7 @@ class IntroPageScreen extends StatelessWidget {
                   style: theme.textTheme.displaySmall?.copyWith(fontSize: 40.0),
                 ),
               ),
-              SizedBox(height: 70.v),
+              SizedBox(height: 38.v),
               Padding(
                 padding: EdgeInsets.only(right: 28.h),
                 child: CustomIconButton(
