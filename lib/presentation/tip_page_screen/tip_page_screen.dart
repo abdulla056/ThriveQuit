@@ -41,7 +41,7 @@ class TipPageScreen extends StatelessWidget {
                 ),
               );
             },
-            itemCount: 2,
+            itemCount: 1,
             itemBuilder: (context, index) {
               return TiplistItemWidget();
             },
