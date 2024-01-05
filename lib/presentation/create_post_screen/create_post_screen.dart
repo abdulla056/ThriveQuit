@@ -78,7 +78,7 @@ class CreatePostScreen extends StatelessWidget {
                     Container(
                         width: 301.h,
                         padding: EdgeInsets.symmetric(
-                            horizontal: 19.h, vertical: 3.v),
+                            horizontal: 19.h, vertical: 7.v),
                         decoration: AppDecoration.outlineBlack90001.copyWith(
                             borderRadius: BorderRadiusStyle.roundedBorder20),
                         child: Column(
@@ -121,35 +121,50 @@ class CreatePostScreen extends StatelessWidget {
                                                                   child: Text(
                                                                       "Upload Photo",
                                                                       style: CustomTextStyles
-                                                                          .labelMediumGray900))),
+                                                                          .labelMediumGray900
+                                                                          .copyWith(
+                                                                        fontSize:
+                                                                            15.0,
+                                                                      )))),
                                                           Align(
                                                               alignment: Alignment
                                                                   .bottomCenter,
-                                                              child: SizedBox(
-                                                                  width: 104.h,
-                                                                  child: Divider(
-                                                                      color: appTheme
-                                                                          .black90001
-                                                                          .withOpacity(
-                                                                              0.45))))
+                                                              child: Padding(
+                                                                padding: const EdgeInsets
+                                                                    .symmetric(
+                                                                    vertical:
+                                                                        22.0),
+                                                                child: SizedBox(
+                                                                    width: 75.h,
+                                                                    child: Divider(
+                                                                        color: appTheme
+                                                                            .black90001
+                                                                            .withOpacity(0.45))),
+                                                              ))
                                                         ])))
                                           ]))),
                               SizedBox(height: 7.v),
-                              CustomIconButton(
-                                  height: 46.v,
-                                  width: 47.h,
-                                  padding: EdgeInsets.all(7.h),
-                                  decoration:
-                                      IconButtonStyleHelper.outlineBlackTL14,
-                                  child: CustomImageView(
-                                      imagePath: ImageConstant.imgShare))
+                              Padding(
+                                padding: const EdgeInsets.only(top: 1.0),
+                                child: CustomIconButton(
+                                    height: 46.v,
+                                    width: 46.h,
+                                    decoration:
+                                        IconButtonStyleHelper.outlineBlackTL14,
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                          right: 20.0, left: 20.0),
+                                      child: CustomImageView(
+                                        imagePath: ImageConstant.imgShare,
+                                      ),
+                                    )),
+                              )
                             ])),
-                    SizedBox(height: 15.v),
                     Padding(
-                        padding: EdgeInsets.only(left: 14.h),
+                        padding: EdgeInsets.only(left: 14.h, top: 10.v),
                         child: Text("More thoughts to input?",
-                            style: CustomTextStyles.titleLargeGray900_2)), //NOTSURE
-                    SizedBox(height: 15.v)
+                            style: theme.textTheme.titleSmall)),
+                    SizedBox(height: 220.v), //NOTSURE
                   ])),
           SizedBox(height: 12.v),
           Align(
@@ -166,6 +181,7 @@ class CreatePostScreen extends StatelessWidget {
     return CustomElevatedButton(
         width: 215.h,
         text: "Publish",
+        buttonStyle: CustomButtonStyles.fillDeepOrange,
         margin: EdgeInsets.only(left: 72.h, right: 73.h, bottom: 40.v),
         buttonTextStyle: CustomTextStyles.headlineSmallOnErrorMedium);
   }

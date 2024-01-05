@@ -10,54 +10,115 @@ class TiplistItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(
-        horizontal: 14.h,
-        vertical: 15.v,
-      ),
-      decoration: AppDecoration.fillAmber.copyWith(
-        borderRadius: BorderRadiusStyle.roundedBorder17,
-      ),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          SizedBox(height: 15.v),
-          Text(
-            "Tip of the day",
-            style: CustomTextStyles.titleMediumWhiteA700,
+    return Column(
+      children: [
+        Container(
+          padding: EdgeInsets.symmetric(
+            horizontal: 14.h,
+            vertical: 15.v,
           ),
-          SizedBox(height: 18.v),
-          Align(
-            alignment: Alignment.center,
-            child: Container(
-              width: 252.h,
-              margin: EdgeInsets.only(
-                left: 8.h,
-                right: 12.h,
-              ),
-              child: Text(
-                "Constantly getting the urge to pick up your cigarette again? Try chewing gum to distract your mind and stray your senses.",
-                maxLines: 5,
-                overflow: TextOverflow.ellipsis,
-                style: CustomTextStyles.titleLargeWhiteA700Regular,
-              ),
-            ),
+          decoration: AppDecoration.fillAmber.copyWith(
+            borderRadius: BorderRadiusStyle.roundedBorder17,
           ),
-          SizedBox(height: 47.v),
-          Align(
-            alignment: Alignment.centerRight,
-            child: Padding(
-              padding: EdgeInsets.only(right: 5.h),
-              child: Text(
-                "SEE MORE >",
-                style: CustomTextStyles.titleSmallWhiteA700Medium,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              SizedBox(height: 15.v),
+              Text(
+                "Tip of the day",
+                style: CustomTextStyles.titleMediumWhiteA700,
               ),
-            ),
+              SizedBox(height: 18.v),
+              Align(
+                alignment: Alignment.center,
+                child: Container(
+                  width: 252.h,
+                  margin: EdgeInsets.only(
+                    left: 8.h,
+                    right: 12.h,
+                  ),
+                  child: Text(
+                    "Constantly getting the urge to pick up your cigarette again? Try chewing gum to distract your mind and stray your senses.",
+                    maxLines: 5,
+                    overflow: TextOverflow.ellipsis,
+                    style: CustomTextStyles.titleLargeWhiteA700Regular,
+                  ),
+                ),
+              ),
+              SizedBox(height: 47.v),
+              Align(
+                alignment: Alignment.centerRight,
+                child: Padding(
+                  padding: EdgeInsets.only(right: 5.h),
+                  child: Text(
+                    "SEE MORE >",
+                    style: CustomTextStyles.titleSmallWhiteA700Medium,
+                  ),
+                ),
+              ),
+            ],
           ),
-        ],
-      ),
+        ),
+        SizedBox(height: 15.v),
+        Container(
+          padding: EdgeInsets.symmetric(
+            horizontal: 10.h,
+            vertical: 15.v,
+          ),
+          decoration: AppDecoration.fillAmber.copyWith(
+            color: Colors.white,
+            borderRadius: BorderRadiusStyle.roundedBorder17,
+            border: Border.all(color: Colors.orange, width: 3.5),
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                child: Text(
+                  "Bonus tip",
+                  style: CustomTextStyles.titleMediumWhiteA700
+                      .copyWith(color: Colors.black),
+                ),
+              ),
+              SizedBox(height: 18.v),
+              Align(
+                alignment: Alignment.center,
+                child: Container(
+                  width: 252.h,
+                  margin: EdgeInsets.only(
+                    left: 8.h,
+                    right: 12.h,
+                  ),
+                  child: Text(
+                    "Inhale fragrant essential oil vapour to help overcome your desire and calm yourself with its healing and rejuvenating properties.",
+                    maxLines: 5,
+                    overflow: TextOverflow.ellipsis,
+                    style: CustomTextStyles.titleLargeWhiteA700Regular
+                        .copyWith(color: Colors.black),
+                  ),
+                ),
+              ),
+              SizedBox(height: 47.v),
+              Align(
+                alignment: Alignment.centerRight,
+                child: Padding(
+                  padding: EdgeInsets.only(right: 5.h),
+                  child: Text(
+                    "SEE MORE >",
+                    style: CustomTextStyles.titleSmallWhiteA700Medium
+                        .copyWith(color: Colors.black),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }
