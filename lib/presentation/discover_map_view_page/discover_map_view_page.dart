@@ -98,6 +98,7 @@ class DiscoverMapViewPageState extends State<DiscoverMapViewPage>
       markerId: MarkerId(markerId),
       position: position,
       infoWindow: InfoWindow(
+        onTap: () => Navigator.pushNamed(context, AppRoutes.discoverIndividualDetailedViewRehabCentersScreen),
         title: markerId,
         snippet: description,
       ),
