@@ -89,7 +89,7 @@ class DiscoverIndvidualDetailedViewRecoveryProgramsScreen
                                       width: 197.h,
                                       margin: EdgeInsets.only(left: 13.h),
                                       child: Text(
-                                          "Location should be somewhere that the rehab center, should be located in, 47500",
+                                          "Online (ZOOM or Google Meet)",
                                           maxLines: 2,
                                           overflow: TextOverflow.ellipsis,
                                           style: CustomTextStyles
@@ -105,7 +105,7 @@ class DiscoverIndvidualDetailedViewRecoveryProgramsScreen
                                       style: CustomTextStyles
                                           .labelLargeDMSansOrangeA200),
                                   TextSpan(
-                                      text: "Organizer",
+                                      text: "Malaysian Academy of Pharmacy (MAP)",
                                       style: CustomTextStyles
                                           .labelLargeDMSansBlack900)
                                 ]),
@@ -123,7 +123,7 @@ class DiscoverIndvidualDetailedViewRecoveryProgramsScreen
                                 margin:
                                     EdgeInsets.only(left: 18.h, right: 28.h),
                                 child: Text(
-                                    "Nestled in a serene setting, Harmony Haven is a leading rehab center committed to guiding individuals on their journey to recovery. Our state-of-the-art facility offers personalized treatment programs, blending evidence-based therapies, compassionate counseling, and holistic activities. Our expert team of dedicated professionals provides round-the-clock support, fostering a healing environment for those seeking freedom from addiction.",
+                                    "mQuit service is a collaborative effort from the Ministry of Health, Malaysian Academy of Pharmacy (MAP), Malaysian Pharmacists Society (MPS) and various other partners.  The main objective of this service is to carry out smoking cessation programme in Malaysia involving both public and private sector. Community pharmacy is an important channel for providing mQuit service.",
                                     maxLines: 9,
                                     overflow: TextOverflow.ellipsis,
                                     style: CustomTextStyles
@@ -214,7 +214,7 @@ class DiscoverIndvidualDetailedViewRecoveryProgramsScreen
         width: double.maxFinite,
         child: Stack(alignment: Alignment.topLeft, children: [
           CustomImageView(
-              imagePath: ImageConstant.imgImage13,
+              imagePath: ImageConstant.mquitServiceImg,
               height: 161.v,
               width: 360.h,
               radius: BorderRadius.vertical(bottom: Radius.circular(5.h)),
@@ -245,7 +245,7 @@ class DiscoverIndvidualDetailedViewRecoveryProgramsScreen
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("Recovery Program 1", style: theme.textTheme.headlineMedium),
+                  Text("mQUIT Service", style: theme.textTheme.headlineMedium),
                   Spacer(),
                   CustomImageView(
                       imagePath: ImageConstant.imgHeartRewardSOrange90001,
@@ -259,32 +259,6 @@ class DiscoverIndvidualDetailedViewRecoveryProgramsScreen
                       margin:
                           EdgeInsets.only(left: 12.h, top: 9.v, bottom: 10.v))
                 ])));
-  }
-
-  ///Handling route based on bottom click actions
-  String getCurrentRoute(BottomBarEnum type) {
-    switch (type) {
-      case BottomBarEnum.Dashboard:
-        return "/";
-      case BottomBarEnum.Education:
-        return AppRoutes.homePageOnePage;
-      case BottomBarEnum.Community:
-        return "/";
-      case BottomBarEnum.Profile:
-        return "/";
-      default:
-        return "/";
-    }
-  }
-
-  ///Handling page based on route
-  Widget getCurrentPage(String currentRoute) {
-    switch (currentRoute) {
-      case AppRoutes.homePageOnePage:
-        return HomePageOnePage();
-      default:
-        return DefaultWidget();
-    }
   }
 
   /// Navigates back to the previous screen.
