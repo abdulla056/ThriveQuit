@@ -27,7 +27,7 @@ class Userprofile1ItemWidget extends StatelessWidget {
                 alignment: Alignment.bottomRight,
                 children: [
                   CustomImageView(
-                    imagePath: ImageConstant.imgImage3,
+                    imagePath: ImageConstant.mquitServiceImg,
                     height: 77.v,
                     width: 186.h,
                     radius: BorderRadius.vertical(
@@ -43,7 +43,7 @@ class Userprofile1ItemWidget extends StatelessWidget {
                         bottom: 3.v,
                       ),
                       child: Text(
-                        "Recovery Program 1",
+                        "MQuit Service",
                         style: CustomTextStyles.labelLargeDMSansGray900_2,
                       ),
                     ),
@@ -61,7 +61,7 @@ class Userprofile1ItemWidget extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            "12",
+                            "19",
                             style: CustomTextStyles.titleSmallWhiteA70014,
                           ),
                           SizedBox(height: 1.v),
@@ -83,7 +83,7 @@ class Userprofile1ItemWidget extends StatelessWidget {
                 SizedBox(
                   width: 135.h,
                   child: Text(
-                    "Recovery programs offer structured interventions and support systems designed to help individuals ",
+                    "mQuit service is a collaborative effort from the Ministry of Health, Malaysian Academy of Pharmacy (MAP), Malaysian Pharmacists Society (MPS) and various other partners.",
                     maxLines: 3,
                     overflow: TextOverflow.ellipsis,
                     style: CustomTextStyles.labelSmallGray600,

@@ -87,7 +87,7 @@ class DiscoverMapViewPageState extends State<DiscoverMapViewPage>
       mapController = controller;
 
       // Add markers to the map
-      _addMarker(LatLng(3.0648, 101.616), 'Recovery Program 1', 'Its a really good recovery program');
+      _addMarker(LatLng(3.1722596082070345, 101.66640681656379), 'Solace Asia', 'Solace Asia is a Malaysian-based drug and alcohol rehab and was the first of its type to be established in Malaysia.');
       _addMarker(LatLng(3.0658, 101.626), 'Rehab Center 1', 'Its a really good rehab center');
       _addMarker(LatLng(3.0638, 101.606), 'Recovery Program 2', 'Its a really good recovery program');
     });
@@ -98,6 +98,7 @@ class DiscoverMapViewPageState extends State<DiscoverMapViewPage>
       markerId: MarkerId(markerId),
       position: position,
       infoWindow: InfoWindow(
+        onTap: () => Navigator.pushNamed(context, AppRoutes.discoverIndividualDetailedViewRehabCentersScreen),
         title: markerId,
         snippet: description,
       ),

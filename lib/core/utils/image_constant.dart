@@ -181,9 +181,13 @@ class ImageConstant {
 
   static String imgPhoneButton = '$imagePath/img_phone_button.svg';
 
+  static String rehabCenterImage = '$imagePath/rehab_center_image1.png';
+
   static String imgInstagram = '$imagePath/img_instagram.svg';
 
   static String imgFacebook = '$imagePath/img_facebook.svg';
+
+    static String mquitServiceImg = '$imagePath/mquit_service.png';
 
   static String imgTwitterMediaTwitterSocial =
       '$imagePath/img_twitter_media_twitter_social.svg';

@@ -40,10 +40,10 @@ class DiscoverIndividualDetailedViewRehabCentersScreen extends StatelessWidget {
                                       margin: EdgeInsets.only(
                                           top: 2.v, bottom: 3.v)),
                                   Container(
-                                      width: 197.h,
+                                      width: 250.h,
                                       margin: EdgeInsets.only(left: 6.h),
                                       child: Text(
-                                          "Location should be somewhere that the rehab center, should be located in, 47500",
+                                          "Suite C4-2, 9, Jln Dutamas 1, Solaris Dutamas, 50480 Kuala Lumpur, Malaysia",
                                           maxLines: 2,
                                           overflow: TextOverflow.ellipsis,
                                           style: CustomTextStyles
@@ -68,7 +68,7 @@ class DiscoverIndividualDetailedViewRehabCentersScreen extends StatelessWidget {
                                       width: 199.h,
                                       margin: EdgeInsets.only(left: 7.h),
                                       child: Text(
-                                          "Specific focus areas like substance abuse, mental health, or dual diagnosis.",
+                                          "Alcohol and Drug Rehab Center",
                                           maxLines: 2,
                                           overflow: TextOverflow.ellipsis,
                                           style: CustomTextStyles
@@ -87,7 +87,7 @@ class DiscoverIndividualDetailedViewRehabCentersScreen extends StatelessWidget {
                         width: 312.h,
                         margin: EdgeInsets.only(left: 18.h, right: 28.h),
                         child: Text(
-                            "Nestled in a serene setting, Harmony Haven is a leading rehab center committed to guiding individuals on their journey to recovery. Our state-of-the-art facility offers personalized treatment programs, blending evidence-based therapies, compassionate counseling, and holistic activities. Our expert team of dedicated professionals provides round-the-clock support, fostering a healing environment for those seeking freedom from addiction.",
+                            "Solace Asia is one of the most scientific evidence-based addiction rehabilitations in Asia. Solace Asia creates tailored outpatient, inpatient, and online services to help treat addiction. The fully equipped scientific treatment and research centres are designed for various substance (drug and alcohol) and behavioural (gambling, retail, sex etc) addictions. Solace Asia is rated as one of the leading addiction services providers in Asia by industry practitioners due to the industry credibility, backed by the Ministry of Health and National Anti-Drug Agency. Solace Asia is fully certified and accredited serving clients from various parts of the world. We want to create a better world without addictions.",
                             maxLines: 9,
                             overflow: TextOverflow.ellipsis,
                             style: CustomTextStyles.labelLargeDMSansGray600)),
@@ -159,7 +159,7 @@ class DiscoverIndividualDetailedViewRehabCentersScreen extends StatelessWidget {
         width: double.maxFinite,
         child: Stack(alignment: Alignment.topLeft, children: [
           CustomImageView(
-              imagePath: ImageConstant.imgImage13,
+              imagePath: ImageConstant.rehabCenterImage,
               height: 161.v,
               width: 360.h,
               radius: BorderRadius.vertical(bottom: Radius.circular(5.h)),
@@ -188,7 +188,7 @@ class DiscoverIndividualDetailedViewRehabCentersScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("Rehab Center 1", style: theme.textTheme.headlineMedium),
+              Text("Solace Asia", style: theme.textTheme.headlineMedium),
               Spacer(),
               CustomImageView(
                   imagePath: ImageConstant.imgHeartRewardSOrange90001,
@@ -202,40 +202,7 @@ class DiscoverIndividualDetailedViewRehabCentersScreen extends StatelessWidget {
                   margin: EdgeInsets.only(left: 12.h, top: 9.v, bottom: 10.v))
             ]));
   }
-
-  /// Section Widget
-  Widget _buildNavigationBar(BuildContext context) {
-    return CustomBottomAppBar(onChanged: (BottomBarEnum type) {
-      Navigator.pushNamed(navigatorKey.currentContext!, getCurrentRoute(type));
-    });
-  }
-
-  ///Handling route based on bottom click actions
-  String getCurrentRoute(BottomBarEnum type) {
-    switch (type) {
-      case BottomBarEnum.Dashboard:
-        return "/";
-      case BottomBarEnum.Education:
-        return AppRoutes.homePageOnePage;
-      case BottomBarEnum.Community:
-        return "/";
-      case BottomBarEnum.Profile:
-        return "/";
-      default:
-        return "/";
-    }
-  }
-
-  ///Handling page based on route
-  Widget getCurrentPage(String currentRoute) {
-    switch (currentRoute) {
-      case AppRoutes.homePageOnePage:
-        return HomePageOnePage();
-      default:
-        return DefaultWidget();
-    }
-  }
-
+  
   /// Navigates back to the previous screen.
   onTapBtnArrowLeft(BuildContext context) {
     Navigator.pop(context);
