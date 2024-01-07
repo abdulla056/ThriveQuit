@@ -1,73 +1,95 @@
 import 'package:flutter/material.dart';
 import 'package:thrive_quit_application/core/app_export.dart';
-import 'package:thrive_quit_application/widgets/base_button.dart';
 
-class CustomOutlinedButton extends BaseButton {
-  CustomOutlinedButton({
+class CustomOutlinedButton extends StatelessWidget {
+  const CustomOutlinedButton({
     Key? key,
     this.decoration,
     this.leftIcon,
     this.rightIcon,
     this.label,
-    VoidCallback? onPressed,
-    ButtonStyle? buttonStyle,
-    TextStyle? buttonTextStyle,
-    bool? isDisabled,
-    Alignment? alignment,
-    double? height,
-    double? width,
-    EdgeInsets? margin,
-    required String text,
-  }) : super(
-          text: text,
-          onPressed: onPressed,
-          buttonStyle: buttonStyle,
-          isDisabled: isDisabled,
-          buttonTextStyle: buttonTextStyle,
-          height: height,
-          alignment: alignment,
-          width: width,
-          margin: margin,
-        );
+    this.onPressed,
+    this.buttonStyle,
+    this.buttonTextStyle,
+    this.isDisabled,
+    this.alignment,
+    this.height,
+    this.width,
+    this.margin,
+    required this.text,
+  }) : super(key: key);
 
   final BoxDecoration? decoration;
-
   final Widget? leftIcon;
-
   final Widget? rightIcon;
-
   final Widget? label;
+  final VoidCallback? onPressed;
+  final ButtonStyle? buttonStyle;
+  final TextStyle? buttonTextStyle;
+  final bool? isDisabled;
+  final Alignment? alignment;
+  final double? height;
+  final double? width;
+  final EdgeInsets? margin;
+  final String text;
 
   @override
   Widget build(BuildContext context) {
     return alignment != null
         ? Align(
             alignment: alignment ?? Alignment.center,
-            child: buildOutlinedButtonWidget,
+            child: buildGradientRing(),
           )
-        : buildOutlinedButtonWidget;
+        : buildGradientRing();
   }
 
-  Widget get buildOutlinedButtonWidget => Container(
-        height: this.height ?? 67.v,
-        width: this.width ?? double.maxFinite,
-        margin: margin,
-        decoration: decoration,
-        child: OutlinedButton(
-          style: buttonStyle,
-          onPressed: isDisabled ?? false ? null : onPressed ?? () {},
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              leftIcon ?? const SizedBox.shrink(),
-              Text(
+  Widget buildGradientRing() {
+    double outerCircleSize = 40.v; // Size of the outer circle
+    double innerCircleSize = 40.v; // Size of the inner circle
+
+    return Container(
+      height: outerCircleSize,
+      width: outerCircleSize,
+      margin: margin,
+      decoration: decoration,
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          // Outer ring (gradient)
+          Container(
+            width: outerCircleSize,
+            height: outerCircleSize,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              gradient: LinearGradient(
+                begin: Alignment(-3, -3),
+                end: Alignment(0, -3),
+                colors: [
+                  appTheme.amber900,
+                  appTheme.whiteA700.withOpacity(0),
+                  appTheme.amber900,
+                ],
+              ),
+            ),
+          ),
+          // Inner circle with percentage
+          Container(
+            width: innerCircleSize,
+            height: innerCircleSize,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: Colors.white, // Adjust the color as needed
+            ),
+            child: Center(
+              child: Text(
                 text,
                 style: buttonTextStyle ?? theme.textTheme.headlineSmall,
               ),
-              rightIcon ?? const SizedBox.shrink(),
-            ],
+            ),
           ),
-        ),
-      );
+        ],
+      ),
+    );
+  }
 }
+
