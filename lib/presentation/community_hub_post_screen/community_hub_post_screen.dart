@@ -17,6 +17,14 @@ class CommunityHubPostScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        floatingActionButton:                 
+                  FloatingActionButton.large(
+                  onPressed: () {
+                    // Add your onPressed code here!
+                  },
+                  child: const Icon(Icons.reply),
+                  backgroundColor: Colors.orangeAccent,
+                ),
         appBar: _buildAppBar(context),
         body: SizedBox(
           width: SizeUtils.width,
