@@ -26,7 +26,7 @@ class TrackerPageState extends State<TrackerPage>
           decoration: AppDecoration.fillWhiteA,
           child: Column(
             children: [
-              SizedBox(height: 27.v),
+              SizedBox(height: 40.v),
               _buildRightStack(context),
             ],
           ),
@@ -49,16 +49,6 @@ class TrackerPageState extends State<TrackerPage>
         child: Stack(
           alignment: Alignment.bottomRight,
           children: [
-            CustomIconButton(
-              height: 56.adaptSize,
-              width: 56.adaptSize,
-              padding: EdgeInsets.all(13.h),
-              decoration: IconButtonStyleHelper.fillOrange,
-              alignment: Alignment.bottomRight,
-              child: CustomImageView(
-                imagePath: ImageConstant.imgRight,
-              ),
-            ),
             Align(
               alignment: Alignment.bottomRight,
               child: Padding(
@@ -219,7 +209,7 @@ class TrackerPageState extends State<TrackerPage>
                             ],
                           ),
                         ),
-                        SizedBox(height: 1.v),
+                        SizedBox(height: 10.v),
                         Container(
                           width: 106.h,
                           margin: EdgeInsets.only(
