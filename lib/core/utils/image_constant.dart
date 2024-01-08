@@ -5,6 +5,8 @@ class ImageConstant {
   // Logo page images
   static String imgImage1 = '$imagePath/img_image_1.png';
 
+  static String logoImage = '$imagePath/logo.png';
+
   // Intro Page images
   static String imgImage1444x360 = '$imagePath/img_image_1_444x360.png';
 

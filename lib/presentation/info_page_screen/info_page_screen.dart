@@ -1,12 +1,74 @@
 import 'package:flutter/material.dart';
 import 'package:thrive_quit_application/core/app_export.dart';
+import 'package:thrive_quit_application/widgets/custom_drop_down.dart';
 import 'package:thrive_quit_application/widgets/custom_icon_button.dart';
 
 class InfoPageScreen extends StatelessWidget {
-  const InfoPageScreen({Key? key})
+  InfoPageScreen({Key? key})
       : super(
           key: key,
         );
+
+    List<String> dropdownItemList = [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19",
+    "20",
+    "21",
+    "22",
+    "23",
+    "24",
+    "25",
+    "26",
+    "27",
+    "28",
+    "29",
+    "30",
+    "31",
+  ];
+
+  List<String> dropdownItemList1 = [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12",
+  ];
+
+  List<String> dropdownItemList2 = [
+    "1998",
+    "1999",
+    "2000",
+    "2001",
+    "2002",
+    "2003",
+    "2004",
+    "2005",
+    "2006",
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -49,10 +111,12 @@ class InfoPageScreen extends StatelessWidget {
               ),
               SizedBox(height: 36.v),
               _buildSmokingInformationSection(context),
-              SizedBox(height: 31.v),
+              SizedBox(height: 36.v),
               _buildCigarettesSmokedSection(context),
-              SizedBox(height: 41.v),
+              SizedBox(height: 36.v),
               _buildAverageCostSection(context),
+              SizedBox(height: 36.v,),
+              _buildDateLastSmoked(context),
               Spacer(),
               SizedBox(height: 3.v),
               Padding(
@@ -150,6 +214,80 @@ class InfoPageScreen extends StatelessWidget {
               borderRadius: BorderRadius.circular(
                 20.h,
               ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+    /// Section Widget
+  Widget _buildDateLastSmoked(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(right: 4.h),
+      padding: EdgeInsets.symmetric(horizontal: 2.h),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: EdgeInsets.only(left: 3.h),
+            child: RichText(
+              text: TextSpan(
+                children: [
+                  TextSpan(
+                    text: "When is the last time you smoked?",
+                    style: theme.textTheme.titleSmall,
+                  ),
+                ],
+              ),
+              textAlign: TextAlign.left,
+            ),
+          ),
+          SizedBox(height: 11.v),
+          Padding(
+            padding: EdgeInsets.only(left: 3.h),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.only(right: 11.h),
+                    child: CustomDropDown(
+                      hintText: "DD",
+                      items: dropdownItemList,
+                      contentPadding: EdgeInsets.symmetric(
+                        horizontal: 11.h,
+                        vertical: 15.v,
+                      ),
+                      onChanged: (value) {},
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.only(right: 11.5.h),
+                    child: CustomDropDown(
+                      hintText: "MM",
+                      items: dropdownItemList1,
+                      contentPadding: EdgeInsets.symmetric(
+                        horizontal: 11.h,
+                        vertical: 15.v,
+                      ),
+                      onChanged: (value) {},
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 0.h),
+                    child: CustomDropDown(
+                      hintText: "YYYY",
+                      items: dropdownItemList2,
+                      onChanged: (value) {},
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
         ],
