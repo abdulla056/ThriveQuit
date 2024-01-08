@@ -37,13 +37,16 @@ class SavingsScreen extends StatelessWidget {
                       SizedBox(height: 6.v),
                       Padding(
                         padding: EdgeInsets.only(left: 1.h),
-                        child: CustomIconButton(
-                          height: 23.v,
-                          width: 32.h,
-                          padding: EdgeInsets.all(2.h),
-                          child: CustomImageView(
-                            imagePath:
-                                ImageConstant.imgRightOnprimarycontainer23x32,
+                        child: GestureDetector(
+                          onTap: () => Navigator.pop(context),
+                          child: CustomIconButton(
+                            height: 23.v,
+                            width: 32.h,
+                            padding: EdgeInsets.all(2.h),
+                            child: CustomImageView(
+                              imagePath:
+                                  ImageConstant.imgRightOnprimarycontainer23x32,
+                            ),
                           ),
                         ),
                       ),
