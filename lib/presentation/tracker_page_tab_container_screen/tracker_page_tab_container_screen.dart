@@ -42,23 +42,25 @@ class TrackerPageTabContainerScreenState
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-        backgroundColor: Colors.transparent,
+          backgroundColor: Colors.transparent,
           leading: IconButton(
             onPressed: () {
               Navigator.pop(context);
             },
-            icon: Icon(Icons.arrow_back_ios_new_outlined,),
+            icon: Icon(
+              Icons.arrow_back_ios_new_outlined,
+            ),
           ),
           centerTitle: true,
           title: AppbarSubtitleThree(
-          text: "Your history",
-      ),
+            text: "Your history",
+          ),
         ),
         body: SizedBox(
           width: double.maxFinite,
           child: Column(
             children: [
-              SizedBox(height: 8.v),
+              SizedBox(height: 1.v),
               _buildCalendar(context),
               SizedBox(height: 24.v),
               SizedBox(
@@ -72,7 +74,7 @@ class TrackerPageTabContainerScreenState
                       child: Padding(
                         padding: EdgeInsets.only(
                           top: 118.v,
-                          right: 107.h,
+                          right: 112.h,
                         ),
                         child: Text(
                           "7",
@@ -118,20 +120,21 @@ class TrackerPageTabContainerScreenState
       width: double.maxFinite,
       child: TableCalendar(
         locale: 'en_US',
+        headerStyle: HeaderStyle(
+          formatButtonVisible: false,
+          titleCentered: true,
+          titleTextStyle: CustomTextStyles.titleSmallGray900Medium_1,
+        ),
         firstDay: DateTime(DateTime.now().year - 5),
         lastDay: DateTime(DateTime.now().year + 5),
         calendarFormat: CalendarFormat.month,
         rangeSelectionMode: rangeSelectionMode,
         startingDayOfWeek: StartingDayOfWeek.monday,
-        headerStyle: HeaderStyle(
-          formatButtonVisible: false,
-          titleCentered: true,
-        ),
         calendarStyle: CalendarStyle(
           outsideDaysVisible: false,
           isTodayHighlighted: true,
-          todayTextStyle: TextStyle(
-            color: appTheme.whiteA700,
+          defaultTextStyle: TextStyle(
+            color: Colors.black,
             fontFamily: 'Poppins',
             fontWeight: FontWeight.w500,
           ),
@@ -144,12 +147,16 @@ class TrackerPageTabContainerScreenState
         ),
         daysOfWeekStyle: DaysOfWeekStyle(
           weekdayStyle: TextStyle(
-            color: appTheme.blueGray90002,
-            fontFamily: 'Poppins',
-            fontWeight: FontWeight.w500,
+              color: appTheme.blueGray90002,
+              fontFamily: 'Poppins',
+              fontWeight: FontWeight.w500,
+              height: 0.5.v),
+          weekendStyle: TextStyle(
+            color: const Color(0xFF6A6A6A),
+            height: 0.2,
           ),
         ),
-        rowHeight: 25.v,
+        rowHeight: 30.v,
         focusedDay: focusedDay,
         rangeStartDay: rangeStart,
         rangeEndDay: rangeEnd,
@@ -178,8 +185,8 @@ class TrackerPageTabContainerScreenState
               child: Row(
                 children: [
                   Container(
-                    height: 22.v,
-                    width: 19.h,
+                    height: 19.v,
+                    width: 40.h,
                     decoration: BoxDecoration(
                       color: theme.colorScheme.errorContainer,
                       borderRadius: BorderRadius.circular(
@@ -203,7 +210,7 @@ class TrackerPageTabContainerScreenState
             SizedBox(height: 18.v),
             Container(
               padding: EdgeInsets.symmetric(
-                horizontal: 21.h,
+                horizontal: 18.h,
                 vertical: 12.v,
               ),
               decoration: AppDecoration.fillGray100.copyWith(
@@ -216,6 +223,7 @@ class TrackerPageTabContainerScreenState
                   SizedBox(height: 3.v),
                   Text(
                     "You’ve smoked on 7 days this month",
+                    maxLines: 1,
                     style: CustomTextStyles.titleSmallGray900Medium_1,
                   ),
                   SizedBox(height: 1.v),
@@ -278,7 +286,7 @@ class TrackerPageTabContainerScreenState
                     style: CustomTextStyles.titleSmallGray900Medium_1,
                   ),
                   Padding(
-                    padding: EdgeInsets.only(left: 32.h),
+                    padding: EdgeInsets.only(left: 30.h),
                     child: Text(
                       "months",
                       style: CustomTextStyles.titleSmallGray900Medium_1,
@@ -313,8 +321,9 @@ class TrackerPageTabContainerScreenState
                 fontFamily: 'DM Sans',
                 fontWeight: FontWeight.w500,
               ),
-              indicatorPadding: EdgeInsets.all(
-                2.0.h,
+              indicatorPadding: EdgeInsets.symmetric(
+                horizontal: -40.0,
+                vertical: 2.0,
               ),
               indicator: BoxDecoration(
                 color: appTheme.orangeA200,
