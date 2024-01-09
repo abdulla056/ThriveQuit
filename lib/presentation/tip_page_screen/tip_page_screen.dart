@@ -16,35 +16,37 @@ class TipPageScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: _buildAppBar(context),
-        body: Padding(
-          padding: EdgeInsets.only(
-            left: 29.h,
-            top: 12.v,
-            right: 29.h,
-          ),
-          child: ListView.separated(
-            physics: NeverScrollableScrollPhysics(),
-            shrinkWrap: true,
-            separatorBuilder: (
-              context,
-              index,
-            ) {
-              return Padding(
-                padding: EdgeInsets.symmetric(vertical: 15.5.v),
-                child: SizedBox(
-                  width: 266.h,
-                  child: Divider(
-                    height: 2.v,
-                    thickness: 2.v,
-                    color: appTheme.black90001.withOpacity(0.3),
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.only(
+              left: 29.h,
+              top: 12.v,
+              right: 29.h,
+            ),
+            child: ListView.separated(
+              physics: NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              separatorBuilder: (
+                context,
+                index,
+              ) {
+                return Padding(
+                  padding: EdgeInsets.symmetric(vertical: 15.5.v),
+                  child: SizedBox(
+                    width: 266.h,
+                    child: Divider(
+                      height: 2.v,
+                      thickness: 2.v,
+                      color: appTheme.black90001.withOpacity(0.3),
+                    ),
                   ),
-                ),
-              );
-            },
-            itemCount: 1,
-            itemBuilder: (context, index) {
-              return TiplistItemWidget();
-            },
+                );
+              },
+              itemCount: 1,
+              itemBuilder: (context, index) {
+                return TiplistItemWidget();
+              },
+            ),
           ),
         ),
       ),

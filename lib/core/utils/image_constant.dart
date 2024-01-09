@@ -106,6 +106,8 @@ class ImageConstant {
   // Breathing exercises - with GIF images
   static String imgBreathingGif = '$imagePath/img_breathing_gif.png';
 
+  static String breathingGif = '$imagePath/breathing_gif.gif';
+
   // Discover - List View images
   static String imgArrowRight = '$imagePath/img_arrow_right.svg';
 
