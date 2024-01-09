@@ -11,6 +11,7 @@ dependencies:
   flutter_svg: ^1.1.6
   provider: ^6.1.1
   table_calendar: ^3.0.6
+  expandable: ^5.0.1
   outline_gradient_button: ^2.0.0+1
   intl: ^0.18.0
 dev_dependencies: 

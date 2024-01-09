@@ -25,20 +25,22 @@ class LoginPageScreen extends StatelessWidget {
             children: [
               _buildVectorStack(context),
               SizedBox(height: 18.v),
-              CustomOutlinedButton(
+              CustomElevatedButton(
+                height: 67.v,
                 text: "Signup with Google",
                 margin: EdgeInsets.only(
                   left: 13.h,
                   right: 30.h,
                 ),
                 leftIcon: Container(
-                  margin: EdgeInsets.only(right: 9.h),
+                  margin: EdgeInsets.only(right: 14.h),
                   child: CustomImageView(
                     imagePath: ImageConstant.imgImage9,
                     height: 43.v,
                     width: 52.h,
                   ),
                 ),
+                buttonTextStyle: theme.textTheme.headlineSmall!,
               ),
               SizedBox(height: 25.v),
               CustomElevatedButton(

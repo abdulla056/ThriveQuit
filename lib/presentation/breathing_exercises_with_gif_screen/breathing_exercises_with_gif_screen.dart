@@ -14,6 +14,12 @@ class BreathingExercisesWithGifScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+        title: Text(
+          "Breathing Excercise",
+          style: theme.textTheme.headlineSmall!.copyWith(
+            color: appTheme.gray900,
+          ),
+        ),
         backgroundColor: Colors.transparent,
           leading: IconButton(
             onPressed: () {
@@ -29,7 +35,7 @@ class BreathingExercisesWithGifScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CustomImageView(
-                imagePath: ImageConstant.imgBreathingGif,
+                imagePath: ImageConstant.breathingGif,
                 height: 360.adaptSize,
                 width: 360.adaptSize,
               ),
