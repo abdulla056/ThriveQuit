@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "900485707843",
+    "project_id": "thrive-quit",
+    "storage_bucket": "thrive-quit.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:900485707843:android:b5a444d0c4d3be62b2bcf6",
+        "android_client_info": {
+          "package_name": "com.thrivequitapplication.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4deDKUjHLDqhIy7YaQibDeyGXqahwzAw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

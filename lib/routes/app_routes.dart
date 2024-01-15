@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:thrive_quit_application/auth/auth_gate.dart';
 import 'package:thrive_quit_application/presentation/discover_list_view_page/discover_list_view_page.dart';
 import 'package:thrive_quit_application/presentation/home_page_one_page/home_page_one_page.dart';
 import 'package:thrive_quit_application/presentation/logo_page_one_screen/logo_page_one_screen.dart';
@@ -110,7 +111,10 @@ class AppRoutes {
 
   static const String discoverPage = '/discover_page';
 
+  static const String authGate = '/auth_gate';
+
   static Map<String, WidgetBuilder> routes = {
+    authGate:(context) => AuthGate(),
     homePage:(context) => HomePage(),
     logoPageOneScreen: (context) => LogoPageOneScreen(),
     logoPageScreen: (context) => LogoPageScreen(),

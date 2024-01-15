@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:thrive_quit_application/core/app_export.dart';
+import 'package:firebase_ui_auth/firebase_ui_auth.dart';
 import 'package:thrive_quit_application/widgets/app_bar/appbar_leading_iconbutton.dart';
 import 'package:thrive_quit_application/widgets/app_bar/appbar_subtitle.dart';
 import 'package:thrive_quit_application/widgets/app_bar/custom_app_bar.dart';
@@ -115,6 +116,7 @@ class SettingsPageScreen extends StatelessWidget {
                     ],
                   ),
                 ),
+                const SignOutButton(),
               ],
             ),
           ),
@@ -161,11 +163,17 @@ class SettingsPageScreen extends StatelessWidget {
               decoration: AppDecoration.fillOnError.copyWith(
                 borderRadius: BorderRadiusStyle.circleBorder129,
               ),
-              child: CustomImageView(
-                imagePath: ImageConstant.imgImage6,
-                height: 54.v,
-                width: 52.h,
-                alignment: Alignment.center,
+              child: GestureDetector(
+                onTap: () => Navigator.push(context, MaterialPageRoute<ProfileScreen>(
+                  builder: (context) => const ProfileScreen(),
+                    )
+                  ),
+                child: CustomImageView(
+                  imagePath: ImageConstant.imgImage6,
+                  height: 54.v,
+                  width: 52.h,
+                  alignment: Alignment.center,
+                ),
               ),
             ),
           ),
