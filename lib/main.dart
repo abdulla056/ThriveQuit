@@ -27,10 +27,10 @@ class MyApp extends StatelessWidget {
     return Sizer(
       builder: (context, orientation, deviceType) {
         return MaterialApp(
-          theme: theme,
+          theme:theme,
           title: 'thrive_quit_application',
           debugShowCheckedModeBanner: false,
-          initialRoute: AppRoutes.authGate,
+          initialRoute: AppRoutes.appNavigationScreen,
           routes: AppRoutes.routes,
         );
       },

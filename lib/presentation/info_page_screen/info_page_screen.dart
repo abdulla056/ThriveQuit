@@ -1,13 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:thrive_quit_application/core/app_export.dart';
+import 'package:thrive_quit_application/data/user_information_data.dart';
 import 'package:thrive_quit_application/widgets/custom_drop_down.dart';
 import 'package:thrive_quit_application/widgets/custom_icon_button.dart';
+import 'package:thrive_quit_application/widgets/custom_text_form_field.dart';
 
-class InfoPageScreen extends StatelessWidget {
+class InfoPageScreen extends StatefulWidget {
   InfoPageScreen({Key? key})
       : super(
           key: key,
         );
+
+  @override
+  State<InfoPageScreen> createState() => _InfoPageScreenState();
+}
+
+class _InfoPageScreenState extends State<InfoPageScreen> {
+    TextEditingController cigarettesPerDayController = TextEditingController();
+
+    TextEditingController cigarettesInOnePackController = TextEditingController();
+
+    TextEditingController averageCostController = TextEditingController();
+
+    String dateOfLastCigaretteDay = '';
+
+    String dateOfLastCigaretteMonth = '';
+
+    String dateOfLastCigaretteYear = '';
 
     List<String> dropdownItemList = [
     "1",
@@ -122,7 +141,19 @@ class InfoPageScreen extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.only(right: 14.h),
                 child: CustomIconButton(
-                  onTap: () => Navigator.pushNamed(context, AppRoutes.homePage),
+                  onTap: () {
+              // Create an instance of UserInformation with user input
+                  SmokingInformation data = SmokingInformation(
+                  cigarettesSmokedPerDay: cigarettesPerDayController.text,
+                  cigarettesInOnePack: cigarettesInOnePackController.text,
+                  cigarettesAverageCost: averageCostController.text,
+                  dateOfLastCigarette: (dateOfLastCigaretteDay + '-' + dateOfLastCigaretteMonth 
+                  + '-' + dateOfLastCigaretteYear),
+              );
+                // Store data in the database
+                data.updateSmoking();
+                Navigator.pushNamed(context, AppRoutes.homePage);
+                              },
                   height: 56.adaptSize,
                   width: 56.adaptSize,
                   padding: EdgeInsets.all(13.h),
@@ -155,6 +186,10 @@ class InfoPageScreen extends StatelessWidget {
           Container(
             height: 71.v,
             width: 301.h,
+            child: CustomTextFormField(
+              controller: cigarettesPerDayController,
+              textInputAction: TextInputAction.done,
+            ),
             decoration: BoxDecoration(
               color: theme.colorScheme.primary,
               borderRadius: BorderRadius.circular(
@@ -182,6 +217,10 @@ class InfoPageScreen extends StatelessWidget {
           Container(
             height: 71.v,
             width: 301.h,
+            child: CustomTextFormField(
+              controller: cigarettesInOnePackController,
+              textInputAction: TextInputAction.done,
+            ),
             decoration: BoxDecoration(
               color: theme.colorScheme.primary,
               borderRadius: BorderRadius.circular(
@@ -209,6 +248,10 @@ class InfoPageScreen extends StatelessWidget {
           Container(
             height: 71.v,
             width: 301.h,
+            child: CustomTextFormField(
+              controller: averageCostController,
+              textInputAction: TextInputAction.done,
+            ),
             decoration: BoxDecoration(
               color: theme.colorScheme.primary,
               borderRadius: BorderRadius.circular(
@@ -259,7 +302,12 @@ class InfoPageScreen extends StatelessWidget {
                         horizontal: 11.h,
                         vertical: 15.v,
                       ),
-                      onChanged: (value) {},
+                        onChanged: (String? value) {
+                        setState(() {
+                        dateOfLastCigaretteDay = value!;
+                          },
+                        );
+                      }
                     ),
                   ),
                 ),
@@ -273,7 +321,12 @@ class InfoPageScreen extends StatelessWidget {
                         horizontal: 11.h,
                         vertical: 15.v,
                       ),
-                      onChanged: (value) {},
+                        onChanged: (String? value) {
+                        setState(() {
+                        dateOfLastCigaretteMonth = value!;
+                          },
+                        );
+                      }
                     ),
                   ),
                 ),
@@ -283,7 +336,12 @@ class InfoPageScreen extends StatelessWidget {
                     child: CustomDropDown(
                       hintText: "YYYY",
                       items: dropdownItemList2,
-                      onChanged: (value) {},
+                      onChanged: (String? value) {
+                        setState(() {
+                        dateOfLastCigaretteYear = value!;
+                          },
+                        );
+                      }
                     ),
                   ),
                 ),
