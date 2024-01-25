@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:thrive_quit_application/core/app_export.dart';
-import 'package:thrive_quit_application/data/user_information_data.dart';
+import 'package:thrive_quit_application/data/registration_pages.dart';
 import 'package:thrive_quit_application/widgets/custom_icon_button.dart';
 
 
@@ -74,13 +74,12 @@ class _CredentialsPage2ScreenState extends State<CredentialsPage2Screen> {
                   child: CustomIconButton(
                     onTap: () {
               // Create an instance of UserInformation with user input
-                HealthInformation data = HealthInformation(
-                gender: selectedValue,
-                height: _currentHeightSliderValue,
-                weight: _currentWeightSliderValue,
-              );
+                HealthInformation data = HealthInformation();
                 // Store data in the database
-                data.updateHealth();
+                data.updateHealth(
+                  selectedValue,
+                  _currentHeightSliderValue,
+                  _currentWeightSliderValue,);
                 Navigator.pushNamed(context, AppRoutes.infoPageScreen);
                     },
                     height: 56.adaptSize,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:thrive_quit_application/core/app_export.dart';
-import 'package:thrive_quit_application/data/user_information_data.dart';
+import 'package:thrive_quit_application/data/registration_pages.dart';
 import 'package:thrive_quit_application/widgets/custom_drop_down.dart';
 import 'package:thrive_quit_application/widgets/custom_icon_button.dart';
 import 'package:thrive_quit_application/widgets/custom_text_form_field.dart';
@@ -143,15 +143,14 @@ class _InfoPageScreenState extends State<InfoPageScreen> {
                 child: CustomIconButton(
                   onTap: () {
               // Create an instance of UserInformation with user input
-                  SmokingInformation data = SmokingInformation(
-                  cigarettesSmokedPerDay: cigarettesPerDayController.text,
-                  cigarettesInOnePack: cigarettesInOnePackController.text,
-                  cigarettesAverageCost: averageCostController.text,
-                  dateOfLastCigarette: (dateOfLastCigaretteDay + '-' + dateOfLastCigaretteMonth 
-                  + '-' + dateOfLastCigaretteYear),
-              );
+                  SmokingInformation data = SmokingInformation();
                 // Store data in the database
-                data.updateSmoking();
+                data.updateSmoking(                  
+                  cigarettesPerDayController.text,
+                  cigarettesInOnePackController.text,
+                  averageCostController.text,
+                  (dateOfLastCigaretteYear + '-' + dateOfLastCigaretteMonth 
+                  + '-' + dateOfLastCigaretteDay),);
                 Navigator.pushNamed(context, AppRoutes.homePage);
                               },
                   height: 56.adaptSize,

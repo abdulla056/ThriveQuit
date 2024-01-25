@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:thrive_quit_application/auth/auth_gate.dart';
 import 'firebase_options.dart';
 import 'package:thrive_quit_application/core/utils/size_utils.dart';
 import 'package:thrive_quit_application/theme/theme_helper.dart';
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
           theme:theme,
           title: 'thrive_quit_application',
           debugShowCheckedModeBanner: false,
-          initialRoute: AppRoutes.appNavigationScreen,
+          home: AuthGate(),
           routes: AppRoutes.routes,
         );
       },

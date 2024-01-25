@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:thrive_quit_application/core/app_export.dart';
-import 'package:thrive_quit_application/data/user_information_data.dart';
+import 'package:thrive_quit_application/data/registration_pages.dart';
 import 'package:thrive_quit_application/widgets/custom_drop_down.dart';
 import 'package:thrive_quit_application/widgets/custom_icon_button.dart';
 import 'package:thrive_quit_application/widgets/custom_text_form_field.dart';
@@ -157,15 +157,15 @@ class _CredentialsPageOneScreenState extends State<CredentialsPageOneScreen> {
                 child: CustomIconButton(
                     onTap: () {
               // Create an instance of UserInformation with user input
-              UserInformation data = UserInformation(
-                firstName: firstNameController.text,
-                lastName: lastNameController.text,
-                userName: userNameController.text,
-                contactNumber: contactNumberController.text,
-                dateOfBirth: (dateOfBirthDay + '-' + dateOfBirthMonth + '-' + dateOfBirthYear),
-              );
+              UserInformation data = UserInformation();
                 // Store data in the database
-                data.storeData();
+                data.storeData(                
+                  firstNameController.text,
+                  lastNameController.text,
+                  userNameController.text,
+                  contactNumberController.text,
+                  (dateOfBirthYear + '-' + dateOfBirthMonth + '-' + dateOfBirthDay),
+                );
                 Navigator.pushNamed(context, AppRoutes.credentialsPage2Screen);
                               },
                   height: 56.adaptSize,
