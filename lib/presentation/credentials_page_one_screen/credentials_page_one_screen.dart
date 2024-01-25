@@ -1,15 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:thrive_quit_application/core/app_export.dart';
+import 'package:thrive_quit_application/data/registration_pages.dart';
 import 'package:thrive_quit_application/widgets/custom_drop_down.dart';
 import 'package:thrive_quit_application/widgets/custom_icon_button.dart';
 import 'package:thrive_quit_application/widgets/custom_text_form_field.dart';
 
-class CredentialsPageOneScreen extends StatelessWidget {
+class CredentialsPageOneScreen extends StatefulWidget {
   CredentialsPageOneScreen({Key? key})
       : super(
           key: key,
         );
 
+  @override
+  State<CredentialsPageOneScreen> createState() => _CredentialsPageOneScreenState();
+}
+
+class _CredentialsPageOneScreenState extends State<CredentialsPageOneScreen> {
   TextEditingController firstNameController = TextEditingController();
 
   TextEditingController lastNameController = TextEditingController();
@@ -18,7 +24,13 @@ class CredentialsPageOneScreen extends StatelessWidget {
 
   TextEditingController contactNumberController = TextEditingController();
 
-  List<String> dropdownItemList = [
+  String dateOfBirthDay = '';
+
+  String dateOfBirthMonth = '';
+
+  String dateOfBirthYear = '';
+
+  List<String> dropdownDay = [
     "1",
     "2",
     "3",
@@ -52,7 +64,7 @@ class CredentialsPageOneScreen extends StatelessWidget {
     "31",
   ];
 
-  List<String> dropdownItemList1 = [
+  List<String> dropdownMonth = [
     "1",
     "2",
     "3",
@@ -67,7 +79,7 @@ class CredentialsPageOneScreen extends StatelessWidget {
     "12",
   ];
 
-  List<String> dropdownItemList2 = [
+  List<String> dropdownYear = [
     "1998",
     "1999",
     "2000",
@@ -143,7 +155,19 @@ class CredentialsPageOneScreen extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.only(right: 13.h),
                 child: CustomIconButton(
-                  onTap: () => Navigator.pushNamed(context, AppRoutes.credentialsPage2Screen),
+                    onTap: () {
+              // Create an instance of UserInformation with user input
+              UserInformation data = UserInformation();
+                // Store data in the database
+                data.storeData(                
+                  firstNameController.text,
+                  lastNameController.text,
+                  userNameController.text,
+                  contactNumberController.text,
+                  (dateOfBirthYear + '-' + dateOfBirthMonth + '-' + dateOfBirthDay),
+                );
+                Navigator.pushNamed(context, AppRoutes.credentialsPage2Screen);
+                              },
                   height: 56.adaptSize,
                   width: 56.adaptSize,
                   padding: EdgeInsets.all(13.h),
@@ -165,40 +189,43 @@ class CredentialsPageOneScreen extends StatelessWidget {
   Widget _buildBasicInfo(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(right: 4.h),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: EdgeInsets.only(left: 5.h),
-            child: RichText(
-              text: TextSpan(
-                children: [
-                  TextSpan(
-                    text: "First Name",
-                    style: CustomTextStyles.titleLargeGray900_2,
-                  ),
-                  TextSpan(
-                    text: "*",
-                    style: theme.textTheme.titleLarge,
-                  ),
-                ],
-              ),
-              textAlign: TextAlign.left,
-            ),
-          ),
-          SizedBox(height: 11.v),
-          Padding(
-            padding: EdgeInsets.only(left: 3.h),
-            child: Container(
-              height: 50.0,
-              width: 400.0,
-              child: CustomTextFormField(
-                controller: userNameController,
-                textInputAction: TextInputAction.done,
+      child: Form(
+        //key: _formkey,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: EdgeInsets.only(left: 5.h),
+              child: RichText(
+                text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text: "First Name",
+                      style: CustomTextStyles.titleLargeGray900_2,
+                    ),
+                    TextSpan(
+                      text: "*",
+                      style: theme.textTheme.titleLarge,
+                    ),
+                  ],
+                ),
+                textAlign: TextAlign.left,
               ),
             ),
-          ),
-        ],
+            SizedBox(height: 11.v),
+            Padding(
+              padding: EdgeInsets.only(left: 3.h),
+              child: Container(
+                height: 50.0,
+                width: 400.0,
+                child: CustomTextFormField(
+                  controller: firstNameController,
+                  textInputAction: TextInputAction.done,
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -235,7 +262,7 @@ class CredentialsPageOneScreen extends StatelessWidget {
               height: 50.0,
               width: 400.0,
               child: CustomTextFormField(
-                controller: userNameController,
+                controller: lastNameController,
                 textInputAction: TextInputAction.done,
               ),
             ),
@@ -317,7 +344,7 @@ class CredentialsPageOneScreen extends StatelessWidget {
               height: 50.0,
               width: 400.0,
               child: CustomTextFormField(
-                controller: userNameController,
+                controller: contactNumberController,
                 textInputAction: TextInputAction.done,
               ),
             ),
@@ -364,12 +391,17 @@ class CredentialsPageOneScreen extends StatelessWidget {
                     padding: EdgeInsets.only(right: 11.h),
                     child: CustomDropDown(
                       hintText: "DD",
-                      items: dropdownItemList,
+                      items: dropdownDay,
                       contentPadding: EdgeInsets.symmetric(
                         horizontal: 11.h,
                         vertical: 15.v,
                       ),
-                      onChanged: (value) {},
+                      onChanged: (String? value) {
+                        setState(() {
+                        dateOfBirthDay = value!;
+                          },
+                        );
+                      }
                     ),
                   ),
                 ),
@@ -378,12 +410,17 @@ class CredentialsPageOneScreen extends StatelessWidget {
                     padding: EdgeInsets.only(right: 11.5.h),
                     child: CustomDropDown(
                       hintText: "MM",
-                      items: dropdownItemList1,
+                      items: dropdownMonth,
                       contentPadding: EdgeInsets.symmetric(
                         horizontal: 11.h,
                         vertical: 15.v,
                       ),
-                      onChanged: (value) {},
+                      onChanged: (String? value) {
+                        setState(() {
+                        dateOfBirthMonth = value!;
+                          },
+                        );
+                      }
                     ),
                   ),
                 ),
@@ -392,8 +429,13 @@ class CredentialsPageOneScreen extends StatelessWidget {
                     padding: EdgeInsets.only(left: 0.h),
                     child: CustomDropDown(
                       hintText: "YYYY",
-                      items: dropdownItemList2,
-                      onChanged: (value) {},
+                      items: dropdownYear,
+                      onChanged: (String? value) {
+                        setState(() {
+                        dateOfBirthYear = value!;
+                          },
+                        );
+                      }
                     ),
                   ),
                 ),

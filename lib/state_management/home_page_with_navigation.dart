@@ -28,60 +28,56 @@ class _HomePageState extends State<HomePage> {
   ]; 
   @override
   Widget build(BuildContext context) {
-    final ThemeData theme = Theme.of(context);
-        return Scaffold(
-          body : screens[currentPageIndex],
-          // floatingActionButton: FloatingActionButton(
-          //   backgroundColor: Colors.orange,
-          //   child : Icon(Icons.location_on_outlined),
-          //   onPressed: () => Navigator.pushNamed(context, AppRoutes.discoverPage),
-          // ),
-          // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-          bottomNavigationBar: 
-              NavigationBar(
-              onDestinationSelected: (int index) {
-                setState(() {
-                  currentPageIndex = index;
-                });
-              },
-              backgroundColor: Colors.grey.shade200,
-              indicatorColor: Colors.orange,
-              selectedIndex: currentPageIndex,
-              destinations: const <Widget>[
-                NavigationDestination(
-                  selectedIcon: Icon(Icons.dashboard),
-                  icon: Icon(Icons.dashboard_outlined),
-                  label: 'Dashboard',
-                ),
-                NavigationDestination(
-                  selectedIcon: Icon(Icons.school),
-                  icon: Icon(Icons.school_outlined),
-                  label: 'Tips',
-                ),
-                Card(
-                  elevation: 50,
-                  color: Colors.orange,
-                  child: SizedBox(
-                    width: 500,
-                    height: 100,
-                    child: NavigationDestination(
-                      selectedIcon: Icon(Icons.location_on_sharp),
-                      icon: Icon(Icons.location_on_outlined,), 
-                      label: 'Discover',),
+        return Theme(
+          data: theme,
+          child: Scaffold(
+            body : screens[currentPageIndex],
+            bottomNavigationBar: 
+                NavigationBar(
+                onDestinationSelected: (int index) {
+                  setState(() {
+                    currentPageIndex = index;
+                  });
+                },
+                backgroundColor: Colors.grey.shade200,
+                indicatorColor: Colors.orange,
+                selectedIndex: currentPageIndex,
+                destinations: const <Widget>[
+                  NavigationDestination(
+                    selectedIcon: Icon(Icons.dashboard),
+                    icon: Icon(Icons.dashboard_outlined),
+                    label: 'Dashboard',
                   ),
-                ),
-                NavigationDestination(
-                  selectedIcon: Icon(Icons.people_alt),
-                  icon: Icon(Icons.people_alt_outlined),
-                  label: 'Community',
-                ),
-                NavigationDestination(
-                  selectedIcon: Icon(Icons.account_circle),
-                  icon: Icon(Icons.account_circle_outlined),
-                  label: 'Profile',
+                  NavigationDestination(
+                    selectedIcon: Icon(Icons.school),
+                    icon: Icon(Icons.school_outlined),
+                    label: 'Tips',
                   ),
-              ],
-            ),
+                  Card(
+                    elevation: 50,
+                    color: Colors.orange,
+                    child: SizedBox(
+                      width: 500,
+                      height: 100,
+                      child: NavigationDestination(
+                        selectedIcon: Icon(Icons.location_on_sharp),
+                        icon: Icon(Icons.location_on_outlined,), 
+                        label: 'Discover',),
+                    ),
+                  ),
+                  NavigationDestination(
+                    selectedIcon: Icon(Icons.people_alt),
+                    icon: Icon(Icons.people_alt_outlined),
+                    label: 'Community',
+                  ),
+                  NavigationDestination(
+                    selectedIcon: Icon(Icons.account_circle),
+                    icon: Icon(Icons.account_circle_outlined),
+                    label: 'Profile',
+                    ),
+                ],
+              ),
+          ),
         );
   }
 }

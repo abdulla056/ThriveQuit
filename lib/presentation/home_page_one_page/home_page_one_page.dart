@@ -1,4 +1,4 @@
-import '../home_page_one_page/widgets/tipscomponentlist_item_widget.dart';
+import 'package:thrive_quit_application/controller/dashboard_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:thrive_quit_application/core/app_export.dart';
 import 'package:thrive_quit_application/widgets/custom_elevated_button.dart';
@@ -15,6 +15,29 @@ class HomePageOnePage extends StatefulWidget {
 }
 
 class _HomePageOnePageState extends State<HomePageOnePage> {
+  DashboardController dashboardController = DashboardController();
+  //final data = dashboardController.dashboardData(userId)
+
+    @override
+  void initState() {
+    super.initState();
+
+    // Fetch user data when the widget is initialized
+    fetchDashboardData();
+  }
+
+  Future<void> fetchDashboardData() async {
+    try {
+      // Call the dashboardData function from the controller
+      await dashboardController.dashboardData();
+
+      // Rebuild the widget to reflect the changes in the UI
+      setState(() {});
+    } catch (e) {
+      print('Error fetching dashboard data: $e');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -46,8 +69,6 @@ class _HomePageOnePageState extends State<HomePageOnePage> {
       ),
     );
   }
-}
-
 /// Section Widget
 Widget _buildEmergencyHelpRow(BuildContext context) {
   return Padding(
@@ -65,7 +86,7 @@ Widget _buildEmergencyHelpRow(BuildContext context) {
             bottom: 6.v,
           ),
           child: Text(
-            "Welcome Boblet,",
+            "Welcome ${dashboardController.displayName},",
             style: CustomTextStyles.titleLargeGray900Medium,
           ),
         ),
@@ -139,7 +160,7 @@ Widget _buildTrackerDisplayColumn(BuildContext context) {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "237",
+                dashboardController.totalDaysSinceSmoked.toString(),
                 style: theme.textTheme.displayLarge,
               ),
               Padding(
@@ -162,7 +183,7 @@ Widget _buildTrackerDisplayColumn(BuildContext context) {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Text(
-                "0",
+                dashboardController.yearsCounter.toString(),
                 style: CustomTextStyles.headlineLargeOrangeA20002,
               ),
               Padding(
@@ -179,7 +200,7 @@ Widget _buildTrackerDisplayColumn(BuildContext context) {
               Padding(
                 padding: EdgeInsets.only(left: 9.h),
                 child: Text(
-                  "7",
+                  dashboardController.monthsCounter.toString(),
                   style: CustomTextStyles.headlineLargeOrangeA20002,
                 ),
               ),
@@ -208,7 +229,7 @@ Widget _buildTrackerDisplayColumn(BuildContext context) {
               Padding(
                 padding: EdgeInsets.only(left: 3.h),
                 child: Text(
-                  "27",
+                  dashboardController.daysCounter.toString(),
                   style: CustomTextStyles.headlineLargeOrangeA20002,
                 ),
               ),
@@ -445,7 +466,7 @@ Widget _buildFiveHundredTwentyStack(BuildContext context) {
               child: Padding(
                 padding: EdgeInsets.only(right: 30.h, top: 48.v),
                 child: Text(
-                  "520",
+                  dashboardController.totalMoneySaved,
                   style: CustomTextStyles.displayMediumGray80001,
                 ),
               ),
@@ -569,3 +590,5 @@ Widget _buildHealthAndBreathingExcercises(BuildContext context) {
     ),
   );
 }
+}
+
